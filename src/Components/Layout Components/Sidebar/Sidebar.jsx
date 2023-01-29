@@ -120,7 +120,7 @@ const Sidebar = () => {
                 <AccordionIcon />
               </AccordionButton>
             </h2>
-            <AccordionPanel>
+            <AccordionPanel ml="20px">
               <Link href="">
                 <Flex alignItems="center" color="white">
                   <Employee h="35px" w="30px" mt="10px" />
@@ -128,7 +128,7 @@ const Sidebar = () => {
                 </Flex>
               </Link>
             </AccordionPanel>
-            <AccordionPanel>
+            <AccordionPanel ml="20px">
               <Link href="">
                 <Flex alignItems="center" color="white">
                   <Attendance h="35px" w="30px" mt="10px" />
@@ -136,7 +136,7 @@ const Sidebar = () => {
                 </Flex>
               </Link>
             </AccordionPanel>
-            <AccordionPanel>
+            <AccordionPanel ml="20px">
               <Link href="">
                 <Flex alignItems="center" color="white">
                   <Report h="35px" w="30px" mt="10px" />
@@ -144,7 +144,7 @@ const Sidebar = () => {
                 </Flex>
               </Link>
             </AccordionPanel>
-            <AccordionPanel>
+            <AccordionPanel ml="20px">
               <Link href="">
                 <Flex alignItems="center" color="white">
                   <Salary h="35px" w="30px" mt="10px" />
@@ -152,7 +152,7 @@ const Sidebar = () => {
                 </Flex>
               </Link>
             </AccordionPanel>
-            <AccordionPanel>
+            <AccordionPanel ml="20px">
               <Link href="">
                 <Flex alignItems="center" color="white">
                   <Payment h="35px" w="30px" mt="10px" />
@@ -160,7 +160,7 @@ const Sidebar = () => {
                 </Flex>
               </Link>
             </AccordionPanel>
-            <AccordionPanel>
+            <AccordionPanel ml="20px">
               <Link href="">
                 <Flex alignItems="center" color="white">
                   <Setting h="35px" w="30px" mt="10px" />
