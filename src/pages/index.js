@@ -4,7 +4,7 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Box, Flex } from "@chakra-ui/react";
 import Sidebar from "@/Components/Layout Components/Sidebar/Sidebar";
-import MainPage from "@/Components/Index/MainPage";
+import Index from "@/Components/Index/Index";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Flex>
         <Sidebar />
-        <MainPage />
+        <Index />
       </Flex>
     </>
   );
