@@ -6,7 +6,14 @@ import {
   Box,
   Circle,
   Flex,
+  Table,
+  TableContainer,
+  Tbody,
+  Th,
   Text,
+  Tfoot,
+  Thead,
+  Tr,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -60,10 +67,56 @@ const TimeTableItem = ({ number, title, date, status }) => {
           </Flex>
         </AccordionButton>
         <AccordionPanel pb={4}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          <TableContainer w="80%" mt="2%" ml="auto" mr="auto" borderRadius="10px">
+            <Table size="sm" w="100%">
+              <Thead bg="#1C80DD" color="white">
+                <Tr>
+                  <Th>Sl. No.</Th>
+                  <Th>Date</Th>
+                  <Th>Time</Th>
+                  <Th>Subject</Th>
+                </Tr>
+              </Thead>
+              <Tbody bg="#F4F2FA">
+                <Tr>
+                  <Th py="10px">1</Th>
+                  <Th>1-2-2022</Th>
+                  <Th>8:30 - 9:30</Th>
+                  <Th>Maths</Th>
+                </Tr>
+                <Tr>
+                  <Th py="10px">2</Th>
+                  <Th>2-2-2022</Th>
+                  <Th>8:30 - 9:30</Th>
+                  <Th>Hindi</Th>
+                </Tr>
+                <Tr>
+                  <Th py="10px">3</Th>
+                  <Th>3-2-2022</Th>
+                  <Th>8:30 - 9:30</Th>
+                  <Th>English</Th>
+                </Tr>
+                <Tr>
+                  <Th py="10px">4</Th>
+                  <Th>4-2-2022</Th>
+                  <Th>8:30 - 9:30</Th>
+                  <Th>Science</Th>
+                </Tr>
+                <Tr>
+                  <Th py="10px">5</Th>
+                  <Th>5-2-2022</Th>
+                  <Th>8:30 - 9:30</Th>
+                  <Th>Social</Th>
+                </Tr>
+                <Tr>
+                  <Th py="10px">6</Th>
+                  <Th>6-2-2022</Th>
+                  <Th>8:30 - 9:30</Th>
+                  <Th>Kannada</Th>
+                </Tr>
+              </Tbody>
+            </Table>
+          </TableContainer>
         </AccordionPanel>
       </AccordionItem>
     </Accordion>
