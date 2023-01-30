@@ -32,7 +32,7 @@ import {
 
 const Sidebar = () => {
   return (
-    <Box bg="#111827" w="17%" h="100vh">
+    <Box bg="#111827" w="17%">
       <Box w="100%" bg="#111827" h="max-content" p="10px">
         <Center
           bg="rgba(255, 255, 255, 0.2)"

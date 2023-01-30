@@ -8,9 +8,10 @@ const Header = () => {
     <Flex
       justifyContent="flex-end"
     //   alignItems="center"
-      w="83%"
+      w="100%"
       p="5px"
       h="30px"
+      bg="white"
     >
       <Circle size="20px" bg="#34D399" color="white" mr={4}>
         <PhoneIcon boxSize={2} />
