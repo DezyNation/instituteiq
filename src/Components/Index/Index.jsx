@@ -2,6 +2,7 @@ import { Box, Flex, Heading } from "@chakra-ui/react";
 import React from "react";
 import Header from "../Layout Components/Header/Header";
 import Assessment from "../Misc/Assessment";
+import AssessmentTotal from "../Misc/AssessmentTotal";
 import Carousel from "../Misc/Carousel";
 
 const Index = () => {
@@ -95,16 +96,11 @@ const Index = () => {
               marks="472/625"
               grades="B"
             />
-            <Assessment
+            <AssessmentTotal
               color="#1C80DD"
-              slno="4"
-              title="Science"
-              date="2/4/22"
-              teacher="Teacher"
               percentage="69"
               marks="472/625"
               grades="B"
-              type="total"
             />
           </Box>
         </Box>

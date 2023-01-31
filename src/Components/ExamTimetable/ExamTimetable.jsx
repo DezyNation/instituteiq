@@ -5,7 +5,7 @@ import TimeTableItem from "../Misc/TimeTableItem";
 
 const ExamTimetable = () => {
   return (
-    <Flex w="83%" flexDirection="column" alignItems="flex-end" bg="#f5f5f5" h="max-content" pb="50px">
+    <Flex w="83%" flexDirection="column" alignItems="flex-end" bg="#f5f5f5" h="max-content" pb="50px" ml="17%">
       <Header />
       <Box alignSelf="flex-start" w="90%">
         <Heading
