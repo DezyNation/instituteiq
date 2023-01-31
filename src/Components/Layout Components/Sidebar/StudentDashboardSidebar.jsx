@@ -26,11 +26,13 @@ import Link from "next/link";
 const StudentDashboardSidebar = () => {
   return (
     // <Box w="17%" h="100vh">
-      <Flex w="17%" bg="#111827" h="100vh" p="10px" flexDirection="column">
+      <Flex w="17%" bg="#111827" h="100vh" p="10px" flexDirection="column" position="fixed">
         <Text alignSelf="center" color="white">School Name</Text>        
-        <Circle size="110px" bg="gray" color="white" alignSelf="center" my="30px" fontSize="4xl">
+        <Circle size="110px" bg="black" color="white" alignSelf="center" my="30px" fontSize="6xl" fontWeight="500">
           A
         </Circle>
+        <Text alignSelf="center" fontSize="s" fontWeight="500" color="white">Anurag Kulkarni</Text>        
+        <Text alignSelf="center" fontSize="sm" fontWeight="500" color="white" mb="10px">Student</Text>        
         <Link href="">
           <Flex alignItems="center" color="white">
             <Dashboard h="35px" w="30px" mt="10px" />

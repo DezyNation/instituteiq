@@ -2,24 +2,26 @@ import { Box, Flex, Heading } from "@chakra-ui/react";
 import React from "react";
 import Header from "../Layout Components/Header/Header";
 import Assessment from "../Misc/Assessment";
+import Carousel from "../Misc/Carousel";
 
 const Index = () => {
   return (
     <>
-      <Flex w="83%" flexDirection="column" alignItems="flex-end">
+      <Flex w="83%" flexDirection="column" alignItems="flex-end" ml="17%">
         <Header />
         <Box alignSelf="flex-start" w="100%" h="100%" bg="#f5f5f5">
           <Box bg="#f5f5f5" w="100%" h="max-content">
             <Heading
               as={"h1"}
-              color="#F79210"
+              color="#1C80DDCF"
               fontWeight="bold"
               fontSize={"xx-large"}
               ml="40px"
               mt="30px"
             >
-              Perfromance
+              Performance
             </Heading>
+            <Carousel />
             <Flex
               justifyContent="space-between"
               w="90%"
@@ -32,7 +34,10 @@ const Index = () => {
               borderRadius="12.7538px"
             >
               <Heading fontWeight="600" fontSize={"large"}>
-                Assessment
+                Sl. NO.
+              </Heading>
+              <Heading fontWeight="600" fontSize={"large"}>
+                Subject
               </Heading>
               <Heading fontWeight="600" fontSize={"large"}>
                 Date
@@ -52,7 +57,8 @@ const Index = () => {
             </Flex>
             <Assessment
               color="#1C80DD"
-              title="Assessment 1"
+              slno="1"
+              title="Maths"
               date="7/2/22"
               teacher="Teacher"
               percentage="59"
@@ -61,7 +67,8 @@ const Index = () => {
             />
             <Assessment
               color="#F79210"
-              title="Assessment 2"
+              slno="2"
+              title="English"
               date="27/2/22"
               teacher="Teacher"
               percentage="80"
@@ -70,12 +77,34 @@ const Index = () => {
             />
             <Assessment
               color="#37D334"
-              title="Assessment 3"
+              slno="3"
+              title="Hindi"
               date="2/4/22"
               teacher="Teacher"
               percentage="70"
               marks="472/625"
               grades="B"
+            />
+            <Assessment
+              color="#1C80DD"
+              slno="4"
+              title="Science"
+              date="2/4/22"
+              teacher="Teacher"
+              percentage="69"
+              marks="472/625"
+              grades="B"
+            />
+            <Assessment
+              color="#1C80DD"
+              slno="4"
+              title="Science"
+              date="2/4/22"
+              teacher="Teacher"
+              percentage="69"
+              marks="472/625"
+              grades="B"
+              type="total"
             />
           </Box>
         </Box>
