@@ -19,7 +19,7 @@ import React from "react";
 
 const TimeTableItem = ({ number, title, date, status }) => {
   return (
-    <Accordion defaultIndex={[0]} allowToggle>
+    <Accordion defaultIndex={[]} allowToggle>
       <AccordionItem>
         <AccordionButton>
           <Flex ml="40px" mt="40px" alignItems="center" gap="20px" w="100%">

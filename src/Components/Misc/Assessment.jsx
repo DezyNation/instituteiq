@@ -30,7 +30,7 @@ const Assessment = ({
       py="7px"
       position="relative"
       _before={{
-        content: '""',
+        content: '" "',
         position: "absolute",
         w: "10px",
         h: "100%",

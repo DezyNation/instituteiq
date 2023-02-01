@@ -110,7 +110,7 @@ const Sidebar = () => {
           </Flex>
         </Link>
 
-        <Accordion defaultIndex={[0]} pt="5px" allowMultiple color="white">
+        <Accordion defaultIndex={[]} pt="5px" allowMultiple color="white">
           <AccordionItem>
             <h2>
               <AccordionButton>

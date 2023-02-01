@@ -1,10 +1,15 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Button, Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useRef } from "react";
 
 const Carousel = () => {
+  // const buttonsParent = useRef()
+  // const moveCarousel = (e) =>{
+  //   buttonsParent.current.style.width = ""
+  // }
+
   return (
-    <Flex gap="10px" w="90%" ml="40px" mt="20px" alignItems="center">
+    <Flex gap="10px" w="100%" mt="20px" alignItems="center">
       <ChevronLeftIcon boxSize={7} cursor="pointer"/>
       <Button
         width="20%"
