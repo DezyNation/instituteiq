@@ -28,17 +28,17 @@ const TimeTableItem = ({ number, title, date, status }) => {
             </Circle>
             <Box
               w="100%"
-              bg="#F3F0FA"
+              bg="#fff"
               boxShadow={`2.12563px 6.37688px 4.25125px rgba(0, 0, 0, 0.25)`}
               borderRadius="12.7538px"
-              h="100px"
+              h="80px"
               px="40px"
               // my="auto"
               position="relative"
               _before={{
                 content: '""',
                 position: "absolute",
-                w: "10px",
+                w: "8px",
                 h: "100%",
                 bg: "#1C80DD",
                 left: "0",
@@ -77,7 +77,7 @@ const TimeTableItem = ({ number, title, date, status }) => {
                   <Th>Subject</Th>
                 </Tr>
               </Thead>
-              <Tbody bg="#F4F2FA">
+              <Tbody bg="#fff">
                 <Tr>
                   <Th py="10px">1</Th>
                   <Th>1-2-2022</Th>
