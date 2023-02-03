@@ -29,6 +29,44 @@ export const UserManagement = createIcon({
     />
   ),
 });
+export const HeaderAttendance = createIcon({
+  displayName: "HeaderAttendance",
+  viewBox:"-8 -8 55 55",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: (
+    <path
+      d="M25.2501 1.58337V8.91671M12.7501 1.58337V8.91671M36.6721 18.0834H1.32786M36.6721 18.0834C36.2382 7.62012 31.821 4.33337 19.0001 4.33337C6.17915 4.33337 1.76176 7.62012 1.32786 18.0834M36.6721 18.0834C36.6965 18.6716 36.7084 19.2825 36.7084 19.9167C36.7084 31.8334 32.5417 35.5 19.0001 35.5C5.45841 35.5 1.29175 31.8334 1.29175 19.9167C1.29175 19.2825 1.30347 18.6716 1.32786 18.0834"
+      stroke="white"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  ),
+});
+export const HeaderPerformance = createIcon({
+  displayName: "HeaderPerformance",
+  viewBox:"-8 -8 55 55",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M2.66675 2.66663V25.3333C2.66675 27.5466 4.45341 29.3333 6.66675 29.3333H29.3334"
+      stroke="white"
+      stroke-width="1.5"
+      stroke-miterlimit="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />,
+    <path
+      d="M6.66675 22.6667L12.7867 15.52C13.8001 14.3467 15.6001 14.2667 16.6934 15.3734L17.9601 16.64C19.0534 17.7334 20.8534 17.6667 21.8667 16.4934L28.0001 9.33337"
+      stroke="white"
+      stroke-width="1.5"
+      stroke-miterlimit="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />,
+  ],
+});
+
 export const Performance = createIcon({
   displayName: "Performance",
   viewBox: "0 0 27 27",
@@ -47,6 +85,57 @@ export const Performance = createIcon({
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
+    />,
+  ],
+});
+export const HeaderAbsent = createIcon({
+  displayName: "HeaderAbsent",
+  viewBox: "-8 -8 55 55",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M13 3.08337V7.70837M26 3.08337V7.70837M5.6875 14.0138H33.3125M30.9887 31.003L27.5438 27.75M30.9562 27.7809L27.5113 31.0492M29.25 35.4584C30.9739 35.4584 32.6272 34.8087 33.8462 33.6522C35.0652 32.4957 35.75 30.9272 35.75 29.2917C35.75 27.6562 35.0652 26.0877 33.8462 24.9312C32.6272 23.7747 30.9739 23.125 29.25 23.125C27.5261 23.125 25.8728 23.7747 24.6538 24.9312C23.4348 26.0877 22.75 27.6562 22.75 29.2917C22.75 30.9272 23.4348 32.4957 24.6538 33.6522C25.8728 34.8087 27.5261 35.4584 29.25 35.4584Z"
+      stroke="white"
+      stroke-width="1.5"
+      stroke-miterlimit="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />,
+    <path
+      d="M34.125 13.1042V25.2217C32.9387 23.9421 31.2 23.125 29.25 23.125C25.6587 23.125 22.75 25.8846 22.75 29.2917C22.75 30.448 23.0912 31.5425 23.6925 32.4675C24.0337 33.0225 24.4725 33.5159 24.9762 33.9167H13C7.3125 33.9167 4.875 30.8334 4.875 26.2084V13.1042C4.875 8.47921 7.3125 5.39587 13 5.39587H26C31.6875 5.39587 34.125 8.47921 34.125 13.1042Z"
+      stroke="white"
+      stroke-width="1.5"
+      stroke-miterlimit="10"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />,
+    <path
+      d="M19.4919 21.1208H19.5082M13.4778 21.1208H13.494M13.4778 25.7459H13.494"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />,
+  ],
+});
+export const HeaderAssignment = createIcon({
+  displayName: "HeaderAssignment",
+  viewBox:"-8 -8 55 55",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M36.1 17.4L34.4666 24.3666C33.0666 30.3833 30.3 32.8166 25.1 32.3166C24.2666 32.25 23.3666 32.1 22.4 31.8666L19.6 31.2C12.65 29.55 10.5 26.1166 12.1333 19.15L13.7666 12.1666C14.1 10.75 14.5 9.51664 15 8.49997C16.95 4.46664 20.2666 3.38331 25.8333 4.69997L28.6166 5.34997C35.6 6.98331 37.7333 10.4333 36.1 17.4Z"
+      stroke="white"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />,
+    <path
+      d="M21.0667 14.2167L29.1501 16.2667M19.4334 20.6667L24.2667 21.9M25.1001 32.3167C24.0667 33.0167 22.7667 33.6 21.1834 34.1167L18.5501 34.9833C11.9334 37.1167 8.45008 35.3333 6.30008 28.7167L4.16675 22.1333C2.03341 15.5167 3.80008 12.0167 10.4167 9.88333L13.0501 9.01667C13.7334 8.8 14.3834 8.61667 15.0001 8.5C14.5001 9.51667 14.1001 10.75 13.7667 12.1667L12.1334 19.15C10.5001 26.1167 12.6501 29.55 19.6001 31.2L22.4001 31.8667C23.3667 32.1 24.2667 32.25 25.1001 32.3167Z"
+      stroke="white"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />,
   ],
 });

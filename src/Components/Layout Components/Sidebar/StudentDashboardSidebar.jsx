@@ -118,7 +118,7 @@ const StudentDashboardSidebar = () => {
             <p>Apply Leave</p>
           </Flex>
         </Link>
-        <Link href="" style={{ marginTop: "auto" }}>
+        <Link href="" style={{ marginTop: "100px" }}>
           <Flex alignItems="center" color="white">
             <Logout h="35px" w="30px" mt="10px" />
             <p>Logout</p>

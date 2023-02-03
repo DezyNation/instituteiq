@@ -12,6 +12,8 @@ const MainPage = (props) => {
       h="max-content"
       pb="50px"
       ml="17%"
+      height="100vh"
+      overflow="auto"
     >
       <Header />
       <Box w="90%" alignSelf="center" bg="#f5f5f5">
