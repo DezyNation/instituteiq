@@ -24,7 +24,6 @@ const AssessmentTotal = ({ color, percentage, marks, grades }) => {
       px="40px"
       py="7px"
       position="relative"
-      mb="40px"
     >
       <Flex flexDirection="column" w="35%" alignItems="center">
         <Link href="">

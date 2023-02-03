@@ -29,6 +29,194 @@ export const UserManagement = createIcon({
     />
   ),
 });
+export const Performance = createIcon({
+  displayName: "Performance",
+  viewBox: "0 0 27 27",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M8.25004 20.1667H13.75C18.3334 20.1667 20.1667 18.3334 20.1667 13.75V8.25004C20.1667 3.66671 18.3334 1.83337 13.75 1.83337H8.25004C3.66671 1.83337 1.83337 3.66671 1.83337 8.25004V13.75C1.83337 18.3334 3.66671 20.1667 8.25004 20.1667Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+    <path
+      d="M14.2084 16.9583C15.2167 16.9583 16.0417 16.1333 16.0417 15.125V6.87496C16.0417 5.86663 15.2167 5.04163 14.2084 5.04163C13.2 5.04163 12.375 5.86663 12.375 6.87496V15.125C12.375 15.6112 12.5682 16.0775 12.912 16.4213C13.2558 16.7651 13.7221 16.9583 14.2084 16.9583ZM7.79171 16.9583C8.80004 16.9583 9.62504 16.1333 9.62504 15.125V11.9166C9.62504 10.9083 8.80004 10.0833 7.79171 10.0833C6.78337 10.0833 5.95837 10.9083 5.95837 11.9166V15.125C5.95837 15.6112 6.15153 16.0775 6.49534 16.4213C6.83916 16.7651 7.30548 16.9583 7.79171 16.9583Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+  ],
+});
+export const ApplyLeave = createIcon({
+  displayName: "ApplyLeave",
+  viewBox: "0 0 27 27",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M8 2V5M16 2V5M3.5 9.09H20.5M19.07 20.11L16.95 18M19.05 18.02L16.93 20.14M18 23C19.0609 23 20.0783 22.5786 20.8284 21.8284C21.5786 21.0783 22 20.0609 22 19C22 17.9391 21.5786 16.9217 20.8284 16.1716C20.0783 15.4214 19.0609 15 18 15C16.9391 15 15.9217 15.4214 15.1716 16.1716C14.4214 16.9217 14 17.9391 14 19C14 20.0609 14.4214 21.0783 15.1716 21.8284C15.9217 22.5786 16.9391 23 18 23Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+    <path
+      d="M21 8.5V16.36C20.27 15.53 19.2 15 18 15C15.79 15 14 16.79 14 19C14 19.75 14.21 20.46 14.58 21.06C14.79 21.42 15.06 21.74 15.37 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+    <path
+      d="M11.9949 13.7H12.0049M8.29395 13.7H8.30395M8.29395 16.7H8.30395"
+      stroke="white"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+  ],
+});
+export const Assignment = createIcon({
+  displayName: "Assignment",
+  viewBox: "0 0 27 27",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M8 12.2H15M8 16.2H12.38M10 6H14C16 6 16 5 16 4C16 2 15 2 14 2H10C9 2 8 2 8 4C8 6 9 6 10 6Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+    <path
+      d="M16 4.02002C19.33 4.20002 21 5.43002 21 10V16C21 20 20 22 15 22H9C4 22 3 20 3 16V10C3 5.44002 4.67 4.20002 8 4.02002"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+  ],
+});
+export const FeePaymments = createIcon({
+  displayName: "FeePaymments",
+  viewBox: "0 0 27 27",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M9.5 13.75C9.5 14.72 10.25 15.5 11.17 15.5H13.05C13.85 15.5 14.5 14.82 14.5 13.97C14.5 13.06 14.1 12.73 13.51 12.52L10.5 11.47C9.91 11.26 9.51 10.94 9.51 10.02C9.51 9.18 10.16 8.49 10.96 8.49H12.84C13.76 8.49 14.51 9.27 14.51 10.24M12 7.5V16.5"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+    <path
+      d="M22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2M22 6V2M22 2H18M22 2L17 7"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+  ],
+});
+export const Fines = createIcon({
+  displayName: "Fines",
+  viewBox: "0 0 27 27",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M10.7521 16.86V18.89C10.7521 20.61 9.15205 22 7.18205 22C5.21205 22 3.60205 20.61 3.60205 18.89V16.86C3.60205 18.58 5.20205 19.8 7.18205 19.8C9.15205 19.8 10.7521 18.57 10.7521 16.86Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+    <path
+      d="M10.75 14.11C10.75 14.61 10.61 15.07 10.37 15.47C9.77997 16.44 8.56997 17.05 7.16997 17.05C5.76997 17.05 4.55997 16.43 3.96997 15.47C3.72997 15.07 3.58997 14.61 3.58997 14.11C3.58997 13.25 3.98997 12.48 4.62997 11.92C5.27997 11.35 6.16997 11.01 7.15997 11.01C8.14997 11.01 9.03997 11.36 9.68997 11.92C10.35 12.47 10.75 13.25 10.75 14.11Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+    <path
+      d="M10.7521 14.11V16.86C10.7521 18.58 9.15205 19.8 7.18205 19.8C5.21205 19.8 3.60205 18.57 3.60205 16.86V14.11C3.60205 12.39 5.20205 11 7.18205 11C8.17205 11 9.06205 11.35 9.71205 11.91C10.3521 12.47 10.7521 13.25 10.7521 14.11ZM22.0001 10.97V13.03C22.0001 13.58 21.5601 14.03 21.0001 14.05H19.0401C17.9601 14.05 16.97 13.26 16.88 12.18C16.82 11.55 17.0601 10.96 17.4801 10.55C17.8501 10.17 18.3601 9.95001 18.9201 9.95001H21.0001C21.5601 9.97001 22.0001 10.42 22.0001 10.97Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+    <path
+      d="M2 10.5V8.5C2 5.78 3.64 3.88 6.19 3.56C6.45 3.52 6.72 3.5 7 3.5H16C16.26 3.5 16.51 3.51 16.75 3.55C19.33 3.85 21 5.76 21 8.5V9.95H18.92C18.36 9.95 17.85 10.17 17.48 10.55C17.06 10.96 16.82 11.55 16.88 12.18C16.97 13.26 17.96 14.05 19.04 14.05H21V15.5C21 18.5 19 20.5 16 20.5H13.5"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+  ],
+});
+export const StudyMaterial = createIcon({
+  displayName: "StudyMaterial",
+  viewBox: "0 0 27 27",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M21.6601 10.44L20.6801 14.62C19.8401 18.23 18.1801 19.69 15.0601 19.39C14.5601 19.35 14.0201 19.26 13.4401 19.12L11.7601 18.72C7.59006 17.73 6.30006 15.67 7.28006 11.49L8.26006 7.30001C8.46006 6.45001 8.70006 5.71001 9.00006 5.10001C10.1701 2.68001 12.1601 2.03001 15.5001 2.82001L17.1701 3.21001C21.3601 4.19001 22.6401 6.26001 21.6601 10.44Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+    <path
+      d="M12.64 8.52998L17.49 9.75998M11.66 12.4L14.56 13.14M15.06 19.39C14.44 19.81 13.66 20.16 12.71 20.47L11.13 20.99C7.15998 22.27 5.06997 21.2 3.77997 17.23L2.49997 13.28C1.21997 9.30998 2.27997 7.20998 6.24997 5.92998L7.82997 5.40998C8.23997 5.27998 8.62997 5.16998 8.99997 5.09998C8.69997 5.70998 8.45997 6.44998 8.25997 7.29998L7.27997 11.49C6.29997 15.67 7.58998 17.73 11.76 18.72L13.44 19.12C14.02 19.26 14.56 19.35 15.06 19.39Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+  ],
+});
+export const TimeTable = createIcon({
+  displayName: "TimeTable",
+  viewBox: "0 0 27 27",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+    <path
+      d="M15.6949 13.7H15.7039M15.6949 16.7H15.7039M11.9949 13.7H12.0049M11.9949 16.7H12.0049M8.29395 13.7H8.30395M8.29395 16.7H8.30395"
+      stroke="white"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />,
+  ],
+});
+export const ExamSchedule = createIcon({
+  displayName: "ExamSchedule",
+  viewBox: "0 0 27 27",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: (
+    <path
+      d="M15.75 9H8.25M15.75 15H8.25M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  ),
+});
+
 export const LessonPlanner = createIcon({
   displayName: "LessonPlanner",
   viewBox: "0 0 27 27",
@@ -346,6 +534,9 @@ export const Notification = createIcon({
   viewBox: "0 0 27 27",
   // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
   path: (
-    <path d="M6.99999 16.998C8.10374 16.998 8.99905 16.1027 8.99905 14.998H5.00093C5.00093 16.1027 5.89624 16.998 6.99999 16.998ZM13.7309 12.3196C13.1272 11.6709 11.9975 10.6949 11.9975 7.49805C11.9975 5.06992 10.295 3.12617 7.99937 2.6493V1.99805C7.99937 1.44586 7.55187 0.998047 6.99999 0.998047C6.44812 0.998047 6.00062 1.44586 6.00062 1.99805V2.6493C3.70499 3.12617 2.00249 5.06992 2.00249 7.49805C2.00249 10.6949 0.872804 11.6709 0.269054 12.3196C0.0815536 12.5212 -0.00157141 12.7621 -8.9117e-06 12.998C0.00342859 13.5105 0.405616 13.998 1.00312 13.998H12.9969C13.5944 13.998 13.9969 13.5105 14 12.998C14.0016 12.7621 13.9184 12.5209 13.7309 12.3196Z" fill="#4A5568"/>
+    <path
+      d="M6.99999 16.998C8.10374 16.998 8.99905 16.1027 8.99905 14.998H5.00093C5.00093 16.1027 5.89624 16.998 6.99999 16.998ZM13.7309 12.3196C13.1272 11.6709 11.9975 10.6949 11.9975 7.49805C11.9975 5.06992 10.295 3.12617 7.99937 2.6493V1.99805C7.99937 1.44586 7.55187 0.998047 6.99999 0.998047C6.44812 0.998047 6.00062 1.44586 6.00062 1.99805V2.6493C3.70499 3.12617 2.00249 5.06992 2.00249 7.49805C2.00249 10.6949 0.872804 11.6709 0.269054 12.3196C0.0815536 12.5212 -0.00157141 12.7621 -8.9117e-06 12.998C0.00342859 13.5105 0.405616 13.998 1.00312 13.998H12.9969C13.5944 13.998 13.9969 13.5105 14 12.998C14.0016 12.7621 13.9184 12.5209 13.7309 12.3196Z"
+      fill="#4A5568"
+    />
   ),
 });
