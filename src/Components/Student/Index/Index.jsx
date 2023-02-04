@@ -5,15 +5,15 @@ import MainPage from "../../Layout Components/MainPage/MainPage";
 import Assessment from "../Misc/Assessment";
 import AssessmentTotal from "../Misc/AssessmentTotal";
 import Carousel from "../Misc/Carousel";
-import Cards from "./Cards";
+import Cards from "../Misc/Cards";
 import HeaderChart from "./HeaderChart";
-import IndexTimeTable from "./IndexTimeTable";
+import IndexTimeTable from "../Misc/IndexTimeTable";
 import LatestTasks from "./LatestTasks";
 
 const Index = () => {
   return (
-    <MainPage heading="Performance">
-      <Flex gap="40px">
+    <MainPage>
+      <Flex gap="40px" mt="50px">
         <Cards heading="Performance" value="56%" />
         <Cards heading="Attendance" value="102" />
         <Cards heading="Pending Assignment" value="98" />
@@ -24,7 +24,7 @@ const Index = () => {
         <HeaderChart />
       </Flex>
       <Flex gap="50px" mt="50px" justifyContent="space-evenly">
-        <IndexTimeTable />
+        <IndexTimeTable width="500px"/>
         <LatestTasks />
       </Flex>
     </MainPage>

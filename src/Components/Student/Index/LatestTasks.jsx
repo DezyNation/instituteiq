@@ -41,7 +41,7 @@ const LatestTasks = () => {
       </Flex>
       {LatestTasksList.map((element, index) => {
         return (
-          <Box bg="#fff" p="10px" boxShadow="0px 4.50136px 4.50136px rgba(0, 0, 0, 0.25)" borderRadius="13.5px" mb="20px">
+          <Box key={`${element.subject}_${index}`} bg="#fff" p="10px" boxShadow="0px 4.50136px 4.50136px rgba(0, 0, 0, 0.25)" borderRadius="13.5px" mb="20px">
             <Flex alignItems="center">
               <Circle
                 w="40px"

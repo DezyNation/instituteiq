@@ -31,7 +31,7 @@ export const UserManagement = createIcon({
 });
 export const HeaderAttendance = createIcon({
   displayName: "HeaderAttendance",
-  viewBox:"-8 -8 55 55",
+  viewBox: "-8 -8 55 55",
   // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
   path: (
     <path
@@ -45,7 +45,7 @@ export const HeaderAttendance = createIcon({
 });
 export const HeaderPerformance = createIcon({
   displayName: "HeaderPerformance",
-  viewBox:"-8 -8 55 55",
+  viewBox: "-8 -8 55 55",
   // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
   path: [
     <path
@@ -120,7 +120,7 @@ export const HeaderAbsent = createIcon({
 });
 export const HeaderAssignment = createIcon({
   displayName: "HeaderAssignment",
-  viewBox:"-8 -8 55 55",
+  viewBox: "-8 -8 55 55",
   // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
   path: [
     <path
@@ -628,4 +628,67 @@ export const Notification = createIcon({
       fill="#4A5568"
     />
   ),
+});
+
+export const YetToReceive = createIcon({
+  displayName: "YetToReceive",
+  viewBox: "-8 -8 55 55",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M9.37746 21.1755C8.98875 21.1782 8.60873 21.0672 8.28998 20.8578L0.790138 15.8814C0.385919 15.6115 0.111669 15.202 0.0273463 14.7424C-0.0569768 14.2827 0.0554855 13.8103 0.340147 13.4285C0.482243 13.2377 0.663098 13.0752 0.872271 12.9505C1.08144 12.8258 1.31479 12.7413 1.55884 12.7019C1.8029 12.6625 2.05282 12.669 2.29418 12.7211C2.53554 12.7731 2.76357 12.8696 2.96509 13.005L9.37746 17.2226L15.7523 12.705C16.1501 12.4242 16.6502 12.3036 17.1425 12.3698C17.6347 12.436 18.0789 12.6835 18.3773 13.0579C18.6756 13.4323 18.8037 13.903 18.7334 14.3663C18.6631 14.8296 18.4001 15.2477 18.0023 15.5285L10.5024 20.8225C10.1779 21.0516 9.78315 21.1755 9.37746 21.1755Z"
+      fill="white"
+    />,
+    <path
+      d="M9.37847 17.6468C8.8812 17.6468 8.4043 17.4609 8.05267 17.1299C7.70105 16.799 7.50351 16.3501 7.50351 15.8821V1.76468C7.50351 1.29666 7.70105 0.847805 8.05267 0.516863C8.4043 0.185921 8.8812 0 9.37847 0C9.87574 0 10.3526 0.185921 10.7043 0.516863C11.0559 0.847805 11.2534 1.29666 11.2534 1.76468V15.8821C11.2534 16.3501 11.0559 16.799 10.7043 17.1299C10.3526 17.4609 9.87574 17.6468 9.37847 17.6468Z"
+      fill="white"
+    />,
+    <circle cx="-3" cy="30" r="3" fill="white" />,
+    <circle cx="9" cy="30" r="3" fill="white" />,
+    <circle cx="21" cy="30" r="3" fill="white" />,
+  ],
+});
+export const Received = createIcon({
+  displayName: "Received",
+  viewBox: "-8 -8 55 55",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      d="M9.37746 21.1755C8.98875 21.1782 8.60873 21.0672 8.28998 20.8578L0.790138 15.8814C0.385919 15.6115 0.111669 15.202 0.0273463 14.7424C-0.0569768 14.2827 0.0554855 13.8103 0.340147 13.4285C0.482243 13.2377 0.663098 13.0752 0.872271 12.9505C1.08144 12.8258 1.31479 12.7413 1.55884 12.7019C1.8029 12.6625 2.05282 12.669 2.29418 12.7211C2.53554 12.7731 2.76357 12.8696 2.96509 13.005L9.37746 17.2226L15.7523 12.705C16.1501 12.4242 16.6502 12.3036 17.1425 12.3698C17.6347 12.436 18.0789 12.6835 18.3773 13.0579C18.6756 13.4323 18.8037 13.903 18.7334 14.3663C18.6631 14.8296 18.4001 15.2477 18.0023 15.5285L10.5024 20.8225C10.1779 21.0516 9.78315 21.1755 9.37746 21.1755Z"
+      fill="white"
+    />,
+    <path
+      d="M9.37847 17.6468C8.8812 17.6468 8.4043 17.4609 8.05267 17.1299C7.70105 16.799 7.50351 16.3501 7.50351 15.8821V1.76468C7.50351 1.29666 7.70105 0.847805 8.05267 0.516863C8.4043 0.185921 8.8812 0 9.37847 0C9.87574 0 10.3526 0.185921 10.7043 0.516863C11.0559 0.847805 11.2534 1.29666 11.2534 1.76468V15.8821C11.2534 16.3501 11.0559 16.799 10.7043 17.1299C10.3526 17.4609 9.87574 17.6468 9.37847 17.6468Z"
+      fill="white"
+    />,
+  ],
+});
+export const PendingReview = createIcon({
+  displayName: "PendingReview",
+  viewBox: "-8 -8 55 55",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      style={{ opacity: "0.783" }}
+      fill="#fefffe"
+      d="M 11.5,4.5 C 13.1667,4.5 14.8333,4.5 16.5,4.5C 16.0146,9.15854 17.848,10.4919 22,8.5C 22.49,7.20677 22.6567,5.87344 22.5,4.5C 25.8621,4.06952 28.6954,5.06952 31,7.5C 31.6667,15.5 31.6667,23.5 31,31.5C 30.0975,32.7014 28.9308,33.5348 27.5,34C 22.1667,34.6667 16.8333,34.6667 11.5,34C 10.0692,33.5348 8.90252,32.7014 8,31.5C 7.33333,23.5 7.33333,15.5 8,7.5C 9.14508,6.36362 10.3117,5.36362 11.5,4.5 Z"
+    />,
+  ],
+});
+export const ThumbsUp = createIcon({
+  displayName: "ThumbsUp",
+  viewBox: "-8 -8 55 55",
+  // path can also be an array of elements, if you have multiple paths, lines, shapes, etc.
+  path: [
+    <path
+      style={{opacity:"0.876"}}
+      fill="#fefffe"
+      d="M 17.5,3.5 C 23.8256,3.1737 26.1589,6.1737 24.5,12.5C 27.5719,12.1826 30.5719,12.5159 33.5,13.5C 35.3055,19.5282 34.6388,25.1948 31.5,30.5C 25.612,31.8074 19.7787,31.8074 14,30.5C 13.3333,25.1667 13.3333,19.8333 14,14.5C 15.8568,11.0455 17.0234,7.37886 17.5,3.5 Z"
+    />,
+    <path
+      style={{opacity:"0.783"}}
+      fill="#fefffe"
+      d="M 4.5,14.5 C 7.39382,14.0423 9.89382,14.709 12,16.5C 12.6667,21.5 12.6667,26.5 12,31.5C 9.33333,34.1667 6.66667,34.1667 4,31.5C 3.21526,25.7507 3.38193,20.084 4.5,14.5 Z"
+    />,
+  ],
 });

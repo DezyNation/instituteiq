@@ -1,3 +1,4 @@
+import { DownloadIcon } from "@chakra-ui/icons";
 import {
   Box,
   Card,
@@ -14,6 +15,10 @@ import {
   HeaderAssignment,
   HeaderAttendance,
   HeaderPerformance,
+  PendingReview,
+  Received,
+  ThumbsUp,
+  YetToReceive,
 } from "public/icons/Icons";
 import React from "react";
 
@@ -69,6 +74,55 @@ const Cards = ({ heading, value }) => {
         <HeaderAttendance
           borderRadius="20px"
           bg="#000"
+          h="62px"
+          w="77px"
+          m="auto"
+          position="absolute"
+          top="-25px"
+          left="30px"
+        />
+      )}
+      {heading === "Received" && (
+        <Received
+          borderRadius="20px"
+          bg="#003865"
+          h="62px"
+          w="77px"
+          m="auto"
+          position="absolute"
+          color="white"
+          top="-25px"
+          left="30px"
+        />
+      )}
+      {heading === "Yet to Receive" && (
+        <YetToReceive
+          borderRadius="20px"
+          bg="#003865"
+          h="62px"
+          w="77px"
+          m="auto"
+          position="absolute"
+          top="-25px"
+          left="30px"
+        />
+      )}
+      {heading === "Pending Review" && (
+        <PendingReview
+          borderRadius="20px"
+          bg="#003865"
+          h="62px"
+          w="77px"
+          m="auto"
+          position="absolute"
+          top="-25px"
+          left="30px"
+        />
+      )}
+      {heading === "Reviewed" && (
+        <ThumbsUp
+          borderRadius="20px"
+          bg="#003865"
           h="62px"
           w="77px"
           m="auto"

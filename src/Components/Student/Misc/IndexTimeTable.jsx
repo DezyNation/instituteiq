@@ -2,7 +2,7 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 import { Box, Circle, Divider, Flex, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 
-const IndexTimeTable = () => {
+const IndexTimeTable = ({width}) => {
   const subjectIcon = (element) => {
     var icon = element.charAt(0);
     if (icon.length < 2) {
@@ -44,7 +44,7 @@ const IndexTimeTable = () => {
   ];
   return (
     <Box
-      w="500px"
+      w={width}
       borderRadius="12px"
       bg="#fff"
       border="0.3px solid #000000"
@@ -59,7 +59,7 @@ const IndexTimeTable = () => {
       </Flex>
         {TimeTableList.map((element, index) => {
           return (
-            <Box>
+            <Box key={`${element.subject}_${index}`}>
               <Flex alignItems="center">
                 <Circle w="40px" h="40px" bg="#D4F6CC" color="white" mr="10px">
                   <Box as="span" fontWeight="500" fontSize="16px" color="#000">
