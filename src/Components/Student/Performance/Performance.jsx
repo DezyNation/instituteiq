@@ -1,6 +1,6 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import React from "react";
-import MainPage from "../Layout Components/MainPage/MainPage";
+import MainPage from "../../Layout Components/MainPage/MainPage";
 import Assessment from "../Misc/Assessment";
 import AssessmentTotal from "../Misc/AssessmentTotal";
 import Carousel from "../Misc/Carousel";

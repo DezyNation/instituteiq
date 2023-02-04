@@ -1,6 +1,6 @@
 import { Grid } from "@chakra-ui/react";
 import React from "react";
-import MainPage from "../Layout Components/MainPage/MainPage";
+import MainPage from "../../Layout Components/MainPage/MainPage";
 import Carousel from "../Misc/Carousel";
 import StudentAssignmentItem from "./StudentAssignmentItem";
 

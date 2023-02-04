@@ -1,6 +1,6 @@
 import { Box, Grid, Heading } from "@chakra-ui/react";
 import React from "react";
-import MainPage from "../Layout Components/MainPage/MainPage";
+import MainPage from "../../Layout Components/MainPage/MainPage";
 import Carousel from "../Misc/Carousel";
 import StudyMaterialItem from "./StudyMaterialItem";
 
@@ -59,25 +59,25 @@ const StudyMaterial = () => {
   return (
     <MainPage heading="Study Material">
       <Carousel />
-        <Grid
-          gridTemplateRows="repeat(2, max-content)"
-          h="100vh"
-          gridTemplateColumns="repeat(auto-fit, minmax(250px,250px))"
-          w="100%"
-          mt="70px"
-          ml="40px"
-          gap="20px"
-        >
-          {studyMaterial.map((element) => {
-            return (
-              <StudyMaterialItem
-                chapter={element.chapter}
-                description={element.description}
-                date={element.date}
-              />
-            );
-          })}
-        </Grid>
+      <Grid
+        gridTemplateRows="repeat(2, max-content)"
+        h="100vh"
+        gridTemplateColumns="repeat(auto-fit, minmax(250px,250px))"
+        w="100%"
+        mt="70px"
+        ml="40px"
+        gap="20px"
+      >
+        {studyMaterial.map((element) => {
+          return (
+            <StudyMaterialItem
+              chapter={element.chapter}
+              description={element.description}
+              date={element.date}
+            />
+          );
+        })}
+      </Grid>
     </MainPage>
   );
 };

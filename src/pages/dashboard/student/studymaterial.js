@@ -4,16 +4,14 @@ import { Inter } from "@next/font/google";
 // import styles from "@/styles/Home.module.css";
 import { Flex } from "@chakra-ui/react";
 import StudentDashboardSidebar from "@/Components/Layout Components/Sidebar/StudentDashboardSidebar";
-import Performance from "@/Components/Performance/Performance";
+import StudyMaterial from "@/Components/Student/Study Material/StudyMaterial";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+export default function studymaterial() {
   return (
     <>
       <Flex>
-        <StudentDashboardSidebar/>
-        <Performance/>
+        <StudentDashboardSidebar />
+        <StudyMaterial />
       </Flex>
     </>
   );

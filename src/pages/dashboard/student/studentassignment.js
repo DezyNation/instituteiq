@@ -1,5 +1,5 @@
 import StudentDashboardSidebar from "@/Components/Layout Components/Sidebar/StudentDashboardSidebar";
-import StudentAssignment from "@/Components/Student Assignment/StudentAssignment";
+import StudentAssignment from "@/Components/Student/Student Assignment/StudentAssignment";
 import { Flex } from "@chakra-ui/react";
 
 export default function studentassignment() {
