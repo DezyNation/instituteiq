@@ -3,8 +3,8 @@
 import { Inter } from "@next/font/google";
 // import styles from "@/styles/Home.module.css";
 import { Flex } from "@chakra-ui/react";
-import Index from "@/Components/Student/Index/Index";
 import StudentDashboardSidebar from "@/Components/Layout Components/Sidebar/StudentDashboardSidebar";
+import Index from "@/Components/Student/Index/Index";
 
 const inter = Inter({ subsets: ["latin"] });
 

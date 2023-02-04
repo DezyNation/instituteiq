@@ -17,7 +17,10 @@ const Index = () => {
         <Cards heading="Pending Assignment" value="98" />
         <Cards heading="Absent" value="4" />
       </Flex>
-      <HeaderChart />
+      <Flex gap="5%" mt="50px">
+        <HeaderChart />
+        <HeaderChart />
+      </Flex>
     </MainPage>
   );
 };
