@@ -66,7 +66,7 @@ const HeaderChart = () => {
   };
 
   return (
-    <Box w="45%">
+    <Box w="474px">
       <Line data={data} options={options}></Line>
     </Box>
   );

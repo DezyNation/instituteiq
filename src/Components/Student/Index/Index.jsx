@@ -7,6 +7,8 @@ import AssessmentTotal from "../Misc/AssessmentTotal";
 import Carousel from "../Misc/Carousel";
 import Cards from "./Cards";
 import HeaderChart from "./HeaderChart";
+import IndexTimeTable from "./IndexTimeTable";
+import LatestTasks from "./LatestTasks";
 
 const Index = () => {
   return (
@@ -17,9 +19,13 @@ const Index = () => {
         <Cards heading="Pending Assignment" value="98" />
         <Cards heading="Absent" value="4" />
       </Flex>
-      <Flex gap="5%" mt="50px">
+      <Flex gap="50px" mt="50px" justifyContent="space-evenly">
         <HeaderChart />
         <HeaderChart />
+      </Flex>
+      <Flex gap="50px" mt="50px" justifyContent="space-evenly">
+        <IndexTimeTable />
+        <LatestTasks />
       </Flex>
     </MainPage>
   );
