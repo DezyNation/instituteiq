@@ -15,7 +15,7 @@ const IndexTimeTable = () => {
     }
     return icon;
   };
-  const subject = [
+  const TimeTableList = [
     {
       subject: "Mathematics",
       time: "8:30 AM - 9:30 AM",
@@ -44,8 +44,7 @@ const IndexTimeTable = () => {
   ];
   return (
     <Box
-      w="404px"
-      h="463px"
+      w="500px"
       borderRadius="12px"
       bg="#fff"
       border="0.3px solid #000000"
@@ -58,7 +57,7 @@ const IndexTimeTable = () => {
         </Heading>
         <ChevronRightIcon boxSize={7} color="#818181" />
       </Flex>
-        {subject.map((element, index) => {
+        {TimeTableList.map((element, index) => {
           return (
             <Box>
               <Flex alignItems="center">
@@ -90,7 +89,7 @@ const IndexTimeTable = () => {
                   {element.teacher}
                 </Text>
               </Flex>
-              {index !== subject.length - 1 && (
+              {index !== TimeTableList.length - 1 && (
                 <Divider height="2px" bg="#BCBCBC" mb="25px"/>
               )}
             </Box>
