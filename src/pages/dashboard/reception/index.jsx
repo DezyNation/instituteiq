@@ -5,7 +5,7 @@ import Layout from './layout'
 const Dashboard = () => {
   return (
     <>
-        <Layout pageName={'Student Dashboard'}>
+        <Layout pageName="Student Dashboard">
           
         </Layout>
     </>

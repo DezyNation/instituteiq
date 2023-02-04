@@ -98,7 +98,7 @@ const Sidenav = () => {
 const Layout = ({ children, pageName }) => {
     return (
         <>
-            <Head><title>institute iQ | {pageName}</title></Head>
+            <Head><title>{`institute iQ | ${pageName}`}</title></Head>
             <Stack
                 w={'full'} h={'100vh'}
                 direction={['column', 'row']}
