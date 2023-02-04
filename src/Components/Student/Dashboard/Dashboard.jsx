@@ -5,6 +5,7 @@ import React from "react";
 import LatestTasks from "../Index/LatestTasks";
 import Cards from "../Misc/Cards";
 import IndexTimeTable from "../Misc/IndexTimeTable";
+import AttendanceStat from "./AttendanceStat";
 import ToDoList from "./ToDoList";
 
 const Dashboard = () => {
@@ -22,6 +23,7 @@ const Dashboard = () => {
       </Flex>
       <Flex gap="50px" mt="50px" justifyContent="space-evenly">
         <IndexTimeTable width="370px"/>
+        <AttendanceStat/>
         <ToDoList />
       </Flex>
     </MainPage>
