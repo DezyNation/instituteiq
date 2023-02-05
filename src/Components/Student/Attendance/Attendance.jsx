@@ -42,12 +42,12 @@ const Attendance = () => {
         <Cards heading="Pending Assignment" value="98" />
         <Cards heading="Absent" value="4" />
       </Flex>
-      <Flex mt="30px" justifyContent="space-around">
-        <Box>
+      <Flex mt="30px" justifyContent="space-evenly">
+        <Box w="450px">
             <AbsentCalender />
         </Box>
         <TableContainer borderRadius="12px">
-          <Table w="400px" variant="striped" colorScheme="teal">
+          <Table w="400px" borderRadius="12px" variant="striped" colorScheme="teal">
             <Thead bg="#1c1c1c" color="white">
               <Tr fontWeight="400" h="45px">
                 <Th>Sl. No.</Th>
