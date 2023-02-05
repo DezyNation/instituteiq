@@ -3,6 +3,7 @@ import Attendance from "@/Components/Student/Attendance/Attendance";
 import { Flex } from "@chakra-ui/react";
 
 export default function attendance(){
+
     return (
         <>
         <Flex>

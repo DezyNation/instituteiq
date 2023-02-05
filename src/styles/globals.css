@@ -64,6 +64,36 @@ body{
   background: #555;
 }
 
+span.flatpickr-day.selected{
+  background-color: #000 !important;
+  border-color: #000;
+  color: #fff;
+  font-weight: 400 !important;
+}
+span.flatpickr-day.selected:hover{
+  background-color: #000 !important;
+  border-color: #000;
+  color: #fff;
+  font-weight: 400 !important;
+} 
+span.flatpickr-day.flatpickr-disabled{
+  color:#000 !important;
+  font-weight: 400 !important;
+}
+
+span.flatpickr-day{
+  background-color: #000;
+  font-weight: 400 !important;
+  color:#fff;
+}
+span.flatpickr-day:hover{
+  font-weight: 400 !important;
+  background-color: #000;
+  color:#fff;
+}
+
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

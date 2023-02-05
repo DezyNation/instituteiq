@@ -12,6 +12,7 @@ import {
   TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
+import AbsentCalender from "./AbsentCalender";
 
 const Attendance = () => {
   const tableData = [
@@ -41,8 +42,10 @@ const Attendance = () => {
         <Cards heading="Pending Assignment" value="98" />
         <Cards heading="Absent" value="4" />
       </Flex>
-      <Flex mt="30px">
-        <Box></Box>
+      <Flex mt="30px" justifyContent="space-around">
+        <Box>
+            <AbsentCalender />
+        </Box>
         <TableContainer borderRadius="12px">
           <Table w="400px" variant="striped" colorScheme="teal">
             <Thead bg="#1c1c1c" color="white">
@@ -55,7 +58,7 @@ const Attendance = () => {
             <Tbody textAlign="center">
               {tableData.map((item, index) => {
                 return (
-                  <Tr fontWeight="400" fontSize="17px" color="#2f2f2f" bg={((index+1)%2===0) ? "#cecece" : "#fff"} h="45px">
+                  <Tr key={`${item}_${index}`} fontWeight="400" fontSize="17px" color="#2f2f2f" bg={((index+1)%2===0) ? "#cecece" : "#fff"} h="45px">
                     <Td>{index+1}</Td>
                     <Td>{item.date}</Td>
                     <Td>{item.status}</Td>
