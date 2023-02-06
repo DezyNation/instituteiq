@@ -5,6 +5,7 @@ import Carousel from "../Misc/Carousel";
 import StudyMaterialItem from "./StudyMaterialItem";
 
 const StudyMaterial = () => {
+  const carouselButtons = ["Subject-1","Subject-2","Subject-3","Subject-4","Subject-5","Subject-6","Subject-7","Subject-8"];
   const studyMaterial = [
     {
       chapter: "Chapter Name",
@@ -58,7 +59,7 @@ const StudyMaterial = () => {
 
   return (
     <MainPage heading="Study Material">
-      <Carousel />
+      <Carousel carouselButtons={carouselButtons}/>
       <Grid
         gridTemplateRows="repeat(2, max-content)"
         h="100vh"

@@ -126,6 +126,12 @@ span.flatpickr-day:hover{
 
 /* Flatpicker styling end */
 
+/* Splide style  */
+.splide__arrow{
+  background-color: transparent !important;
+}
+/* Splide style ends */
+
 
 @media (prefers-color-scheme: dark) {
   :root {

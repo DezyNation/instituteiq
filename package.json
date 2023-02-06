@@ -16,6 +16,7 @@
     "@fontsource/fredoka": "^4.5.9",
     "@fontsource/roboto": "^4.5.8",
     "@next/font": "13.1.6",
+    "@splidejs/react-splide": "^0.7.12",
     "chart.js": "^4.2.0",
     "faker": "^6.6.6",
     "flatpickr": "^4.6.13",
