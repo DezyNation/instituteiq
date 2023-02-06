@@ -59,7 +59,7 @@ const StudyMaterial = () => {
 
   return (
     <MainPage heading="Study Material">
-      <Carousel carouselButtons={carouselButtons}/>
+      <Carousel carouselButtons={carouselButtons} type="button"/>
       <Grid
         gridTemplateRows="repeat(2, max-content)"
         h="100vh"

@@ -68,7 +68,7 @@ const StudentAssignment = () => {
 
   return (
     <MainPage heading="Student Assignment">
-      <Carousel carouselButtons={carouselButtons}/>
+      <Carousel carouselButtons={carouselButtons} type="button" />
       <Grid
         gridTemplateRows="repeat(2, max-content)"
         h="100vh"

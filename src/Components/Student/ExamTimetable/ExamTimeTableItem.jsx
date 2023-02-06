@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const TimeTableItem = ({ number, title, date, status }) => {
+const ExamTimeTableItem = ({ number, title, date, status }) => {
   return (
     <Accordion defaultIndex={[]} allowToggle>
       <AccordionItem>
@@ -123,4 +123,4 @@ const TimeTableItem = ({ number, title, date, status }) => {
   );
 };
 
-export default TimeTableItem;
+export default ExamTimeTableItem;

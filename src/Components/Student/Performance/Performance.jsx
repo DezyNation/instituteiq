@@ -11,7 +11,7 @@ const Performance = () => {
   return (
     <MainPage heading="Perfromance">
       <Box w="100%" h="max-content">
-        <Carousel carouselButtons={carouselButtons}/>
+        <Carousel carouselButtons={carouselButtons} type="button"/>
         <Flex
           justifyContent="space-between"
           w="90%"
