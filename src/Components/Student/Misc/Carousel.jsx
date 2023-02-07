@@ -54,7 +54,7 @@ const Carousel = ({ carouselButtons, type }) => {
             rewind: true,
             width: "100%",
             gap: "60px",
-            perPage: 5,
+            perPage: 7,
             perMove: 1,
             pagination: false,
             padding: "6%",
@@ -71,7 +71,8 @@ const Carousel = ({ carouselButtons, type }) => {
                   fontSize="l"
                   h="83px"
                   textAlign="center"
-                  color="#8f8f8f"
+                  bg={index===3?"#000":""}
+                  color={index===3?"#fff":"#8f8f8f"}
                 >
                   <Text>{date[0]}</Text>
                   <Text>{date[1]}</Text>
