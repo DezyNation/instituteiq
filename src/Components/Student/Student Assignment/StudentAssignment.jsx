@@ -5,7 +5,16 @@ import Carousel from "../Misc/Carousel";
 import StudentAssignmentItem from "./StudentAssignmentItem";
 
 const StudentAssignment = () => {
-  const carouselButtons = ["Subject-1","Subject-2","Subject-3","Subject-4","Subject-5","Subject-6","Subject-7","Subject-8"];
+  const carouselButtons = [
+    "Subject-1",
+    "Subject-2",
+    "Subject-3",
+    "Subject-4",
+    "Subject-5",
+    "Subject-6",
+    "Subject-7",
+    "Subject-8",
+  ];
 
   const assignments = [
     {
@@ -78,9 +87,10 @@ const StudentAssignment = () => {
         ml="40px"
         gap="20px"
       >
-        {assignments.map((element) => {
+        {assignments.map((element, index) => {
           return (
             <StudentAssignmentItem
+              key={`${element.chapter}_${index}`}
               chapter={element.chapter}
               description={element.description}
               startDate={element.startDate}

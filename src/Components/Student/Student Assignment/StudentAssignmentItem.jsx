@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
+import UploadModal from "./UploadModal";
 
 const StudentAssignmentItem = ({
   chapter,
@@ -37,7 +38,8 @@ const StudentAssignmentItem = ({
             {description}
           </Text>
         </Box>
-        <Link href="" style={{color:"#3948CD",textAlign:"right",display:"flex",justifyContent:"flex-end",marginTop:"5px"}}>Upload</Link>
+        <UploadModal button={"Upload"} chapter={chapter}/>
+        {/* <Link href="" style={{color:"#3948CD",textAlign:"right",display:"flex",justifyContent:"flex-end",marginTop:"5px"}}>Upload</Link> */}
         <Divider bg="#B0B2B6" h="0.5px" mb="5px" mt="10px"/>
         <Flex justifyContent="space-between">
           <Text fontSize="xs">{startDate}</Text>

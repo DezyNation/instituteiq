@@ -132,6 +132,13 @@ span.flatpickr-day:hover{
 }
 /* Splide style ends */
 
+/* Chakra UI modal */
+.chakra-modal__content-container {
+  position: ansolute !important;
+  z-index: 2;
+}
+/* Chakra UI modal end */
+
 
 @media (prefers-color-scheme: dark) {
   :root {

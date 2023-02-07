@@ -22,8 +22,8 @@ const Carousel = ({ carouselButtons, type }) => {
           options={{
             rewind: true,
             width: "100%",
-            gap: "60px",
-            perPage: 5,
+            // gap: "10px",
+            perPage: 4,
             perMove: 1,
             pagination: false,
             padding: "6%",
