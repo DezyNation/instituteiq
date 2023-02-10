@@ -8,15 +8,14 @@ import {
 } from "@chakra-ui/react";
 import React, { useRef } from "react";
 
-const CircularStat = () => {
+const CircularStat = ({heading}) => {
   const circularProgress = useRef();
-  console.log(circularProgress.current);
 
   return (
     <Flex bg="#fff" w="254px" h="260px" borderRadius="12px" p="10px" flexDirection="column" justifyContent="space-between">
       <Flex justifyContent="space-between" alignItems="center">
         <Text fontSize="20px" fontWeight="500" line-height="23px">
-          Attendance
+          {heading}
         </Text>
         <ChevronRightIcon boxSize="7" />
       </Flex>

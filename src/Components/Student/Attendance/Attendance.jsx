@@ -1,7 +1,7 @@
 import MainPage from "@/Components/Layout Components/MainPage/MainPage";
 import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
-import Cards from "../Misc/Cards";
+import Cards from "@/Components/Layout Components/Misc/Cards";
 import {
   Table,
   Thead,

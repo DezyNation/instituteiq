@@ -46,7 +46,7 @@ const IndexTimeTable = ({width}) => {
     <Box
       w={width}
       borderRadius="12px"
-      bg="#fff"
+      bg="#F4F2FA"
       border="0.3px solid #000000"
       boxShadow="2px 4px 4px rgba(0, 0, 0, 0.25)"
       p="15px"

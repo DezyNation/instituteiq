@@ -5,9 +5,9 @@ import MainPage from "../../Layout Components/MainPage/MainPage";
 import Assessment from "../Misc/Assessment";
 import AssessmentTotal from "../Misc/AssessmentTotal";
 import Carousel from "../Misc/Carousel";
-import Cards from "../Misc/Cards";
+import Cards from "@/Components/Layout Components/Misc/Cards";
 import HeaderChart from "./HeaderChart";
-import IndexTimeTable from "../Misc/IndexTimeTable";
+import IndexTimeTable from "../../Teacher/Dashboard/IndexTimeTable";
 import LatestTasks from "./LatestTasks";
 
 const Index = () => {
@@ -24,7 +24,7 @@ const Index = () => {
         <HeaderChart />
       </Flex>
       <Flex gap="50px" mt="50px" justifyContent="space-evenly">
-        <IndexTimeTable width="500px"/>
+        <IndexTimeTable width="500px" />
         <LatestTasks />
       </Flex>
     </MainPage>

@@ -9,6 +9,7 @@ const MainPage = (props) => {
       flexDirection="column"
       alignItems="flex-end"
       bg="#f5f5f5"
+      // bg="#F9FAFB"
       h="max-content"
       pb="50px"
       ml="17%"

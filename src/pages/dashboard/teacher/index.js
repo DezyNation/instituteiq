@@ -3,7 +3,7 @@ import Dashboard from "@/Components/Teacher/Dashboard/Dashboard";
 import StudentAssignment from "@/Components/Student/Student Assignment/StudentAssignment";
 import { Flex } from "@chakra-ui/react";
 
-export default function dashboard() {
+export default function Index() {
   return (
     <>
       <Flex>
