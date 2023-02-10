@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useRef } from "react";
 
-const AttendanceStat = () => {
+const CircularStat = () => {
   const circularProgress = useRef();
   console.log(circularProgress.current);
 
@@ -47,4 +47,4 @@ const AttendanceStat = () => {
   );
 };
 
-export default AttendanceStat;
+export default CircularStat;
