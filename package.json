@@ -29,6 +29,7 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0",
     "react-flatpickr": "^3.10.13",
+    "react-icons": "^4.7.1",
     "sass": "^1.57.1"
   }
 }

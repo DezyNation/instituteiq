@@ -15,6 +15,10 @@ import {
   HeaderAssignment,
   HeaderAttendance,
   HeaderPerformance,
+  NumberStaff,
+  NumberStudent,
+  OverallAttendance,
+  OverallPerformance,
   PendingReview,
   Received,
   ThumbsUp,
@@ -85,7 +89,7 @@ const Cards = ({ heading, value }) => {
       {heading === "Received" && (
         <Received
           borderRadius="20px"
-          bg="#003865"
+          bg="rgba(0, 56, 101, 0.85)"
           h="62px"
           w="77px"
           m="auto"
@@ -98,7 +102,7 @@ const Cards = ({ heading, value }) => {
       {heading === "Yet to Receive" && (
         <YetToReceive
           borderRadius="20px"
-          bg="#003865"
+          bg="rgba(0, 56, 101, 0.85)"
           h="62px"
           w="77px"
           m="auto"
@@ -110,7 +114,7 @@ const Cards = ({ heading, value }) => {
       {heading === "Pending Review" && (
         <PendingReview
           borderRadius="20px"
-          bg="#003865"
+          bg="rgba(0, 56, 101, 0.85)"
           h="62px"
           w="77px"
           m="auto"
@@ -122,7 +126,55 @@ const Cards = ({ heading, value }) => {
       {heading === "Reviewed" && (
         <ThumbsUp
           borderRadius="20px"
-          bg="#003865"
+          bg="rgba(0, 56, 101, 0.85)"
+          h="62px"
+          w="77px"
+          m="auto"
+          position="absolute"
+          top="-25px"
+          left="30px"
+        />
+      )}
+      {heading === "No of Students" && (
+        <NumberStudent
+          borderRadius="20px"
+          bg="rgba(0, 56, 101, 0.85)"
+          h="62px"
+          w="77px"
+          m="auto"
+          position="absolute"
+          top="-25px"
+          left="30px"
+        />
+      )}
+      {heading === "No of Staff" && (
+        <NumberStaff
+          borderRadius="20px"
+          bg="rgba(0, 56, 101, 0.85)"
+          h="62px"
+          w="77px"
+          m="auto"
+          position="absolute"
+          top="-25px"
+          left="30px"
+        />
+      )}
+      {heading === "Overall Performance" && (
+        <OverallPerformance
+          borderRadius="20px"
+          bg="rgba(0, 56, 101, 0.85)"
+          h="62px"
+          w="77px"
+          m="auto"
+          position="absolute"
+          top="-25px"
+          left="30px"
+        />
+      )}
+      {heading === "Overall Attendance" && (
+        <OverallAttendance
+          borderRadius="20px"
+          bg="rgba(0, 56, 101, 0.85)"
           h="62px"
           w="77px"
           m="auto"
