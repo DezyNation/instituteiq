@@ -8,6 +8,8 @@ import IndexTimeTable from "../Misc/IndexTimeTable";
 import AttendanceStat from "./AttendanceStat";
 import ToDoList from "./ToDoList";
 
+//this is teacher's portal.
+
 const Dashboard = () => {
   return (
     <MainPage heading="Dashboard">

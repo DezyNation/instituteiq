@@ -31,7 +31,7 @@ const UploadModal = ({ button, chapter }) => {
 
   const onSubmitClick = (e) =>{
     e.preventDefault()
-    console.log(e.target.form)
+    console.log(e)
   }
   return (
     <>
@@ -60,7 +60,7 @@ const UploadModal = ({ button, chapter }) => {
             {chapter}
           </ModalHeader>
           <ModalBody mt="20px" pb="10px">
-            <form action="" method="post">
+            <form action="" method="post" onSubmit={onSubmitClick}>
               <FormControl isInvalid={isError}>
                 <Textarea
                   value={input}
@@ -89,7 +89,6 @@ const UploadModal = ({ button, chapter }) => {
                   bg="#1C80DD"
                   color="white"
                   type="submit"
-                  onClick={onSubmitClick}
                   >
                   Submit
                 </Button>
