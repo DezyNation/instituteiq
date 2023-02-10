@@ -5,6 +5,7 @@ import React from "react";
 import MainPage from "../../Layout Components/MainPage/MainPage";
 import Cards from "../../Layout Components/Misc/Cards";
 import CircularStat from "../../Layout Components/Misc/CircularStat";
+import LeaderBoard from "./LeaderBoard";
 import LeavesList from "./LeavesList";
 import RecentCircular from "./RecentCircular";
 import ResearchCircular from "./RecentCircular";
@@ -32,6 +33,7 @@ const Dashboard = () => {
         <LeavesList />
       </Flex>
       <Flex mt="30px" w="100%" justifyContent="space-around">
+        <LeaderBoard />
         <RecentCircular />
         <ToDoList />
       </Flex>
