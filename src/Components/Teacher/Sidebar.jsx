@@ -7,55 +7,9 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import React from 'react'
-import { 
-    BsGrid, 
-    BsJournalBookmark, 
-    BsSpeedometer, 
-    BsSnow3, 
-    BsFileEarmarkCheck,
-    BsWallet
-} from 'react-icons/bs'
-import { FaUsersCog } from 'react-icons/fa'
 
-const SidebarOptions = [
-    {
-        text: "dashboard",
-        link: "/dashboard/teacher/class-teacher/",
-        icon: <BsGrid fontSize={20} />
-    },
-    {
-        text: "management controls",
-        link: "/dashboard/teacher/class-teacher/",
-        icon: <BsSpeedometer fontSize={20} />
-    },
-    {
-        text: "fee management",
-        link: "/dashboard/teacher/class-teacher/",
-        icon: <BsWallet fontSize={20} />
-    },
-    {
-        text: "branch management",
-        link: "/dashboard/teacher/class-teacher/",
-        icon: <BsSnow3 fontSize={20} />
-    },
-    {
-        text: "user management",
-        link: "/dashboard/teacher/class-teacher/",
-        icon: <FaUsersCog fontSize={20} />
-    },
-    {
-        text: "lesson planner",
-        link: "/dashboard/teacher/class-teacher/",
-        icon: <BsJournalBookmark fontSize={20} />
-    },
-    {
-        text: "exam management",
-        link: "/dashboard/teacher/class-teacher/",
-        icon: <BsFileEarmarkCheck fontSize={20} />
-    },
-]
 
-const Sidebar = () => {
+const Sidebar = ({SidebarOptions}) => {
     return (
         <>
             <Box py={8} px={4} h={'100vh'} bg={'rgb(17,24,39)'} flex={2} color={'white'} overflowY={'scroll'}>
@@ -69,7 +23,7 @@ const Sidebar = () => {
                     {
                         SidebarOptions.map((option, key) => {
                             return (
-                                <Link style={{ width: '100%' }} href={option.link}>
+                                <Link style={{ width: '100%' }} href={option.link} key={key}>
                                     <HStack spacing={2} w={'full'} justifyContent={'flex-start'} color={'aqua'} _hover={{color: 'white'}}>
                                         {option.icon}
                                         <Text textTransform={'capitalize'} fontSize={15}>{option.text}</Text>
