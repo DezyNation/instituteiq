@@ -46,9 +46,9 @@ const Attendance = () => {
         <Box w="450px">
             <AbsentCalender />
         </Box>
-        <TableContainer borderRadius="12px">
-          <Table w="400px" borderRadius="12px" variant="striped" colorScheme="teal">
-            <Thead bg="#1c1c1c" color="white">
+        <TableContainer borderRadius="12px" color="white">
+          <Table w="400px" borderRadius="12px" variant={"unstyled"}>
+            <Thead bg="#1c1c1c">
               <Tr fontWeight="400" h="45px">
                 <Th>Sl. No.</Th>
                 <Th>Date</Th>

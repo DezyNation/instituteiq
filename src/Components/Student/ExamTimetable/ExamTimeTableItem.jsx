@@ -31,8 +31,8 @@ const ExamTimeTableItem = ({ number, title, date, status }) => {
               bg="#fff"
               boxShadow={`2.12563px 6.37688px 4.25125px rgba(0, 0, 0, 0.25)`}
               borderRadius="12.7538px"
-              h="80px"
               px="40px"
+              py="15px"
               // my="auto"
               position="relative"
               _before={{
@@ -42,20 +42,22 @@ const ExamTimeTableItem = ({ number, title, date, status }) => {
                 h: "100%",
                 bg: "#1C80DD",
                 left: "0",
+                top:"0",
                 borderTopLeftRadius: "12.7538px",
                 borderBottomLeftRadius: "12.7538px",
               }}
             >
-              <Box transform={"translateY(40%)"}>
-                <Text fontWeight="700" fontSize="xl" textAlign="left">
-                  {title}
-                </Text>
-                <Flex justifyContent="space-between" alignItems="center">
-                  <Text fontWeight="400" fontSize="s">
-                    {date}
-                  </Text>
+              <Box>
+                <Flex justifyContent={"space-between"} alignItems="center">
+                  <Flex flexDirection={"column"} alignItems="flex-start" justifyContent="flex-end">
+                    <Text fontWeight="700" fontSize="xl" textAlign="left">
+                      {title}
+                    </Text>
+                    <Text fontWeight="400" fontSize="s">
+                      {date}
+                    </Text>
+                  </Flex>
                   <Text
-                    alignSelf="center"
                     color={status === "Upcoming" ? "#F79210" : "#37D334"}
                     fontWeight="500"
                   >
@@ -67,14 +69,21 @@ const ExamTimeTableItem = ({ number, title, date, status }) => {
           </Flex>
         </AccordionButton>
         <AccordionPanel pb={4}>
-          <TableContainer w="80%" mt="2%" ml="auto" mr="auto" borderRadius="10px">
+          <TableContainer
+            w="80%"
+            mt="2%"
+            ml="auto"
+            mr="auto"
+            borderRadius="10px"
+            variant="unstyled"
+          >
             <Table size="sm" w="100%">
-              <Thead bg="#1C80DD" color="white">
+              <Thead bg="#1C80DD">
                 <Tr>
-                  <Th>Sl. No.</Th>
-                  <Th>Date</Th>
-                  <Th>Time</Th>
-                  <Th>Subject</Th>
+                  <Th color="white">Sl. No.</Th>
+                  <Th color="white">Date</Th>
+                  <Th color="white">Time</Th>
+                  <Th color="white">Subject</Th>
                 </Tr>
               </Thead>
               <Tbody bg="#fff">

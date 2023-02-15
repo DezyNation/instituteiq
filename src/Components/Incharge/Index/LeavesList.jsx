@@ -30,18 +30,18 @@ const LeavesList = () => {
       </Heading>
       <TableContainer w="100%" borderRadius={"0 0 10px 10px"}>
         <Table w="100%">
-          <Thead py="10px" color="white" bg="rgba(0, 56, 101, 0.9)">
+          <Thead py="10px" bg="rgba(0, 56, 101, 0.9)">
             <Tr>
-              <Th>Sl. No.</Th>
-              <Th>Teacher</Th>
+              <Th textAlign={"center"} color="white">Sl. No.</Th>
+              <Th textAlign={"center"} color="white">Teacher</Th>
             </Tr>
           </Thead>
-          <Tbody color="#000" bg="#Fff" textAlign={"center"} fontFamily="Sans-serif">
+          <Tbody color="#000" bg="#Fff" fontFamily="Sans-serif">
             {LeaveList.map((teacher,index)=>{
                 return (
                     <Tr key={`${teacher}_${index}`} borderBottom="1px solid black">
-                        <Td py="5px" fontSize="s" >{index+1}</Td>
-                        <Td py="5px" fontSize="s" >{teacher}</Td>
+                        <Td textAlign={"center"} py="5px" fontSize="s" >{index+1}</Td>
+                        <Td textAlign={"center"} py="5px" fontSize="s" >{teacher}</Td>
                     </Tr>
                 )
             })}

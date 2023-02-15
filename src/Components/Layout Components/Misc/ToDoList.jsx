@@ -58,9 +58,10 @@ const ToDoList = () => {
         heading="Add new task"
         itemList={itemList}
         setItemList={setItemList}
+        placeholder = "Add new task..."
       >
         <Box
-          w="100%"
+          w="500px"
           bg="#fff"
           p="10px"
           boxShadow="0px 4px 4px rgba(56, 70, 199, 0.5)"
@@ -79,11 +80,12 @@ const ToDoList = () => {
               p="10px"
               mr="10px"
               _before={{
+                h:"100%",
                 content: '"+"',
                 color: "white",
                 fontSize: "40px",
                 position: "absolute",
-                bottom: "-5px",
+                top:"-6px",
                 left: "6px",
               }}
             />
@@ -117,6 +119,7 @@ const ToDoList = () => {
             key={`${element.task}_${index}`}
             bg="#fff"
             p="10px"
+            m="auto"
             boxShadow="0px 4px 4px rgba(56, 70, 199, 0.5)"
             borderRadius="13.5px"
             mb="20px"

@@ -48,7 +48,8 @@ const RecentCircular = () => {
       p="15px"
     >
       <InputModal
-        heading="Add new task"
+        heading="Add new circular"
+        placeholder="Add circular"
         itemList={itemList}
         setItemList={setItemList}
       >
@@ -78,7 +79,7 @@ const RecentCircular = () => {
                 position: "absolute",
                 display : "block",
                 margin:"auto",
-                top:"-10px"
+                top:"0"
               }}
             />
             <Flex justifyContent="center" alignItems="center">

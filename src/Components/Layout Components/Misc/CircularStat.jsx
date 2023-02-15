@@ -62,7 +62,7 @@ const CircularStat = ({heading,value,legends}) => {
           borderTop={"15px solid #EF5B0CB5"}
           borderRadius="100%"
         >
-          {`${value}%`}
+          {value}
         </Text>
       </Flex>
       <Flex justifyContent="space-around">

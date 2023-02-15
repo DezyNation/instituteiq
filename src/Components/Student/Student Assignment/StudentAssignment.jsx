@@ -80,7 +80,6 @@ const StudentAssignment = () => {
       <Carousel carouselButtons={carouselButtons} type="button" />
       <Grid
         gridTemplateRows="repeat(2, max-content)"
-        h="100vh"
         gridTemplateColumns="repeat(auto-fit, minmax(250px,250px))"
         w="100%"
         mt="70px"

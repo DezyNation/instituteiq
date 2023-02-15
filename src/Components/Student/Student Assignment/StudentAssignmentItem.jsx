@@ -22,17 +22,16 @@ const StudentAssignmentItem = ({
   return (
     <Card
       w="250px"
-      h="180px"
       p="10px"
       border="1px solid #BABCC0"
       borderRadius="12px"
       bg="#fff"
     >
-      <CardHeader>
+      <CardHeader p="0">
         <Heading size="md">{chapter}</Heading>
       </CardHeader>
       <Divider bg="#B0B2B6" h="0.5px" mt="5px" />
-      <CardBody>
+      <CardBody p="0">
         <Box>
           <Text pt="2" fontSize="sm">
             {description}

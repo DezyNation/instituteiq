@@ -8,12 +8,13 @@ const TimeTableItem = (props) => {
         {props.number}
       </Circle>
       <Box
-        w="100%"
+        w="70%"
         bg="#fff"
         boxShadow={`2.12563px 6.37688px 4.25125px rgba(0, 0, 0, 0.25)`}
         borderRadius="12.7538px"
-        h="80px"
+        // h="80px"
         px="40px"
+        py="5px"
         // my="auto"
         position="relative"
         _before={{
@@ -23,6 +24,7 @@ const TimeTableItem = (props) => {
           h: "100%",
           bg: "#1C80DD",
           left: "0",
+          top:"0",
           borderTopLeftRadius: "12.7538px",
           borderBottomLeftRadius: "12.7538px",
         }}

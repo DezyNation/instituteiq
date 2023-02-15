@@ -41,7 +41,7 @@ const Dashboard = () => {
       </Flex>
       <Flex gap="50px" mt="50px" justifyContent="space-evenly">
         <IndexTimeTable width="370px" />
-        <CircularStat heading="Attendance" value={59} legenrds={["Absent","Present"]}/>
+        <CircularStat heading="Attendance" value={59} legends={["Absent","Present"]}/>
         <ToDoList />
       </Flex>
     </MainPage>

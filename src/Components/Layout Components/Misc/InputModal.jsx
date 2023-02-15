@@ -21,7 +21,7 @@ import {
 } from "@chakra-ui/react";
 import { AttachmentIcon } from "@chakra-ui/icons";
 
-const InputModal = ({ children, heading,itemList, setItemList }) => {
+const InputModal = ({ children, heading,itemList, setItemList,placeholder }) => {
   const [input, setInput] = useState("");
 
   const handleInputChange = (e) => setInput(e.target.value);
@@ -36,7 +36,7 @@ const InputModal = ({ children, heading,itemList, setItemList }) => {
   };
   return (
     <>
-      <Button onClick={onOpen} color="#3948cd" w="100%">
+      <Button onClick={onOpen} color="#3948cd" w="100%" p="0px" my="20px">
         {children}
       </Button>
 
@@ -71,7 +71,7 @@ const InputModal = ({ children, heading,itemList, setItemList }) => {
                   resize={"none"}
                   w="96%"
                   borderRadius="20px"
-                  placeholder="Add task details..."
+                  placeholder={placeholder}
                   p="20px"
                   pb="100px"
                   mt="-5px"

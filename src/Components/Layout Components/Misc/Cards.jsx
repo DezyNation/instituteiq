@@ -184,7 +184,7 @@ const Cards = ({ heading, value }) => {
         />
       )}
 
-      <CardBody position="relative" top="70px">
+      <CardBody position="relative" top="50px">
         <Text
           fontSize="38px"
           fontWeight="500"

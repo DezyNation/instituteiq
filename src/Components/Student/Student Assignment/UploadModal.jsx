@@ -29,23 +29,28 @@ const UploadModal = ({ button, chapter }) => {
   const isError = input === "";
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const onSubmitClick = (e) =>{
-    e.preventDefault()
-    console.log(e)
-  }
+  const onSubmitClick = (e) => {
+    e.preventDefault();
+    console.log(e);
+  };
   return (
     <>
-      <Button onClick={onOpen} color="#3948cd" display={"block"} ml="auto">
+      <Button
+        onClick={onOpen}
+        bg="transparent"
+        color="#3948cd"
+        display={"block"}
+        ml="auto"
+      >
         {button}
       </Button>
 
-      <Modal isOpen={isOpen} onClose={onClose} closeOnOverlayClick={false}>
+      <Modal isOpen={isOpen} onClose={onClose} size={"3xl"} closeOnOverlayClick={false}>
         <ModalOverlay bg="rgba(217, 217, 217, 0.6)" />
         <ModalContent
           bg="white"
           borderRadius="20px"
           h="max-content"
-          w="700px"
           mx="auto"
           my="auto"
         >
@@ -62,7 +67,7 @@ const UploadModal = ({ button, chapter }) => {
           <ModalBody mt="20px" pb="10px">
             <form action="" method="post" onSubmit={onSubmitClick}>
               <FormControl isInvalid={isError}>
-                <Textarea
+                <Text
                   value={input}
                   onChange={handleInputChange}
                   bg="#F6EBEB"
@@ -75,13 +80,29 @@ const UploadModal = ({ button, chapter }) => {
                   mt="-5px"
                   mx="auto"
                   display="block"
-                />
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quisquam voluptatum soluta ab, odio laboriosam maiores molestias rerum nam nemo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae odit sapiente dolor tempora facilis doloribus reprehenderit harum pariatur nihil deleniti! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti, harum.</Text>
               </FormControl>
-              <Text ml="20px" fontSize={"xs"} mt="200px">Published on 20-06-2022 03:16 PM</Text>
-              <Divider height="1px" w="95%" mx="auto" bg="#B0B2B6"/>
+              <Text ml="20px" fontSize={"xs"} mt="200px">
+                Published on 20-06-2022 03:16 PM
+              </Text>
+              <Divider height="1px" w="95%" mx="auto" bg="#B0B2B6" />
               <Flex w="95%" mx="auto" mt="10px" justifyContent={"flex-end"}>
-                <label htmlFor="filesAttachment" style={{color:"#2987DE",alignSelf:"flex-start",marginRight:"auto"}}><AttachmentIcon color="#2987DE"/> Attachments</label>
-                <Input type="file" multiple={true} id="filesAttachment" display="none"/>
+                <label
+                  htmlFor="filesAttachment"
+                  style={{
+                    color: "#2987DE",
+                    alignSelf: "flex-start",
+                    marginRight: "auto",
+                  }}
+                >
+                  <AttachmentIcon color="#2987DE" /> Attachments
+                </label>
+                <Input
+                  type="file"
+                  multiple={true}
+                  id="filesAttachment"
+                  display="none"
+                />
                 <Button
                   w="130px"
                   h="28px"
@@ -89,7 +110,12 @@ const UploadModal = ({ button, chapter }) => {
                   bg="#1C80DD"
                   color="white"
                   type="submit"
-                  >
+                  _hover={{
+                    color:"#1c80DD",
+                    bg:"#fff",
+                    border:"1px solid gray"
+                  }}
+                >
                   Submit
                 </Button>
                 <Button
