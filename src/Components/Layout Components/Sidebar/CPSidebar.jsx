@@ -13,8 +13,10 @@ import {
   ApplyLeave,
 } from "public/icons/Icons";
 import Link from "next/link";
-import AiOutlineUserAdd from "react-icons/ai"
-
+import { AiOutlineUserAdd, AiOutlineIdcard } from "react-icons/ai";
+import { BiWallet } from "react-icons/bi";
+import { CiMoneyCheck1 } from "react-icons/ci";
+import { TbUserCheck } from "react-icons/tb";
 
 const CPSidebar = () => {
   return (
@@ -26,104 +28,79 @@ const CPSidebar = () => {
       top="0"
       overflowY="auto"
     >
-      <Flex
-        bg="#111827"
-        p="10px"
-        flexDirection="column"
-      >
-        <Text alignSelf="center" color="white">
-          School Name
-        </Text>
-        <Circle
-          size="110px"
-          bg="black"
-          color="white"
-          alignSelf="center"
-          my="30px"
-          fontSize="6xl"
-          fontWeight="500"
-        >
-          A
-        </Circle>
-        <Text alignSelf="center" fontSize="s" fontWeight="500" color="white">
-          Anurag Kulkarni
-        </Text>
-        <Text
-          alignSelf="center"
-          fontSize="sm"
-          fontWeight="500"
-          color="white"
-          mb="10px"
-        >
-          Student
-        </Text>
-        <Link href="">
-          <Flex alignItems="center" color="white">
-            <Dashboard h="35px" w="30px" mt="10px" />
-            <p>Dashboard</p>
-          </Flex>
-        </Link>
-        <Link href="">
-          <Flex alignItems="center" color="white">
-          <AiOutlineUserAdd />
-            {/* <Performance h="35px" w="30px" mt="10px" /> */}
-            <p>Performance</p>
-          </Flex>
-        </Link>
-        <Link href="">
-          <Flex alignItems="center" color="white">
-            <Attendance h="35px" w="30px" mt="10px" />
-            <p>Attendance</p>
-          </Flex>
-        </Link>
-        <Link href="">
-          <Flex alignItems="center" color="white">
-            <Assignment h="35px" w="30px" mt="10px" />
-            <p>Assignment</p>
-          </Flex>
-        </Link>
-        <Link href="">
-          <Flex alignItems="center" color="white">
-            <TimeTable h="35px" w="30px" mt="10px" />
-            <p>Time Table</p>
-          </Flex>
-        </Link>
-        <Link href="">
-          <Flex alignItems="center" color="white">
-            <ExamSchedule h="35px" w="30px" mt="10px" />
-            <p>Exam Schedule</p>
-          </Flex>
-        </Link>
-        <Link href="">
-          <Flex alignItems="center" color="white">
-            <StudyMaterial h="35px" w="30px" mt="10px" />
-            <p>Study Material</p>
-          </Flex>
-        </Link>
-        <Link href="">
-          <Flex alignItems="center" color="white">
-            <FeePaymments h="35px" w="30px" mt="10px" />
-            <p>Fee Paymments</p>
-          </Flex>
-        </Link>
-        <Link href="">
-          <Flex alignItems="center" color="white">
-            <Fines h="35px" w="30px" mt="10px" />
-            <p>Fines</p>
-          </Flex>
-        </Link>
-        <Link href="">
-          <Flex alignItems="center" color="white">
-            <ApplyLeave h="35px" w="30px" mt="10px" />
-            <p>Apply Leave</p>
-          </Flex>
-        </Link>
-        <Link href="" style={{ marginTop: "100px" }}>
-          <Flex alignItems="center" color="white">
-            <Logout h="35px" w="30px" mt="10px" />
-            <p>Logout</p>
-          </Flex>
-        </Link>
+      <Flex bg="#111827" p="10px" flexDirection="column" justifyContent={"space-between"} h="100vh">
+        <Flex flexDirection={"column"}>
+          <Text alignSelf="center" color="white">
+            School Name
+          </Text>
+          <Circle
+            size="110px"
+            bg="black"
+            color="white"
+            alignSelf="center"
+            my="30px"
+            fontSize="6xl"
+            fontWeight="500"
+          >
+            A
+          </Circle>
+          <Text alignSelf="center" fontSize="s" fontWeight="500" color="white">
+            Anurag Kulkarni
+          </Text>
+          <Text
+            alignSelf="center"
+            fontSize="sm"
+            fontWeight="500"
+            color="white"
+            mb="10px"
+          >
+            Student
+          </Text>
+          <Link href="" style={{ marginBottom: "10px" }}>
+            <Flex alignItems="center" color="white" gap={1}>
+              <Dashboard h="35px" w="30px" mt="10px" />
+              <p>Dashboard</p>
+            </Flex>
+          </Link>
+          <Link href="" style={{ marginBottom: "15px" }}>
+            <Flex alignItems="center" color="white" gap={2}>
+              <AiOutlineUserAdd fontSize={25} />
+              <p>Add Admission</p>
+            </Flex>
+          </Link>
+          <Link href="" style={{ marginBottom: "15px" }}>
+            <Flex alignItems="center" color="white" gap={2}>
+              <BiWallet fontSize={25} />
+              <p>Fee Payments</p>
+            </Flex>
+          </Link>
+          <Link href="" style={{ marginBottom: "15px" }}>
+            <Flex alignItems="center" color="white" gap={2}>
+              <CiMoneyCheck1 fontSize={25} />
+              <p>Fines</p>
+            </Flex>
+          </Link>
+          <Link href="" style={{ marginBottom: "15px" }}>
+            <Flex alignItems="center" color="white" gap={2}>
+              <TbUserCheck fontSize={25} />
+              <p>Student Updates</p>
+            </Flex>
+          </Link>
+          <Link href="" style={{ marginBottom: "15px" }}>
+            <Flex alignItems="center" color="white" gap={2}>
+              <AiOutlineIdcard fontSize={25} />
+              <p>ID Card Management</p>
+            </Flex>
+          </Link>
+        </Flex>
+        <Box>
+          <Link href="">
+            <Flex alignItems="center" color="white">
+              <Logout h="35px" w="30px" mt="10px" />
+              <p>Logout</p>
+            </Flex>
+          </Link>
+        </Box>
       </Flex>
     </Box>
   );
