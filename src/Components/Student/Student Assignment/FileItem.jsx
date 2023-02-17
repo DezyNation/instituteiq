@@ -7,10 +7,6 @@ const FileItem = ({ fileName }) => {
   const [modalBodyFileList, setModalBodyFileList] = useFilesProvider();
 
   const handleRemove = (e) => {
-    // const indexOfElementToBeRemoved = modalBodyFileList.findIndex((element) => {
-    //   return element === e.target.parentElement.children[0].innerText;
-    // });
-
     setModalBodyFileList(
       modalBodyFileList.filter((element) => {
         return element != e.target.parentElement.children[0].innerText;
