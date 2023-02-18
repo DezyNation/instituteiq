@@ -1,4 +1,12 @@
-import { Box, Heading, HStack, Link } from "@chakra-ui/react";
+import RightDrawer from "@/Components/Layout Components/Misc/RightDrawer";
+import {
+  Box,
+  Button,
+  Heading,
+  HStack,
+  Link,
+  useDisclosure,
+} from "@chakra-ui/react";
 import React from "react";
 import CPItem from "./CPItem";
 
@@ -39,7 +47,19 @@ const RightSide = () => {
         >
           Curriculum Progress
         </Heading>
-        <Link border="1px solid #EEEEEE" borderRadius="18px" bg='#FFFDFD' href="" textDecorationLine="none" textAlign={"center"} color="#1C80DD" px="10px" py="5px">+ Add</Link>
+
+        <RightDrawer
+          buttonText="+ Add"
+          border="1px solid #EEEEEE"
+          borderRadius="18px"
+          bg="#FFFDFD"
+          textDecorationLine="none"
+          textAlign={"center"}
+          color="#1C80DD"
+          px="10px"
+          py="5px"
+          header={"Add a curriculum"}
+        />
       </HStack>
 
       {CPItemList.map((item, index) => {
