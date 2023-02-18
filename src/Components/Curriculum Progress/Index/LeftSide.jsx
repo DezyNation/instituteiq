@@ -77,6 +77,7 @@ const LeftSide = () => {
     <VStack
       w="300px"
       bg="#fbfbfb"
+      border="1px solid #F8F8F8;"
       pl="10px"
       h="100vh"
       top="0"
