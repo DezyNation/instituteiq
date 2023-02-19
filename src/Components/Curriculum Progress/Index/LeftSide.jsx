@@ -100,9 +100,9 @@ const LeftSide = () => {
         w="95%"
         transform={"translatey(18px)"}
       >
-        {classesData.map((type) => {
+        {classesData.map((type,index) => {
           return (
-            <AccordionItem mb="10px">
+            <AccordionItem key={`${type}_${index}`} mb="10px">
               <h2>
                 <AccordionButton
                   h="50px"
@@ -175,4 +175,4 @@ const LeftSide = () => {
   );
 };
 
-export default LeftSide;
+export default LeftSide

@@ -14,19 +14,35 @@ import {
   FormLabel,
   Heading,
   Input,
+  InputGroup,
   Stack,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const RightDrawer = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const firstField = useRef();
+  const drawerSaveButton = useRef();
+  const newTopicForm = useRef();
+
+  const [newTopicInput, setnewTopicInput] = useState(false);
   const subjectTopic = [
     { topic: "Brief history of India", duration: 8 },
-    { topic: "Developers rant", duration: "infinite" },
+    { topic: "Developers pain", duration: "infinite" },
   ];
+  let indexOfNewCurriculum = subjectTopic.length + 1;
+  const handleNewCurriculumButton = () => {
+    drawerSaveButton.current.removeAttribute("disabled");
+    setnewTopicInput(true);
+  };
+  const handleDrawerClose = () => {
+    setnewTopicInput(false);
+    onClose();
+  };
+
+
   return (
     <>
       <Button
@@ -46,7 +62,7 @@ const RightDrawer = (props) => {
         isOpen={isOpen}
         placement="right"
         initialFocusRef={firstField}
-        onClose={onClose}
+        onClose={handleDrawerClose}
         closeOnOverlayClick={false}
       >
         <DrawerOverlay />
@@ -91,9 +107,10 @@ const RightDrawer = (props) => {
                   </FormLabel>
                   <Input
                     type="number"
-                    borderRadius="10px"
-                    height={"30px"}
+                    borderRadius="4px"
+                    height={"25px"}
                     w="25px"
+                    p="0px"
                     border="1px solid #DADADA"
                     bg="fff"
                     id="order"
@@ -110,8 +127,9 @@ const RightDrawer = (props) => {
                   </FormLabel>
                   <Input
                     type="number"
-                    borderRadius="10px"
-                    height={"32px"}
+                    borderRadius="4px"
+                    p="0px"
+                    height={"25px"}
                     w="25px"
                     border="1px solid #DADADA"
                     bg="fff"
@@ -168,23 +186,88 @@ const RightDrawer = (props) => {
                 pl="120px"
                 bg="transparent"
                 color="#1C80DD"
+                onClick={handleNewCurriculumButton}
                 _hover={{ background: "transparent" }}
               >
                 + Add a curriculum
               </Button>
+              {newTopicInput && (
+                <Flex
+                  ml="40px"
+                  mt="40px"
+                  alignItems="center"
+                  gap="20px"
+                  w="100%"
+                >
+                  <Circle
+                    size="30px"
+                    bg="rgba(134, 174, 210, 0.63)"
+                    fontSize="md"
+                    fontWeight="600"
+                  >
+                    {indexOfNewCurriculum}
+                  </Circle>
+                  <InputGroup pl="50px" ref={newTopicForm}>
+                    <Flex flexDirection={"column"} w="80%">
+                      <FormLabel htmlFor="newTopicInput">Topics:</FormLabel>
+                      <Input type="text" placeholder="Type here"></Input>
+                      <Box mt="20px" pl="5px">
+                        <FormLabel
+                          htmlFor="newTopicDurationInput"
+                          color="#707070"
+                          fontWeight={400}
+                          display={"inline"}
+                        >
+                          Duration :
+                        </FormLabel>
+                        <Input
+                          type="number"
+                          borderRadius="4px"
+                          p="0px"
+                          height={"25px"}
+                          w="25px"
+                          border="1px solid #DADADA"
+                          bg="fff"
+                          color="black"
+                          id="newTopicDurationInput"
+                        />{" "}
+                        <Text display="inline" fontSize="xs">
+                          Hours
+                        </Text>
+                      </Box>
+                    </Flex>
+                  </InputGroup>
+                </Flex>
+              )}
             </Stack>
           </DrawerBody>
           <DrawerFooter>
-            <Button bg="#25557B" mr={3} px="60px" color="#fff">
+            <Box
+              ref={drawerSaveButton}
+              as="button"
+              bg="#25557B"
+              mr={3}
+              py="8px"
+              href="s"
+              px="60px"
+              color="#fff"
+              borderRadius={"5px"}
+              transition="opacity 0.2s linear"
+              disabled
+              _disabled={{
+                opacity:"0.5",cursor:"not-allowed"
+              }}
+              _hover={{ bg: "#25557b" }}
+            >
               Save
-            </Button>
+            </Box>
             <Button
               bg="#fdfdfd"
               borderRadius={"5px"}
               variant="outline"
               border="1px solid #D1D5DB"
               px="50px"
-              onClick={onClose}
+              onClick={handleDrawerClose}
             >
               Cancel
             </Button>
