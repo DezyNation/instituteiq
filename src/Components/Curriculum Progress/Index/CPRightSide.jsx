@@ -58,7 +58,7 @@ const CPRightSide = () => {
           color="#1C80DD"
           px="10px"
           py="5px"
-          header={"Add a curriculum"}
+          page={"curriculum-progress"}
         />
       </HStack>
 
