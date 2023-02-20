@@ -1,6 +1,7 @@
 import {
   Accordion,
   AccordionButton,
+  AccordionIcon,
   AccordionItem,
   AccordionPanel,
   Box,
@@ -9,25 +10,19 @@ import {
   Table,
   TableContainer,
   Tbody,
-  Th,
   Text,
-  Tfoot,
+  Th,
   Thead,
   Tr,
 } from "@chakra-ui/react";
 import React from "react";
 
-const ExamTimeTableItem = ({ number, title, date, status }) => {
+const ExamItem = ({ title, date, status, number }) => {
   return (
-    <Accordion
-      defaultIndex={[]}
-      allowToggle
-      border={"0px solid transparent"}
-      _hover={{ bg: "#f5f5f5" }}
-    >
-      <AccordionItem _hover={{bg:"#f5f5f5"}}>
-        <AccordionButton _hover={{bg:"#f5f5f5"}}>
-          <Flex ml="40px" mt="40px" alignItems="center" gap="20px" w="100%">
+    <Accordion defaultIndex={[]} allowToggle border={"0px solid #f5f5f5"} _hover={{ bg: "#f5f5f5" }}>
+      <AccordionItem _hover={{ bg: "#f5f5f5" }}>
+        <AccordionButton _hover={{ bg: "#f5f5f5" }} h="max-content" mt="10px">
+          <Flex alignItems="center" gap="20px" w="100%">
             <Circle size="30px" bg="#A9BCBA" fontSize="2xl" fontWeight="600">
               {number}
             </Circle>
@@ -66,20 +61,29 @@ const ExamTimeTableItem = ({ number, title, date, status }) => {
                       {date}
                     </Text>
                   </Flex>
-                  <Text
-                    color={status === "Upcoming" ? "#F79210" : "#37D334"}
-                    fontWeight="500"
-                  >
-                    {status}
-                  </Text>
+                  <Flex alignItems={"center"} gap="20px">
+                    <Flex
+                      flexDirection={"column"}
+                      alignItems="center"
+                      justifyContent="flex-end"
+                    >
+                      <Text>Declare Result</Text>
+                      <Text
+                        color={status === "Completed" ? "#37D334" : "#F79210"}
+                        fontWeight="500"
+                      >
+                        {status}
+                      </Text>
+                    </Flex>
+                    <AccordionIcon display={"inline"}/>
+                  </Flex>
                 </Flex>
               </Box>
             </Box>
           </Flex>
         </AccordionButton>
-        <AccordionPanel pb={4} bg="#f5f5f5">
+        <AccordionPanel pb={4}>
           <TableContainer
-            bg="#f5f5f5"
             w="80%"
             mt="2%"
             ml="auto"
@@ -142,4 +146,4 @@ const ExamTimeTableItem = ({ number, title, date, status }) => {
   );
 };
 
-export default ExamTimeTableItem;
+export default ExamItem;

@@ -1,15 +1,15 @@
 import MainPage from "@/Components/Layout Components/MainPage/MainPage";
-import { Flex, HStack, VStack } from "@chakra-ui/react";
+import LeftSide from "@/Components/Layout Components/Misc/LeftSide";
+import { HStack } from "@chakra-ui/react";
 import React from "react";
-import LeftSide from "../../Layout Components/Misc/LeftSide";
-import RightSide from "./CPRightSide";
+import EMRightSide from "./EMRightSide";
 
 const Index = () => {
   return (
     <MainPage page={"curriculum-progress"}>
       <HStack alignItems={"flex-start"}>
         <LeftSide />
-        <RightSide />
+        <EMRightSide />
       </HStack>
     </MainPage>
   );

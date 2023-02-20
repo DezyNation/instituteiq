@@ -10,7 +10,7 @@ import {
 import React from "react";
 import CPItem from "./CPItem";
 
-const RightSide = () => {
+const CPRightSide = () => {
   const CPItemList = [
     {
       chapter: "Chapter 1",
@@ -36,8 +36,8 @@ const RightSide = () => {
   const colors = ["#3CCF4E", "#1C80DD", "#FC8F2B"];
   var colorIndex = -1;
   return (
-    <Box p="10px" w="70%" pl="40px">
-      <HStack justifyContent={"space-between"}>
+    <Box p="10px" w="70%" pl="40px" position={"relative"} left="300px">
+      <HStack justifyContent={"space-between"} alignItems="Center">
         <Heading
           as="h2"
           fontSize="30px"
@@ -78,4 +78,4 @@ const RightSide = () => {
   );
 };
 
-export default RightSide;
+export default CPRightSide;

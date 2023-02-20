@@ -80,8 +80,9 @@ const LeftSide = () => {
       border="1px solid #F8F8F8;"
       pl="10px"
       h="100vh"
-      top="0"
-      position={"relative"}
+      top="30px"
+      position={"fixed"}
+      overflowY = "auto"
     >
       <Heading
         as="h2"
