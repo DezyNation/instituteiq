@@ -17,15 +17,22 @@ const MainPage = (props) => {
       overflow="auto"
     >
       <Header />
-      <Box w={props.page==="curriculum-progress"?"100%":"90%"} alignSelf="center" bg="#f5f5f5">
-        {props.page!=="curriculum-progress" && <Heading
-          as={"h1"}
-          fontWeight="400"
-          fontSize={"xx-large"}
-          my="30px"
-        >
-          {props.heading}
-        </Heading>}
+      <Box
+        w={
+          props.page === "curriculum-progress" ||
+          props.page === "exam-management" ||
+          props.page === "assessment-management"
+            ? "100%"
+            : "90%"
+        }
+        alignSelf="center"
+        bg="#f5f5f5"
+      >
+        {props.page !== "curriculum-progress" && (
+          <Heading as={"h1"} fontWeight="400" fontSize={"xx-large"} my="30px">
+            {props.heading}
+          </Heading>
+        )}
         {props.children}
       </Box>
     </Flex>

@@ -6,6 +6,8 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  CircularProgress,
+  CircularProgressLabel,
   Divider,
   Flex,
   Heading,
@@ -15,6 +17,15 @@ import {
 import Link from "next/link";
 import React from "react";
 import { BiLeftArrow } from "react-icons/bi";
+
+const assessmentClasses = [
+  { class: "V-A", students: 50, rate: 85 },
+  { class: "V-B", students: 50, rate: 90 },
+  { class: "V-C", students: 50, rate: 72 },
+];
+
+const colors = ["#3CCF4E", "#1C80DD", "#FC8F2B"];
+var colorIndex = -1;
 
 const classesData = [
   {
@@ -72,17 +83,18 @@ const classesData = [
   },
 ];
 
-const LeftSide = () => {
+const LeftSide = (props) => {
   return (
     <VStack
       w="300px"
-      bg="#fbfbfb"
-      border="1px solid #F8F8F8;"
-      pl="10px"
+      bg={props.page === "assessment-management" ? "#f5f5f5" : "#fbfbfb"}
+      borderRight="2px solid #BABCC0;"
+      px="10px"
       h="100vh"
       top="30px"
       position={"fixed"}
-      overflowY = "auto"
+      overflowY="auto"
+      gap={props.page === "assessment-management" ? "20px" : ""}
     >
       <Heading
         as="h2"
@@ -92,88 +104,126 @@ const LeftSide = () => {
         mb="15px"
         w="100%"
       >
-        School Overview
+        {props.heading}
       </Heading>
-      <Divider border="1px solid black" w="95%" />
-      <Accordion
-        defaultIndex={[]}
-        allowMultiple
-        w="95%"
-        transform={"translatey(18px)"}
-      >
-        {classesData.map((type,index) => {
-          return (
-            <AccordionItem key={`${type}_${index}`} mb="10px">
-              <h2>
-                <AccordionButton
-                  h="50px"
-                  color={"#818181"}
-                  border="1px solid #DDDDDD"
-                  bg="#fff"
-                  borderRadius="8px"
-                >
-                  <Box as="span" flex="1" textAlign="left" color={"#818181"}>
-                    {type.typeName}
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              {Object.entries(type.classes).map((className) => {
-                return (
-                  <AccordionPanel p={0}>
-                    <Accordion defaultIndex={[]} allowMultiple mt="8px">
-                      <AccordionItem w={"100%"}>
-                        <AccordionButton
-                          h="50px"
-                          border="1px solid #DDDDDD"
-                          bg="#fff"
-                          borderRadius="8px"
-                          color="#818181"
-                          w="95%"
-                          mx="auto"
-                        >
-                          <Box
-                            as="span"
-                            flex="1"
-                            textAlign="left"
-                            color={"#818181"}
+      {props.page !== "assessment-management" && (
+        <Divider border="1px solid black" w="95%" />
+      )}
+      {props.page !== "assessment-management" && (
+        <Accordion
+          defaultIndex={[]}
+          allowMultiple
+          w="95%"
+          transform={"translatey(18px)"}
+        >
+          {classesData.map((type, index) => {
+            return (
+              <AccordionItem key={`${type}_${index}`} mb="10px">
+                <h2>
+                  <AccordionButton
+                    h="50px"
+                    color={"#818181"}
+                    border="1px solid #DDDDDD"
+                    bg="#fff"
+                    borderRadius="8px"
+                  >
+                    <Box as="span" flex="1" textAlign="left" color={"#818181"}>
+                      {type.typeName}
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                {Object.entries(type.classes).map((className) => {
+                  return (
+                    <AccordionPanel p={0}>
+                      <Accordion defaultIndex={[]} allowMultiple mt="8px">
+                        <AccordionItem w={"100%"}>
+                          <AccordionButton
+                            h="50px"
+                            border="1px solid #DDDDDD"
+                            bg="#fff"
+                            borderRadius="8px"
+                            color="#818181"
+                            w="95%"
+                            mx="auto"
                           >
-                            {className[0]}
-                          </Box>
-                          <AccordionIcon />
-                        </AccordionButton>
-                        {Object.entries(className[1])[0][1].map(
-                          (section, index) => {
-                            return (
-                              <AccordionPanel w="95%" mx="auto">
-                                <Flex
-                                  alignItems={"center"}
-                                  bg={index === 0 ? "#59A2E6" : ""}
-                                  color={index === 0 ? "#fff" : "#818181"}
-                                  p="8px"
-                                  borderRadius={"8px"}
-                                >
-                                  <Text>{`Section ${section}`}</Text>
-                                  <ChevronRightIcon ml="auto" />
-                                </Flex>
-                              </AccordionPanel>
-                            );
-                          }
-                        )}
-                        <AccordionPanel>
-                          <Link href="" style={{color:"#1c80DD"}}>+Add new section</Link>
-                        </AccordionPanel>
-                      </AccordionItem>
-                    </Accordion>
-                  </AccordionPanel>
-                );
-              })}
-            </AccordionItem>
+                            <Box
+                              as="span"
+                              flex="1"
+                              textAlign="left"
+                              color={"#818181"}
+                            >
+                              {className[0]}
+                            </Box>
+                            <AccordionIcon />
+                          </AccordionButton>
+                          {Object.entries(className[1])[0][1].map(
+                            (section, index) => {
+                              return (
+                                <AccordionPanel w="95%" mx="auto">
+                                  <Flex
+                                    alignItems={"center"}
+                                    bg={index === 0 ? "#59A2E6" : ""}
+                                    color={index === 0 ? "#fff" : "#818181"}
+                                    p="8px"
+                                    borderRadius={"8px"}
+                                  >
+                                    <Text>{`Section ${section}`}</Text>
+                                    <ChevronRightIcon ml="auto" />
+                                  </Flex>
+                                </AccordionPanel>
+                              );
+                            }
+                          )}
+                          <AccordionPanel>
+                            <Link href="" style={{ color: "#1c80DD" }}>
+                              +Add new section
+                            </Link>
+                          </AccordionPanel>
+                        </AccordionItem>
+                      </Accordion>
+                    </AccordionPanel>
+                  );
+                })}
+              </AccordionItem>
+            );
+          })}
+        </Accordion>
+      )}
+      {props.page === "assessment-management" &&
+        assessmentClasses.map((item, index) => {
+          colorIndex = colorIndex < 2 && colorIndex >= -1 ? colorIndex + 1 : 0;
+          return (
+            <Flex
+              key={`${item.class}_${index}`}
+              border="1px solid #AEAEAE"
+              boxShadow="2px 2px 10px rgba(217, 217, 217, 0.25)"
+              bg="#f6f6f6"
+              borderRadius="12px"
+              w="250px"
+              h="156px"
+              alignItems={"center"}
+              justifyContent="space-around"
+            >
+              <Box color="#5d5d5d">
+                <Text fontSize={"lg"} >Class {item.class}</Text>
+                <Text fontSize={"md"} >Students {item.students}</Text>
+              </Box>
+              <Box>
+                <CircularProgress
+                  value={item.rate}
+                  size="80px"
+                  thickness={"14px"}
+                  color={colors[colorIndex]}
+                >
+                  <CircularProgressLabel fontSize={"lg"}>{`${item.rate}%`}</CircularProgressLabel>
+                </CircularProgress>
+              </Box>
+            </Flex>
           );
         })}
-      </Accordion>
     </VStack>
   );
 };
 
-export default LeftSide
+export default LeftSide;
