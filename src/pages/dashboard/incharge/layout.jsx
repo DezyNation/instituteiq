@@ -11,10 +11,6 @@ import {
     BsGrid,
     BsJournalBookmark,
     BsCalendarEvent,
-    BsSpeedometer,
-    BsSnow3,
-    BsFileEarmarkCheck,
-    BsWallet
 } from 'react-icons/bs'
 import { FaUserCog, FaUserClock, FaUserGraduate } from 'react-icons/fa'
 
@@ -32,7 +28,7 @@ const Layout = ({ pageTitle, children }) => {
             icon: <FaUserGraduate />
         },
         {
-            text: "student attendance",
+            text: "staff attendance",
             link: "/dashboard/teacher/class-teacher/student-attendance",
             icon: <FaUserClock fontSize={20} />
         },
