@@ -10,7 +10,7 @@ const Index = () => {
     <MainPage page={"assessment-management"}>
       <HStack alignItems={"flex-start"}>
         <LeftSide page="assessment-management" heading="Your Class : "/>
-        <CPRightSide />
+        <ASSMRightSide />
       </HStack>
     </MainPage>
   );
