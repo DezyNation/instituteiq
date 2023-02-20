@@ -13,13 +13,13 @@ import {
   Heading,
   Input,
   InputGroup,
+  Select,
   Stack,
   Table,
   TableContainer,
   Tbody,
   Td,
   Text,
-  Tfoot,
   Th,
   Thead,
   Tr,
@@ -30,15 +30,15 @@ import React, { useRef, useState } from "react";
 const EMDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const [newTopicInput, setnewTopicInput] = useState(false);
+  const [newSubject, setNewSubject] = useState(false);
 
   const firstField = useRef();
   const drawerSaveButton = useRef();
   const newTopicForm = useRef();
 
-  const handleNewCurriculumButton = () => {
+  const handleAddSubject = () => {
     drawerSaveButton.current.removeAttribute("disabled");
-    setnewTopicInput(true);
+    setNewSubject(true);
   };
 
   const examsDateSheet = [
@@ -48,7 +48,8 @@ const EMDrawer = () => {
   //   let indexOfNewCurriculum = examsDateSheet.length + 1;
 
   const handleDrawerClose = () => {
-    setnewTopicInput(false);
+    setNewSubject(false);
+    drawerSaveButton.current.setAttribute("disabled", "");
     onClose();
   };
 
@@ -88,7 +89,7 @@ const EMDrawer = () => {
               />
             </Box>
             <Box>
-              <FormLabel htmlFor="fromDate" display={"inline"} color="#707070">
+              <FormLabel htmlFor="toDate" display={"inline"} color="#707070">
                 To :
               </FormLabel>
               <Input
@@ -96,7 +97,7 @@ const EMDrawer = () => {
                 w="50%"
                 borderRadius={"12px"}
                 ref={firstField}
-                id="fromDate"
+                id="toDate"
                 placeholder="Type here"
               />
             </Box>
@@ -135,8 +136,12 @@ const EMDrawer = () => {
                       <Td fontSize={"md"} textAlign={"center"} py="10px">
                         {item.subject}
                       </Td>
-                      <Td fontSize={"md"} textAlign={"center"}>{item.date}</Td>
-                      <Td fontSize={"md"} textAlign={"center"}>{item.time}</Td>
+                      <Td fontSize={"md"} textAlign={"center"}>
+                        {item.date}
+                      </Td>
+                      <Td fontSize={"md"} textAlign={"center"}>
+                        {item.time}
+                      </Td>
                     </Tr>
                   );
                 })}
@@ -144,59 +149,57 @@ const EMDrawer = () => {
             </Table>
           </TableContainer>
 
-          <Heading fontWeight={400} fontSize="18px" color="#3f3f3f">
-            Add Subject :
-          </Heading>
-          
           <Button
             w="100px"
             bg="transparent"
             color="#1C80DD"
-            onClick={handleNewCurriculumButton}
+            onClick={handleAddSubject}
             _hover={{ background: "transparent" }}
           >
             + Add Subject
           </Button>
-          {newTopicInput && (
-            <Flex ml="40px" mt="40px" alignItems="center" gap="20px" w="100%">
-              <Circle
-                size="30px"
-                bg="rgba(134, 174, 210, 0.63)"
-                fontSize="md"
-                fontWeight="600"
-              >
-                {indexOfNewCurriculum}
-              </Circle>
-              <InputGroup pl="50px" ref={newTopicForm}>
-                <Flex flexDirection={"column"} w="80%">
-                  <FormLabel htmlFor="newTopicInput">Topics:</FormLabel>
-                  <Input type="text" placeholder="Type here"></Input>
-                  <Box mt="20px" pl="5px">
-                    <FormLabel
-                      htmlFor="newTopicDurationInput"
-                      color="#707070"
-                      fontWeight={400}
-                      display={"inline"}
-                    >
-                      Duration :
-                    </FormLabel>
-                    <Input
-                      type="number"
-                      borderRadius="4px"
-                      p="0px"
-                      height={"25px"}
-                      w="25px"
-                      border="1px solid #DADADA"
-                      bg="fff"
-                      color="black"
-                      id="newTopicDurationInput"
-                    />{" "}
-                    <Text display="inline" fontSize="xs">
-                      Hours
-                    </Text>
-                  </Box>
-                </Flex>
-              </InputGroup>
+          {newSubject && (
+            <Flex gap="20px" alignItems={"center"}>
+              <Flex w="40%" alignItems={"center"}>
+                <FormLabel
+                  htmlFor="newSubject"
+                  display={"inline"}
+                  color="#707070"
+                >
+                  Subject
+                </FormLabel>
+                <Select
+                  display={"inline"}
+                  borderRadius={"12px"}
+                  ref={firstField}
+                  id="newSubject"
+                >
+                    <option value="">Select Subject</option>
+                  <option value="Maths">Maths</option>
+                  <option value="CS">CS</option>
+                  <option value="Physics">Physics</option>
+                  <option value="Biology">Biology</option>
+                  <option value="Chemistry">Chemistry</option>
+                  <option value="English">English</option>
+                </Select>
+              </Flex>
+              <Box>
+                <FormLabel
+                  htmlFor="newSubjectDate"
+                  display={"inline"}
+                  color="#707070"
+                >
+                  Date :
+                </FormLabel>
+                <Input
+                  type="date"
+                  display={"inline"}
+                  w="70%"
+                  borderRadius={"12px"}
+                  ref={firstField}
+                  id="newSubjectDate"
+                />
+              </Box>
             </Flex>
           )}
         </Stack>

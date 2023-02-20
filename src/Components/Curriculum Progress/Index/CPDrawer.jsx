@@ -41,6 +41,7 @@ const CPDrawer = () => {
 
   const handleDrawerClose = () => {
     setnewTopicInput(false);
+    drawerSaveButton.current.setAttribute("disabled", "");
     onClose();
   };
 
