@@ -15,8 +15,9 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { BiLeftArrow } from "react-icons/bi";
+import { classVAssignmentData } from "@/Components/Assessment Management/index/Index";
 
 const assessmentClasses = [
   { class: "V-A", students: 50, rate: 85 },
@@ -83,7 +84,12 @@ const classesData = [
   },
 ];
 
+
 const LeftSide = (props) => {
+  const handleClassAssignmentsCardClick = () => {
+    props.setAssignmentDataToShow(classVAssignmentData);
+  };
+
   return (
     <VStack
       w="300px"
@@ -198,16 +204,18 @@ const LeftSide = (props) => {
               key={`${item.class}_${index}`}
               border="1px solid #AEAEAE"
               boxShadow="2px 2px 10px rgba(217, 217, 217, 0.25)"
+              as="button"
               bg="#f6f6f6"
               borderRadius="12px"
               w="250px"
               h="156px"
               alignItems={"center"}
               justifyContent="space-around"
+              onClick={handleClassAssignmentsCardClick}
             >
               <Box color="#5d5d5d">
-                <Text fontSize={"lg"} >Class {item.class}</Text>
-                <Text fontSize={"md"} >Students {item.students}</Text>
+                <Text fontSize={"lg"}>Class {item.class}</Text>
+                <Text fontSize={"md"}>Students {item.students}</Text>
               </Box>
               <Box>
                 <CircularProgress
@@ -216,8 +224,11 @@ const LeftSide = (props) => {
                   thickness={"14px"}
                   color={colors[colorIndex]}
                 >
-                  <CircularProgressLabel fontSize={"lg"}>{`${item.rate}%`}</CircularProgressLabel>
+                  <CircularProgressLabel
+                    fontSize={"lg"}
+                  >{`${item.rate}%`}</CircularProgressLabel>
                 </CircularProgress>
+                <Text color="gray">Rate</Text>
               </Box>
             </Flex>
           );
