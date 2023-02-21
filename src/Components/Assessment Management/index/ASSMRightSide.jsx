@@ -11,12 +11,13 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
+import AssignmentUploadModal from "../Upload Modal/AssignmentUploadModal";
+import AssignmentFileUploadModal from "../Upload Modal/AssignmentUploadModal";
 
 const colors = ["#3CCF4E", "#1C80DD", "#FC8F2B"];
 var colorIndex = -1;
 
 const ASSMRightSide = ({ assignmentDataToShow }) => {
-  //   console.log(assignmentDataToShow[0].classAndSection);
   return (
     <Box p="10px" w="70%" pl="40px" position={"relative"} left="300px">
       <HStack justifyContent={"space-between"} alignItems="Center">
@@ -30,31 +31,32 @@ const ASSMRightSide = ({ assignmentDataToShow }) => {
           >
             Assignment
           </Heading>
-          {assignmentDataToShow != undefined && (
+          {assignmentDataToShow && assignmentDataToShow.length>0 && (
             <Text fontWeight={500} fontSize={"xl"}>
               Class {assignmentDataToShow[0].classAndSection}
             </Text>
           )}
         </Box>
         <Box>
-          {assignmentDataToShow != undefined && (
+          {assignmentDataToShow && assignmentDataToShow.length>0 && (
             <Text textAlign={"right"} fontWeight={300} fontSize={"xl"}>
               {assignmentDataToShow[0].subject}
             </Text>
           )}
-          <Button
-            textAlign={"right"}
-            p="0"
-            color="#1C80DD"
-            bg="tranparent"
-            _hover={{ bg: "transparent" }}
-          >
-            +Add an assignment
-          </Button>
+          {assignmentDataToShow && (
+            <AssignmentUploadModal
+              textAlign={"right"}
+              p="0"
+              color="#1C80DD"
+              bg="tranparent"
+              assignmentDataToShow={assignmentDataToShow}
+              _hover={{ bg: "transparent" }}
+            />
+          )}
         </Box>
       </HStack>
       <HStack justifyContent={"center"}>
-        {assignmentDataToShow == undefined && (
+        {assignmentDataToShow && assignmentDataToShow.length === 0 && (
           <Text
             position="relative"
             fontSize={"18px"}
@@ -65,13 +67,25 @@ const ASSMRightSide = ({ assignmentDataToShow }) => {
             Assignments not created yet
           </Text>
         )}
-        {assignmentDataToShow != undefined && (
+        {!assignmentDataToShow && (
+          <Text
+            position="relative"
+            fontSize={"18px"}
+            color="#cecece"
+            fontWeight={400}
+            py="200px"
+          >
+            Click on a subject to see assignments
+          </Text>
+        )}
+        {assignmentDataToShow && assignmentDataToShow.length > 0 && (
           <Box w="100%">
             {assignmentDataToShow[0].data?.map((item, index) => {
               colorIndex =
                 colorIndex < 2 && colorIndex >= -1 ? colorIndex + 1 : 0;
               return (
                 <Flex
+                  key={`${index}`}
                   background="#FEFEFF"
                   border="1px solid #C9C9C9"
                   boxShadow="0px 1px 2px rgba(0, 0, 0, 0.25)"

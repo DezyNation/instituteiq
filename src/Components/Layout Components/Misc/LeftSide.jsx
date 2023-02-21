@@ -17,12 +17,12 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 import { BiLeftArrow } from "react-icons/bi";
-import { classVAssignmentData } from "@/Components/Assessment Management/index/Index";
+import { classVAssignmentData } from "@/Components/Assessment Management/Index/Index";
 
 const assessmentClasses = [
-  { class: "V-A", students: 50, rate: 85 },
-  { class: "V-B", students: 50, rate: 90 },
-  { class: "V-C", students: 50, rate: 72 },
+  { Subject: "Maths", students: 50, rate: 85 },
+  { Subject: "Science", students: 50, rate: 90 },
+  { Subject: "English", students: 50, rate: 72 },
 ];
 
 const colors = ["#3CCF4E", "#1C80DD", "#FC8F2B"];
@@ -213,8 +213,9 @@ const LeftSide = (props) => {
               justifyContent="space-around"
               onClick={handleClassAssignmentsCardClick}
             >
-              <Box color="#5d5d5d">
-                <Text fontSize={"lg"}>Class {item.class}</Text>
+              <Box textAlign={"left"} color="#5d5d5d">
+                <Text fontSize={"lg"}>Class V-A</Text>
+                <Text fontSize={"lg"}>{item.Subject}</Text>
                 <Text fontSize={"md"}>Students {item.students}</Text>
               </Box>
               <Box>
