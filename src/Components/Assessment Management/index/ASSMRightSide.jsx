@@ -31,14 +31,14 @@ const ASSMRightSide = ({ assignmentDataToShow }) => {
           >
             Assignment
           </Heading>
-          {assignmentDataToShow && assignmentDataToShow.length>0 && (
+          {assignmentDataToShow && assignmentDataToShow.length > 0 && (
             <Text fontWeight={500} fontSize={"xl"}>
               Class {assignmentDataToShow[0].classAndSection}
             </Text>
           )}
         </Box>
         <Box>
-          {assignmentDataToShow && assignmentDataToShow.length>0 && (
+          {assignmentDataToShow && assignmentDataToShow.length > 0 && (
             <Text textAlign={"right"} fontWeight={300} fontSize={"xl"}>
               {assignmentDataToShow[0].subject}
             </Text>
@@ -49,7 +49,7 @@ const ASSMRightSide = ({ assignmentDataToShow }) => {
               p="0"
               color="#1C80DD"
               bg="tranparent"
-              assignmentDataToShow={assignmentDataToShow}
+              // assignmentDataToShow={assignmentDataToShow}
               _hover={{ bg: "transparent" }}
             />
           )}

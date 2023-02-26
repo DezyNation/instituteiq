@@ -21,14 +21,29 @@ import {
 import React, { useState } from "react";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
+import FileItem from "@/Components/Student/Student Assignment/FileItem";
+import { useFilesProvider } from "@/Components/Student/Student Assignment/FilesProvider";
 
 const AssignmentUploadModal = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [submitButton, setSubmitButton] = useState(true);
-  const handleAddAssignmentSubmit = (e) => {
-    e.preventDefault();
-    console.log(e);
+  const [flatPickerValue, setFlatPickerValue] = useState([]);
+  const [modalBodyFileList, setModalBodyFileList] = useFilesProvider();
+
+  const onFileUpload = (e) => {
+    console.log(e.target.files);
+    let modalBodyFilesArray = [];
+    for (const [, value] of Object.entries(e.target.files)) {
+      modalBodyFilesArray.push(value.name);
+    }
+    setModalBodyFileList(modalBodyFilesArray);
   };
+
+  const handleCancel = () => {
+    setModalBodyFileList([]);
+    onClose();
+  };
+
   return (
     <>
       <Box as="button" onClick={onOpen} {...props}>
@@ -47,7 +62,7 @@ const AssignmentUploadModal = (props) => {
             Upload Assignment
           </ModalHeader>
           <ModalBody>
-            <form action="#" method="" onSubmit={handleAddAssignmentSubmit}>
+            <form action="#" method="">
               <InputGroup display={"flex"} flexDirection="column">
                 <FormLabel
                   htmlFor="assignmentInputTitle"
@@ -82,7 +97,12 @@ const AssignmentUploadModal = (props) => {
                   boxShadow="2px 2px 10px rgba(230, 246, 241, 0.25)"
                   borderRadius="12px"
                 />
-                <FormLabel color="#25557B" htmlFor="fileUpload" mt="15px">
+                <FormLabel
+                  color="#25557B"
+                  htmlFor="fileUpload"
+                  mt="15px"
+                  cursor={"pointer"}
+                >
                   +Attach a document
                 </FormLabel>
                 <Input
@@ -90,8 +110,20 @@ const AssignmentUploadModal = (props) => {
                   border="0"
                   display={"none"}
                   id="fileUpload"
+                  onChange={onFileUpload}
+                  multiple = {true}
                 />
-                <Flex>
+                <Box>
+                    {modalBodyFileList?.map((element, index) => {
+                      return (
+                        <FileItem
+                          key={`${element}_${index}`}
+                          fileName={element}
+                        />
+                      );
+                    })}
+                  </Box>
+                <Flex mt="10px">
                   <Box mr="50px">
                     <FormLabel
                       display="inline"
@@ -167,6 +199,11 @@ const AssignmentUploadModal = (props) => {
                         </FormLabel>
 
                         <Flatpickr
+                          value={flatPickerValue}
+                          onChange={(e) => {
+                            console.log(e[0]);
+                            setFlatPickerValue(e[0]);
+                          }}
                           options={{
                             // inline: true,
                             enableTime: true,
@@ -226,7 +263,7 @@ const AssignmentUploadModal = (props) => {
                     </Button>
                   </Box>
                   <Button
-                    onClick={onClose}
+                    onClick={handleCancel}
                     background="#FDFDFD"
                     border="1px solid #D1D5DB"
                     borderRadius="5px"

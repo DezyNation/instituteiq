@@ -84,7 +84,6 @@ const classesData = [
   },
 ];
 
-
 const LeftSide = (props) => {
   const handleClassAssignmentsCardClick = () => {
     props.setAssignmentDataToShow(classVAssignmentData);

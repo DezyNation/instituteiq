@@ -22,8 +22,6 @@ import { useFilesProvider } from "./FilesProvider";
 const UploadModal = ({ button, chapter }) => {
   const [input, setInput] = useState("");
   const [modalBodyFileList, setModalBodyFileList] = useFilesProvider();
-  // const [modalBodyFileList, onFileUpload,setModalBodyFileList] =
-  //   useFilesProvider();
 
   const handleInputChange = (e) => setInput(e.target.value);
 

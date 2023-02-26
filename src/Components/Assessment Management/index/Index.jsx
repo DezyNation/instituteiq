@@ -37,6 +37,7 @@ const Index = () => {
           page="assessment-management"
           heading="Your Class : "
           setAssignmentDataToShow={setAssignmentDataToShow}
+          assignmentDataToShow = {assignmentDataToShow}
         />
         <ASSMRightSide assignmentDataToShow={assignmentDataToShow}/>
       </HStack>
