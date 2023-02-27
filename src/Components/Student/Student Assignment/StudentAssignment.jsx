@@ -83,9 +83,10 @@ const StudentAssignment = () => {
         gridTemplateColumns="repeat(auto-fit, minmax(250px,250px))"
         w="100%"
         mt="70px"
+        h="200vh"
         ml="40px"
         gap="20px"
-      >
+    >
         {assignments.map((element, index) => {
           return (
             <StudentAssignmentItem

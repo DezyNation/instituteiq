@@ -6,9 +6,9 @@ import CPRightSide from "./CPRightSide";
 
 const Index = () => {
   return (
-    <MainPage page={"curriculum-progress"}>
+    <MainPage pageWidth={"full"}>
       <HStack alignItems={"flex-start"}>
-        <LeftSide heading="School Overview"/>
+        <LeftSide heading="School Overview" page="curriculum-progress"/>
         <CPRightSide />
       </HStack>
     </MainPage>

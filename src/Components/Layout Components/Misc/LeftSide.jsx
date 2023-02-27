@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Button,
   CircularProgress,
   CircularProgressLabel,
   Divider,
@@ -84,6 +85,27 @@ const classesData = [
   },
 ];
 
+const marksEntryClasses = [
+  {
+    class: "V-A",
+    classTeacher: "Name",
+    numberOfStudents: 50,
+    assessments: ["Assessment-1", "Assessment-2", "SA-1"],
+  },
+  {
+    class: "V-B",
+    classTeacher: "Name 2",
+    numberOfStudents: 55,
+    assessments: ["Assessment-1", "Assessment-2", "SA-1"],
+  },
+  {
+    class: "V-C",
+    classTeacher: "Name 3",
+    numberOfStudents: 45,
+    assessments: ["Assessment-1", "Assessment-2", "SA-1"],
+  },
+];
+
 const LeftSide = (props) => {
   const handleClassAssignmentsCardClick = () => {
     props.setAssignmentDataToShow(classVAssignmentData);
@@ -111,10 +133,11 @@ const LeftSide = (props) => {
       >
         {props.heading}
       </Heading>
-      {props.page !== "assessment-management" && (
+      {/* {props.page !== "assessment-management" && (
         <Divider border="1px solid black" w="95%" />
-      )}
-      {props.page !== "assessment-management" && (
+      )} */}
+      {(props.page === "exam-management" ||
+        props.page === "curriculum-progress") && (
         <Accordion
           defaultIndex={[]}
           allowMultiple
@@ -180,11 +203,6 @@ const LeftSide = (props) => {
                               );
                             }
                           )}
-                          <AccordionPanel>
-                            <Link href="" style={{ color: "#1c80DD" }}>
-                              +Add new section
-                            </Link>
-                          </AccordionPanel>
                         </AccordionItem>
                       </Accordion>
                     </AccordionPanel>
@@ -233,6 +251,72 @@ const LeftSide = (props) => {
             </Flex>
           );
         })}
+
+      {props.page === "marks-entry" && (
+        <Accordion
+          defaultIndex={[]}
+          allowMultiple
+          w="95%"
+          transform={"translatey(18px)"}
+        >
+          {marksEntryClasses.map((classItem, index) => {
+            return (
+              <AccordionItem key={`${classItem.class}_${index}`} mb="10px">
+                <h2>
+                  <AccordionButton
+                    color={"#818181"}
+                    bg="#fff"
+                    display={"flex"}
+                    flexDirection={"column"}
+                    gap="5px"
+                    background="#F6F6F6"
+                    border="1px solid #AEAEAE"
+                    boxShadow="2px 2px 10px rgba(217, 217, 217, 0.25)"
+                    borderRadius="12px"
+                  >
+                    <Flex
+                      w={"100%"}
+                      alignItems={"center"}
+                      justifyContent={"space-between"}
+                    >
+                      <Text
+                        fontWeight={500}
+                        fontSize={"lg"}
+                      >{`Class ${classItem.class}`}</Text>
+                      <Text fontWeight={500} fontSize={"xl"}>
+                        {classItem.numberOfStudents}
+                      </Text>
+                    </Flex>
+                    <Box mr="auto">
+                      <Text>{`Class ${classItem.classTeacher}`}</Text>
+                    </Box>
+                  </AccordionButton>
+                </h2>
+                {classItem.assessments.map((assessment, index) => {
+                  return (
+                    <AccordionPanel p={0}>
+                      <Button
+                        as="a"
+                        w="100%"
+                        color="#000"
+                        bg="#f6f6f6"
+                        border="1px solid #DDDDDD"
+                        mt="15px"
+                        py="20px"
+                        _active={{bg:"#4D5EFF",color:"#fff"}}
+                      >
+                        <Text fontWeight="400" textAlign="left" w="100%">
+                          {assessment}
+                        </Text>
+                      </Button>
+                    </AccordionPanel>
+                  );
+                })}
+              </AccordionItem>
+            );
+          })}
+        </Accordion>
+      )}
     </VStack>
   );
 };

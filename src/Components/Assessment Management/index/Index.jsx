@@ -31,7 +31,7 @@ export const classVAssignmentData = [
 const Index = () => {
   const [assignmentDataToShow, setAssignmentDataToShow] = useState();
   return (
-    <MainPage page={"assessment-management"}>
+    <MainPage pageWidth={"full"}>
       <HStack alignItems={"flex-start"}>
         <LeftSide
           page="assessment-management"
