@@ -49,14 +49,6 @@ const EMRightSide = () => {
 
         <RightDrawer
           buttonText="+ Add"
-          border="1px solid #EEEEEE"
-          borderRadius="18px"
-          bg="#FFFDFD"
-          textDecorationLine="none"
-          textAlign={"center"}
-          color="#1C80DD"
-          px="10px"
-          py="5px"
           page={"exam-management"}
         />
       </HStack>

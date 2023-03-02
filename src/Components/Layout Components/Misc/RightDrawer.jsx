@@ -33,14 +33,13 @@ const RightDrawer = (props) => {
   return (
     <>
       <Button
-        border={props.border}
-        borderRadius={props.borderRadius}
-        bg={props.bg}
-        textDecorationLine={props.textDecorationLine}
-        textAlign={props.textAlign}
-        color={props.color}
-        px={props.px}
-        py={props.py}
+        border="1px solid #EEEEEE"
+        borderRadius="18px"
+        bg="#FFFDFD"
+        textDecorationLine="none"
+        textAlign={"center"}
+        color="#1C80DD"
+        px="10px"
         onClick={onOpen}
       >
         {props.buttonText}
@@ -55,6 +54,7 @@ const RightDrawer = (props) => {
         <DrawerOverlay />
         {props.page === "curriculum-progress" && <CPDrawer />}
         {props.page === "exam-management" && <EMDrawer />}
+        {props.page === "fee-management" && <EMDrawer />}
       </Drawer>
     </>
   );

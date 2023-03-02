@@ -29,7 +29,6 @@ const MainPage = (props) => {
           <Heading as={"h1"} fontWeight="400" fontSize={"xx-large"} my="30px">
             {props.heading}
           </Heading>
-        
         {props.children}
       </Box>
     </Flex>
