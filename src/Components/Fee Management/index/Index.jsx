@@ -296,20 +296,22 @@ const Index = () => {
                         </Table>
                         <Divider h="1px" bg="black"></Divider>
                         <Table mx="auto" w="85%">
-                          <Tr>
+                          <Tbody>
+                            <Tr>
                             <Th border="none">Total Fee</Th>
                             {classesFeeStructure.map(
                               (classesFeeStructureItem) => {
                                 if (element === classesFeeStructureItem.class) {
                                   return (
                                     <Th textAlign={"right"} border="none">
-                                      {`₹ ${classesFeeStructureItem.totalFeeWithTaxes}`}
+                                    {`₹ ${classesFeeStructureItem.totalFeeWithTaxes}`}
                                     </Th>
-                                  );
+                                    );
+                                  }
                                 }
-                              }
-                            )}
-                          </Tr>
+                              )}
+                            </Tr>
+                          </Tbody>
                         </Table>
                       </TableContainer>
                     </AccordionPanel>
