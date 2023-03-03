@@ -445,20 +445,23 @@ const FMDrawer = () => {
                   <Td
                     fontWeight="500"
                     fontSize={"md"}
-                    textAlign={"center"}
+                    textAlign={radioValue === "Recurring Fee"?"left":"center"}
+                    colspan={radioValue === "Recurring Fee"?"4":""}
                     color="white"
                   >
                     Tax%
                   </Td>
-                  <Td
-                    fontWeight="500"
-                    fontSize={"md"}
-                    textAlign={"left"}
-                    color="white"
-                    colspan="3"
-                  >
-                    Date
-                  </Td>
+                  {radioValue === "Onetime Fee" && (
+                    <Td
+                      fontWeight="500"
+                      fontSize={"md"}
+                      textAlign={"left"}
+                      color="white"
+                      colspan="3"
+                    >
+                      Date
+                    </Td>
+                  )}
                 </Tr>
               </Thead>
               <Tbody bg="#F4F2FA">
@@ -532,19 +535,21 @@ const FMDrawer = () => {
                         textAlign={"center"}
                         color="#353535"
                       >
-                        <Input
-                          type="date"
-                          background="#FFFFFF"
-                          p="0"
-                          border="0.444px solid #474747"
-                          boxShadow="-2px 2px 10px rgba(196, 226, 255, 0.19)"
-                          borderRadius="5px"
-                          width="73.2px"
-                          height="24px"
-                          value={feeTypeAndDate.date}
-                          name={"date"}
-                          onChange={handleSetFeeTypeAndDate}
-                        />
+                        {radioValue === "Onetime Fee" && (
+                          <Input
+                            type="date"
+                            background="#FFFFFF"
+                            p="0"
+                            border="0.444px solid #474747"
+                            boxShadow="-2px 2px 10px rgba(196, 226, 255, 0.19)"
+                            borderRadius="5px"
+                            width="73.2px"
+                            height="24px"
+                            value={feeTypeAndDate.date}
+                            name={"date"}
+                            onChange={handleSetFeeTypeAndDate}
+                          />
+                        )}
                       </Td>
                       <Td
                         fontWeight="500"

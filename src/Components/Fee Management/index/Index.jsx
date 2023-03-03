@@ -66,6 +66,7 @@ const classesFeeStructure = [
         totalWithTax: 14780,
       },
     ],
+    totalFeeWithTaxes: 28060,
   },
   {
     class: "Class 10",
@@ -89,6 +90,7 @@ const classesFeeStructure = [
         totalWithTax: 14780,
       },
     ],
+    totalFeeWithTaxes: 29960,
   },
 ];
 const Index = () => {
@@ -292,8 +294,24 @@ const Index = () => {
                             })}
                           </Tbody>
                         </Table>
+                        <Divider h="1px" bg="black"></Divider>
+                        <Table mx="auto" w="85%">
+                          <Tr>
+                            <Th border="none">Total Fee</Th>
+                            {classesFeeStructure.map(
+                              (classesFeeStructureItem) => {
+                                if (element === classesFeeStructureItem.class) {
+                                  return (
+                                    <Th textAlign={"right"} border="none">
+                                      {`₹ ${classesFeeStructureItem.totalFeeWithTaxes}`}
+                                    </Th>
+                                  );
+                                }
+                              }
+                            )}
+                          </Tr>
+                        </Table>
                       </TableContainer>
-                      <Divider h="1px" bg="gray" />
                     </AccordionPanel>
                   )}
                 </AccordionItem>
