@@ -85,12 +85,6 @@ const Index = () => {
                     </AccordionItem>
                   </Accordion>
 
-
-                  <Link href={'#'} style={{ width: '100%' }}>
-                    <Text color={'twitter.500'} textAlign={'center'} mt={2}>
-                      + Add new class
-                    </Text>
-                  </Link>
                 </AccordionPanel>
               </AccordionItem>
 
