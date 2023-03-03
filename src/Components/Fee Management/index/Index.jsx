@@ -24,74 +24,74 @@ import {
   Tr,
   VStack,
 } from "@chakra-ui/react";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
+const topBar = [
+  "Fee Structure",
+  "Offers and discount",
+  "Fee Collection",
+  "Transaction",
+  "Payment Gateway",
+];
+export const classes = [
+  "Class 10",
+  "Class 9",
+  "Class 8",
+  "Class 7",
+  "Class 6",
+  "Class 5",
+  "Class 4",
+];
+const classesFeeDefined = ["Class 9", "Class 10"];
+const classesFeeStructure = [
+  {
+    class: "Class 9",
+    feeStructureName: {
+      ReceiptSeries: "XYZ-1",
+      installmentMonth: "Jan-Feb-Mar...",
+      dueDate: 15,
+      totalAmount: "15,180",
+    },
+    feeTypesData: [
+      {
+        feeType: "Admission Fee",
+        amount: 3000,
+        tax: 0,
+        totalWithTax: 15180,
+      },
+      {
+        feeType: "Sports Fee",
+        amount: 2500,
+        tax: 18,
+        totalWithTax: 14780,
+      },
+    ],
+  },
+  {
+    class: "Class 10",
+    feeStructureName: {
+      ReceiptSeries: "XYZ-2",
+      installmentMonth: "Jan-Feb-Mar..",
+      dueDate: 15,
+      totalAmount: "15,190",
+    },
+    feeTypesData: [
+      {
+        feeType: "Admission Fee",
+        amount: 3000,
+        tax: 0,
+        totalWithTax: 15190,
+      },
+      {
+        feeType: "Sports Fee",
+        amount: 2500,
+        tax: 18,
+        totalWithTax: 14780,
+      },
+    ],
+  },
+];
 const Index = () => {
-  const topBar = [
-    "Fee Structure",
-    "Offers and discount",
-    "Fee Collection",
-    "Transaction",
-    "Payment Gateway",
-  ];
-  const classes = [
-    "Class 10",
-    "Class 9",
-    "Class 8",
-    "Class 7",
-    "class 6",
-    "Class 5",
-    "Class 4",
-  ];
-  const classesFeeDefined = ["Class 9", "Class 10"];
-  const classesFeeStructure = [
-    {
-      class: "Class 9",
-      feeStructureName: {
-        ReceiptSeries: "XYZ-1",
-        installmentMonth: "Jan-Feb-Mar...",
-        dueDate: 15,
-        totalAmount: "15,180",
-      },
-      feeTypesData: [
-        {
-          feeType: "Admission Fee",
-          amount: 3000,
-          tax: 0,
-          totalWithTax: 15180,
-        },
-        {
-          feeType: "Sports Fee",
-          amount: 2500,
-          tax: 18,
-          totalWithTax: 14780,
-        },
-      ],
-    },
-    {
-      class: "Class 10",
-      feeStructureName: {
-        ReceiptSeries: "XYZ-2",
-        installmentMonth: "Jan-Feb-Mar..",
-        dueDate: 15,
-        totalAmount: "15,190",
-      },
-      feeTypesData: [
-        {
-          feeType: "Admission Fee",
-          amount: 3000,
-          tax: 0,
-          totalWithTax: 15190,
-        },
-        {
-          feeType: "Sports Fee",
-          amount: 2500,
-          tax: 18,
-          totalWithTax: 14780,
-        },
-      ],
-    },
-  ];
   const [activeTab, setActiveTab] = useState(topBar[0]);
   const changeTab = (e) => {
     setActiveTab(topBar[topBar.indexOf(e.target.innerHTML)]);
@@ -99,10 +99,11 @@ const Index = () => {
   return (
     <MainPage heading={"Fee Management"}>
       <HStack justifyContent={"space-between"}>
-        {topBar.map((element) => {
+        {topBar.map((element, index) => {
           if (element === activeTab) {
             return (
               <Button
+                key={`${element}_${index}`}
                 position="relative"
                 bg="transparent"
                 onClick={changeTab}
@@ -142,10 +143,11 @@ const Index = () => {
       </HStack>
       <VStack>
         <Accordion defaultIndex={[]} allowMultiple w="100%" mt="20px">
-          {classes.map((element) => {
+          {classes.map((element, index) => {
             if (classesFeeDefined.includes(element)) {
               return (
                 <AccordionItem
+                  key={`${element}_${index}`}
                   bg="#E2E1FF"
                   mb="10px"
                   p="5px"
@@ -190,10 +192,13 @@ const Index = () => {
                           Total amount
                         </Text>
                       </HStack>
-                      {classesFeeStructure.map((feeStructureItem) => {
+                      {classesFeeStructure.map((feeStructureItem, index) => {
                         if (element === feeStructureItem.class) {
                           return (
-                            <Flex justifyContent={"space-between"}>
+                            <Flex
+                              justifyContent={"space-between"}
+                              key={`${classesFeeStructure.class}_${index}`}
+                            >
                               <Text
                                 color="black"
                                 fontWeight={500}
@@ -258,9 +263,11 @@ const Index = () => {
                             {classesFeeStructure.map((feeStructureItem) => {
                               if (element === feeStructureItem.class) {
                                 return feeStructureItem.feeTypesData.map(
-                                  (feeStructureData) => {
+                                  (feeStructureData, index) => {
                                     return (
-                                      <Tr>
+                                      <Tr
+                                        key={`${classesFeeStructure.class}_${index}`}
+                                      >
                                         <Td
                                           textAlign={"center"}
                                           color="black"

@@ -1,26 +1,8 @@
 import CPDrawer from "@/Components/Curriculum Progress/Index/CPDrawer";
 import EMDrawer from "@/Components/Exam Management/Index/EMDrawer";
+import FMDrawer from "@/Components/Fee Management/index/FMDrawer";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Button,
-  Circle,
-  Drawer,
-  DrawerBody,
-  DrawerCloseButton,
-  DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  Flex,
-  FormLabel,
-  Heading,
-  Input,
-  InputGroup,
-  Stack,
-  Text,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Button, Drawer, DrawerOverlay, useDisclosure } from "@chakra-ui/react";
 import React, { useRef } from "react";
 
 const RightDrawer = (props) => {
@@ -54,7 +36,7 @@ const RightDrawer = (props) => {
         <DrawerOverlay />
         {props.page === "curriculum-progress" && <CPDrawer />}
         {props.page === "exam-management" && <EMDrawer />}
-        {props.page === "fee-management" && <EMDrawer />}
+        {props.page === "fee-management" && <FMDrawer />}
       </Drawer>
     </>
   );
