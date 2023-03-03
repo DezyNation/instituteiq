@@ -37,6 +37,7 @@ const RightDrawer = (props) => {
         {props.page === "curriculum-progress" && <CPDrawer />}
         {props.page === "exam-management" && <EMDrawer />}
         {props.page === "fee-management" && <FMDrawer />}
+        {props.page === "employee-management" && <FMDrawer />}
       </Drawer>
     </>
   );
