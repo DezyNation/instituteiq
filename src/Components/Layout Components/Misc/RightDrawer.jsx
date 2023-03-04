@@ -1,4 +1,5 @@
 import CPDrawer from "@/Components/Curriculum Progress/Index/CPDrawer";
+import EMPMDrawer from "@/Components/Employee Management/index/EMPMDrawer";
 import EMDrawer from "@/Components/Exam Management/Index/EMDrawer";
 import FMDrawer from "@/Components/Fee Management/index/FMDrawer";
 import { ChevronRightIcon } from "@chakra-ui/icons";
@@ -37,7 +38,7 @@ const RightDrawer = (props) => {
         {props.page === "curriculum-progress" && <CPDrawer />}
         {props.page === "exam-management" && <EMDrawer />}
         {props.page === "fee-management" && <FMDrawer />}
-        {props.page === "employee-management" && <FMDrawer />}
+        {props.page === "employee-management" && <EMPMDrawer />}
       </Drawer>
     </>
   );

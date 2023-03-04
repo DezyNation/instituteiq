@@ -71,6 +71,7 @@ const Index = () => {
         <RightDrawer
           page="employee-management"
           buttonText="+Add New Employee"
+          // EMPMDrawerprop = {chosenRoleOption}
         />
       </HStack>
       <Divider h="1px" my="20px" bg="#A3A3A3" w="100%" />

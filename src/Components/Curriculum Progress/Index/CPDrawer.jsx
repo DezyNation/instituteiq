@@ -125,7 +125,7 @@ const CPDrawer = () => {
           </Heading>
           {subjectTopic.map((item, index) => {
             return (
-              <Flex ml="40px" mt="40px" alignItems="center" gap="20px" w="100%">
+              <Flex ml="40px" mt="40px" alignItems="center" gap="20px" w="100%" key={index}>
                 <Circle
                   size="30px"
                   bg="rgba(134, 174, 210, 0.63)"
