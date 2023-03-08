@@ -1,3 +1,4 @@
+import BMDrawer from "@/Components/Admin/Branch Management/Index/BMDrawer";
 import CPDrawer from "@/Components/Curriculum Progress/Index/CPDrawer";
 import EMPMDrawer from "@/Components/Employee Management/index/EMPMDrawer";
 import EMDrawer from "@/Components/Exam Management/Index/EMDrawer";
@@ -39,6 +40,8 @@ const RightDrawer = (props) => {
         {props.page === "exam-management" && <EMDrawer />}
         {props.page === "fee-management" && <FMDrawer />}
         {props.page === "employee-management" && <EMPMDrawer />}
+        {props.page === "branch-management-employee" && <EMPMDrawer option="employee-without-photo"/>}
+        {props.page === "branch-management-branch" && <BMDrawer />}
       </Drawer>
     </>
   );

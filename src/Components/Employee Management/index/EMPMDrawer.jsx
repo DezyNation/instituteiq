@@ -21,6 +21,8 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Radio,
+  RadioGroup,
   Select,
   Stack,
   Text,
@@ -29,7 +31,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import userSVG from "../../../../public/userSVG.svg";
 
-const EMPMDrawer = () => {
+const EMPMDrawer = (props) => {
   const [uploadFileName, setUploadFileName] = useState("");
   const handleManualFileUpload = (e) => {
     setUploadFileName(e.target.files[0].name);
@@ -52,90 +54,97 @@ const EMPMDrawer = () => {
           <ChevronRightIcon boxSize={7} />
         </Button>
       </DrawerCloseButton>
+
       <DrawerHeader py="30px" mx="20px">
-        Add Employee
+        {props.option === "employee-without-photo"
+          ? "Add Management"
+          : "Add Employee"}
       </DrawerHeader>
 
       <DrawerBody pl="40px">
         <Stack>
-          <HStack justifyContent={"space-between"} alignItems="center">
-            <Text fontSize={"md"}>Bulk Upload</Text>
-            <Button color="#1C80DD" bg="none" _hover={{ bg: "none" }}>
-              Download Sample List <DownloadIcon ml="10px" />
-            </Button>
-          </HStack>
-          <InputGroup
-            border="2px dotted #1890FF"
-            display={"grid"}
-            placeItems="center"
-            bg="rgba(244, 253, 240, 0.87)"
-            borderRadius="7px"
-            p="60px"
-          >
-            <Box>
-              <Text display={"inline"} mr="2px">
-                Click{" "}
-              </Text>
-              <FormLabel
-                cursor={"pointer"}
-                htmlFor="addEmployeeFileUploadInput"
-                display={"inline"}
-                color="#1C80DDDE"
+          {props.option !== "employee-without-photo" && (
+            <>
+              <HStack justifyContent={"space-between"} alignItems="center">
+                <Text fontSize={"md"}>Bulk Upload</Text>
+                <Button color="#1C80DD" bg="none" _hover={{ bg: "none" }}>
+                  Download Sample List <DownloadIcon ml="10px" />
+                </Button>
+              </HStack>
+              <InputGroup
+                border="2px dotted #1890FF"
+                display={"grid"}
+                placeItems="center"
+                bg="rgba(244, 253, 240, 0.87)"
+                borderRadius="7px"
+                p="60px"
               >
-                here
-              </FormLabel>
-              <Text display={"inline"}>to upload</Text>
-              <Input
-                type="file"
-                id="addEmployeeFileUploadInput"
-                display={"none"}
-              />
-            </Box>
-          </InputGroup>
-          <Divider h="1px" bg="#A3A3A3" />
-          <Text textAlign="center" w="100%">
-            OR
-          </Text>
-          <Box>
-            <Text mb="20px" fontSize={"lg"}>
-              Add Employee Manually
-            </Text>
-            <HStack>
-              <Image
-                src={userSVG}
-                style={{
-                  background: "#E8F0FD",
-                  borderRadius: "7px",
-                  padding: "10px",
-                  height: "75px",
-                  width: "75px",
-                }}
-              />
-              <Box>
-                <Text>Upload passport size photo</Text>
-                <Text color="#BEBEBE" fontSize={"xs"}>
-                  (File size: MAX 10MB | Formats : PNG, JPG)
-                </Text>
-                <InputGroup>
+                <Box>
+                  <Text display={"inline"} mr="2px">
+                    Click{" "}
+                  </Text>
                   <FormLabel
-                    cursor="pointer"
-                    color="#1C80DD"
-                    htmlFor="manualEmployeeFileUpload"
+                    cursor={"pointer"}
+                    htmlFor="addEmployeeFileUploadInput"
+                    display={"inline"}
+                    color="#1C80DDDE"
                   >
-                    Upload
+                    here
                   </FormLabel>
-                  <Text>{uploadFileName}</Text>
+                  <Text display={"inline"}>to upload</Text>
                   <Input
                     type="file"
-                    id="manualEmployeeFileUpload"
+                    id="addEmployeeFileUploadInput"
                     display={"none"}
-                    onChange={handleManualFileUpload}
                   />
-                </InputGroup>
+                </Box>
+              </InputGroup>
+              <Divider h="1px" bg="#A3A3A3" />
+              <Text textAlign="center" w="100%">
+                OR
+              </Text>
+              <Box>
+                <Text mb="20px" fontSize={"lg"}>
+                  Add Employee Manually
+                </Text>
+                <HStack>
+                  <Image
+                    src={userSVG}
+                    style={{
+                      background: "#E8F0FD",
+                      borderRadius: "7px",
+                      padding: "10px",
+                      height: "75px",
+                      width: "75px",
+                    }}
+                  />
+                  <Box>
+                    <Text>Upload passport size photo</Text>
+                    <Text color="#BEBEBE" fontSize={"xs"}>
+                      (File size: MAX 10MB | Formats : PNG, JPG)
+                    </Text>
+                    <InputGroup>
+                      <FormLabel
+                        cursor="pointer"
+                        color="#1C80DD"
+                        htmlFor="manualEmployeeFileUpload"
+                      >
+                        Upload
+                      </FormLabel>
+                      <Text>{uploadFileName}</Text>
+                      <Input
+                        type="file"
+                        id="manualEmployeeFileUpload"
+                        display={"none"}
+                        onChange={handleManualFileUpload}
+                      />
+                    </InputGroup>
+                  </Box>
+                </HStack>
               </Box>
-            </HStack>
-          </Box>
-          <Divider h="1px" bg="#A3A3A3" mt="20px !important" />
+              <Divider h="1px" bg="#A3A3A3" mt="20px !important" />
+            </>
+          )}
 
           <Accordion defaultIndex={[]} allowToggle>
             <AccordionItem
@@ -495,6 +504,13 @@ const EMPMDrawer = () => {
                     />
                   </Box>
                 </Flex>
+                <RadioGroup mt="10px">
+                  <Radio value="sameAddress">
+                    <Text color="#3D8CD5">
+                      Permanaent address same as current address
+                    </Text>
+                  </Radio>
+                </RadioGroup>
               </AccordionPanel>
             </AccordionItem>
             <AccordionItem
@@ -1092,7 +1108,9 @@ const EMPMDrawer = () => {
         </Stack>
       </DrawerBody>
       <DrawerFooter>
-        <Text color="#AEAEAE" fontSize={"xs"} mr="10px">Entering mobile number or email ID is mandatory.</Text>
+        <Text color="#AEAEAE" fontSize={"xs"} mr="10px">
+          Entering mobile number or email ID is mandatory.
+        </Text>
         <Box
           as="button"
           bg="#25557B"
