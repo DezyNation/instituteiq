@@ -159,14 +159,13 @@ const Index = () => {
         </InputGroup>
       </HStack>
       <TableContainer
-        borderRadius="12px 12px 12px 12px"
         mt="20px"
         borderWidth="2px 2px 2px 2px"
         borderColor="#8c8c8c"
         overflow={"visible !important"}
         overflowY={"visible !important"}
-      >
-        <Table borderRadius="12px 12px 0px 0px">
+        >
+        <Table>
           <Thead
             background="#EFEFFD"
             borderBottom="3px solid #8c8c8c"

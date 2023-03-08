@@ -1092,6 +1092,7 @@ const EMPMDrawer = () => {
         </Stack>
       </DrawerBody>
       <DrawerFooter>
+        <Text color="#AEAEAE" fontSize={"xs"} mr="10px">Entering mobile number or email ID is mandatory.</Text>
         <Box
           as="button"
           bg="#25557B"
@@ -1109,17 +1110,8 @@ const EMPMDrawer = () => {
           }}
           _hover={{ bg: "#25557b" }}
         >
-          Save
+          Add Employee
         </Box>
-        <Button
-          bg="#fdfdfd"
-          borderRadius={"5px"}
-          variant="outline"
-          border="1px solid #D1D5DB"
-          px="50px"
-        >
-          Cancel
-        </Button>
       </DrawerFooter>
     </DrawerContent>
   );
