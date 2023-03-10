@@ -33,7 +33,6 @@ const Cards = ({ heading, value }) => {
       h="180px"
       p="10px"
       boxShadow=" 4px 4px 4px 1px rgba(0, 0, 0, 0.25)"
-      //   border="1px solid #BABCC0"
       borderRadius="20px"
       bg="rgba(255, 255, 255, 0.55)"
       position="relative"

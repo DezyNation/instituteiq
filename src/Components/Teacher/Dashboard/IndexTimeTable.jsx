@@ -50,12 +50,13 @@ const IndexTimeTable = ({width}) => {
       border="0.3px solid #000000"
       boxShadow="2px 4px 4px rgba(0, 0, 0, 0.25)"
       p="15px"
+      h="max-content"
     >
-      <Flex justifyContent="space-between" alignItems="center" mb="20px">
+      <Flex alignItems="center" mb="20px">
         <Heading as="h1" fontSize="20px" fontWeight="500" lineHeight="23px">
           Today's Time-Table
         </Heading>
-        <ChevronRightIcon boxSize={7} color="#818181" />
+        <ChevronRightIcon ml="auto" boxSize={7} color="#818181" />
       </Flex>
         {TimeTableList.map((element, index) => {
           return (

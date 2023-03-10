@@ -4,36 +4,36 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
-  ModalCloseButton,
   useDisclosure,
   Button,
-  Text,
   Flex,
   FormControl,
-  FormLabel,
   Input,
-  FormHelperText,
-  FormErrorMessage,
-  Textarea,
-  Divider,
 } from "@chakra-ui/react";
-import { AttachmentIcon } from "@chakra-ui/icons";
+import { useFormik } from "formik";
 
-const InputModal = ({ children, heading,itemList, setItemList,placeholder }) => {
-  const [input, setInput] = useState("");
-
-  const handleInputChange = (e) => setInput(e.target.value);
-
-  const isError = input === "";
+const InputModal = ({
+  children,
+  heading,
+  itemList,
+  setItemList,
+  placeholder,
+}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const onSubmitClick = (e) => {
-    e.preventDefault();
-    setItemList([ ...itemList, {task: e.target[0].value} ]);
-    onClose();
-  };
+  const formik = useFormik({
+    initialValues: {
+      newListItemToAdd: "",
+    },
+    onSubmit: (values) => {
+      console.log(values);
+      // Axios code goes here
+      onClose();
+    },
+  });
+
+
   return (
     <>
       <Button onClick={onOpen} color="#3948cd" w="100%" p="0px" my="20px">
@@ -61,12 +61,11 @@ const InputModal = ({ children, heading,itemList, setItemList,placeholder }) => 
             {heading}
           </ModalHeader>
           <ModalBody mt="20px" pb="10px">
-            <form action="" method="post" onSubmit={onSubmitClick}>
-              <FormControl isInvalid={isError}>
+
+            <form action="" method="post" onSubmit={formik.handleSubmit}>
+              <FormControl>
                 <Input
                   type="text"
-                  value={input}
-                  onChange={handleInputChange}
                   bg="#F6EBEB"
                   resize={"none"}
                   w="96%"
@@ -77,6 +76,9 @@ const InputModal = ({ children, heading,itemList, setItemList,placeholder }) => 
                   mt="-5px"
                   mx="auto"
                   display="block"
+                  name={"newListItemToAdd"}
+                  value={formik.values.newListItemToAdd}
+                  onChange={formik.handleChange}
                 />
               </FormControl>
               <Flex w="95%" mx="auto" mt="30px" justifyContent={"flex-end"}>

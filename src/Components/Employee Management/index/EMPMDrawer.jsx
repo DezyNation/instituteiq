@@ -40,7 +40,6 @@ const EMPMDrawer = (props) => {
     const inputName = e.target.name;
     const inputValue = e.target.value;
 
-    console.log(inputName, inputValue);
   };
   return (
     <DrawerContent position={"relative"} maxW="50%">

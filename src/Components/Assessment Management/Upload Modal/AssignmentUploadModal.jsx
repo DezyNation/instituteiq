@@ -8,12 +8,9 @@ import {
   InputGroup,
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Select,
   Text,
   Textarea,
   useDisclosure,
@@ -23,6 +20,7 @@ import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
 import FileItem from "@/Components/Student/Student Assignment/FileItem";
 import { useFilesProvider } from "@/Components/Student/Student Assignment/FilesProvider";
+import { useFormik } from "formik";
 
 const AssignmentUploadModal = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -31,7 +29,6 @@ const AssignmentUploadModal = (props) => {
   const [modalBodyFileList, setModalBodyFileList] = useFilesProvider();
 
   const onFileUpload = (e) => {
-    console.log(e.target.files);
     let modalBodyFilesArray = [];
     for (const [, value] of Object.entries(e.target.files)) {
       modalBodyFilesArray.push(value.name);
@@ -44,6 +41,31 @@ const AssignmentUploadModal = (props) => {
     onClose();
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const files = e.target.querySelector("input#fileUpload").files
+    formik.setValues({
+      ...formik.values,
+      newAssignmentScheduleTime: flatPickerValue,
+      newAssignmentFiles: files,
+    });
+    formik.handleSubmit();
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      newAssignmentTitle: "",
+      newAssignmentDescription: "",
+      newAssignmentFile: "",
+      newAssignmentPoints: "",
+      newAssignmentDueDate: "",
+      newAssignmentScheduleDate: "",
+    },
+    onSubmit: (value) => {
+      //AXIOS CODE GOES HERE
+      console.log(value);
+    },
+  });
   return (
     <>
       <Box as="button" onClick={onOpen} {...props}>
@@ -62,10 +84,10 @@ const AssignmentUploadModal = (props) => {
             Upload Assignment
           </ModalHeader>
           <ModalBody>
-            <form action="#" method="">
+            <form action="#" method="" onSubmit={handleSubmit}>
               <InputGroup display={"flex"} flexDirection="column">
                 <FormLabel
-                  htmlFor="assignmentInputTitle"
+                  htmlFor="newAssignmentTitle"
                   display={"block"}
                   fontWeight={400}
                 >
@@ -78,10 +100,14 @@ const AssignmentUploadModal = (props) => {
                   border="1px solid #ABABAB"
                   boxShadow="2px 2px 10px rgba(230, 246, 241, 0.25)"
                   borderRadius="12px"
+                  id="newAssignmentTitle"
+                  name="newAssignmentTitle"
+                  value={formik.values.newAssignmentTitle}
+                  onChange={formik.handleChange}
                 />
                 <FormLabel
                   mt="20px"
-                  htmlFor="assignmentInputTitle"
+                  htmlFor="newAssignmentDescription"
                   display={"block"}
                   fontWeight={400}
                 >
@@ -96,6 +122,10 @@ const AssignmentUploadModal = (props) => {
                   border="1px solid #ABABAB"
                   boxShadow="2px 2px 10px rgba(230, 246, 241, 0.25)"
                   borderRadius="12px"
+                  id="newAssignmentDescription"
+                  name="newAssignmentDescription"
+                  value={formik.values.newAssignmentDescription}
+                  onChange={formik.handleChange}
                 />
                 <FormLabel
                   color="#25557B"
@@ -111,18 +141,18 @@ const AssignmentUploadModal = (props) => {
                   display={"none"}
                   id="fileUpload"
                   onChange={onFileUpload}
-                  multiple = {true}
+                  multiple={true}
                 />
                 <Box>
-                    {modalBodyFileList?.map((element, index) => {
-                      return (
-                        <FileItem
-                          key={`${element}_${index}`}
-                          fileName={element}
-                        />
-                      );
-                    })}
-                  </Box>
+                  {modalBodyFileList?.map((element, index) => {
+                    return (
+                      <FileItem
+                        key={`${element}_${index}`}
+                        fileName={element}
+                      />
+                    );
+                  })}
+                </Box>
                 <Flex mt="10px">
                   <Box mr="50px">
                     <FormLabel
@@ -130,6 +160,7 @@ const AssignmentUploadModal = (props) => {
                       color="#818181"
                       fontWeight={400}
                       mt="15px"
+                      htmlFor="newAssignmentDueDate"
                     >
                       Due Date :
                     </FormLabel>
@@ -141,10 +172,15 @@ const AssignmentUploadModal = (props) => {
                       borderRadius="6px"
                       p="10px"
                       w="100px"
+                      id="newAssignmentDueDate"
+                      name="newAssignmentDueDate"
+                      value={formik.values.newAssignmentDueDate}
+                      onChange={formik.handleChange}
                     />
                   </Box>
                   <Box>
                     <FormLabel
+                      htmlFor="newAssignmentPoints"
                       display="inline"
                       color="#818181"
                       fontWeight={400}
@@ -160,6 +196,10 @@ const AssignmentUploadModal = (props) => {
                       background="#FFFFFF"
                       border="1px solid #A8A8A8"
                       borderRadius="6px"
+                      id="newAssignmentPoints"
+                      name="newAssignmentPoints"
+                      value={formik.values.newAssignmentPoints}
+                      onChange={formik.handleChange}
                     />
                   </Box>
                 </Flex>
@@ -175,6 +215,7 @@ const AssignmentUploadModal = (props) => {
                           color="#818181"
                           fontWeight={400}
                           mt="15px"
+                          htmlFor="newAssignmentScheduleDate"
                         >
                           Date :
                         </FormLabel>
@@ -186,6 +227,10 @@ const AssignmentUploadModal = (props) => {
                           borderRadius="6px"
                           p="10px"
                           w="100px"
+                          id="newAssignmentScheduleDate"
+                          name="newAssignmentScheduleDate"
+                          value={formik.values.newAssignmentScheduleDate}
+                          onChange={formik.handleChange}
                         />
                       </Box>
                       <Box>
@@ -201,7 +246,6 @@ const AssignmentUploadModal = (props) => {
                         <Flatpickr
                           value={flatPickerValue}
                           onChange={(e) => {
-                            console.log(e[0]);
                             setFlatPickerValue(e[0]);
                           }}
                           options={{
@@ -267,6 +311,7 @@ const AssignmentUploadModal = (props) => {
                     background="#FDFDFD"
                     border="1px solid #D1D5DB"
                     borderRadius="5px"
+                    type="reset"
                   >
                     Cancel
                   </Button>

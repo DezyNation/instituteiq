@@ -1,13 +1,4 @@
-import { CalendarIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Circle,
-  Divider,
-  Flex,
-  Heading,
-  Text,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import InputModal from "@/Components/Layout Components/Misc/InputModal";
 import React, { useState } from "react";
 
@@ -77,9 +68,9 @@ const RecentCircular = () => {
                 color: "white",
                 fontSize: "40px",
                 position: "absolute",
-                display : "block",
-                margin:"auto",
-                top:"0"
+                display: "block",
+                margin: "auto",
+                top: "0",
               }}
             />
             <Flex justifyContent="center" alignItems="center">

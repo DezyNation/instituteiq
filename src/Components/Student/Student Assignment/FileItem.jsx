@@ -7,9 +7,11 @@ const FileItem = ({ fileName }) => {
   const [modalBodyFileList, setModalBodyFileList] = useFilesProvider();
 
   const handleRemove = (e) => {
+    const clickedFileName = e.target.parentElement.children[0].innerText;
+
     setModalBodyFileList(
       modalBodyFileList.filter((element) => {
-        return element != e.target.parentElement.children[0].innerText;
+        return element != clickedFileName;
       })
     );
   };
