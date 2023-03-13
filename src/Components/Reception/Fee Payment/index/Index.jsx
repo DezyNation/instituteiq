@@ -25,6 +25,7 @@ import {
   Tr,
   VStack,
 } from "@chakra-ui/react";
+import { useFormik } from "formik";
 import React, { useRef, useState } from "react";
 
 const feePaymentsData = [
@@ -108,6 +109,8 @@ const Index = () => {
   const [searchedId, setSearchedId] = useState("");
   const [searchResults, setsearchResults] = useState();
   const [chosenDiscountOption, setChosenDiscountOption] = useState("");
+  const [taxRadio, setTaxRadio] = useState("yes");
+  const [paymentMethodRadio, setPaymentMethodRadio] = useState("cash");
   const customDiscountOptionsRef = useRef();
 
   const handleOptionSelection = (e) => {
@@ -137,6 +140,72 @@ const Index = () => {
     if (customOptionsRef.current.style.display === "")
       customOptionsRef.current.style.display = "flex";
     else customOptionsRef.current.style.display = "";
+  };
+
+  const handleDueInstallmentsCheckboxAction = (e) => {
+    const buttonReference = e.target;
+    if (buttonReference.checked) {
+      formik.setValues({
+        ...formik.values,
+        dueInstallments: [
+          ...formik.values.dueInstallments,
+          buttonReference.value,
+        ],
+      });
+    } else {
+      formik.values.dueInstallments.splice(
+        formik.values.dueInstallments.indexOf(buttonReference.value),
+        1
+      );
+      formik.setValues({
+        ...formik.values,
+        dueInstallments: [...formik.values.dueInstallments],
+      });
+    }
+  };
+  const handlePartialPaymentsCheckboxAction = (e) => {
+    const buttonReference = e.target;
+    if (buttonReference.checked) {
+      formik.setValues({
+        ...formik.values,
+        partialPaymentsDate: [
+          ...formik.values.partialPaymentsDate,
+          buttonReference.value,
+        ],
+      });
+    } else {
+      formik.values.partialPaymentsDate.splice(
+        formik.values.partialPaymentsDate.indexOf(buttonReference.value),
+        1
+      );
+      formik.setValues({
+        ...formik.values,
+        partialPaymentsDate: [...formik.values.partialPaymentsDate],
+      });
+    }
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      dueInstallments: [],
+      partialPaymentsDate: [],
+      partialPaymentAmount: "",
+    },
+    onSubmit: (values) => {
+      //AXIOS CODE GOES HERE 
+      console.log(values);
+    },
+  });
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    formik.setValues({
+      ...formik.values,
+      discountoption: chosenDiscountOption,
+      tax: taxRadio,
+      paymentMethod: paymentMethodRadio,
+    });
+    formik.handleSubmit();
   };
 
   return (
@@ -283,289 +352,320 @@ const Index = () => {
                 </Tbody>
               </Table>
             </TableContainer>
-            <TableContainer
-              bg="#E2E1FF70"
-              background="rgba(226, 225, 255, 0.44)"
-              boxShadow="2px 2px 10px rgba(230, 246, 241, 0.25)"
-              borderRadius="12px"
-              w="100%"
-              my="20px"
-              overflow={"visiblex !important"}
-              overflowY={"visiblex !important"}
+            <form
+              action=""
+              onSubmit={handleFormSubmit}
+              style={{ width: "100%" }}
             >
-              <Table>
-                <Thead borderBottom="2px solid #5a5a5a">
-                  <Tr display={"flex"} justifyContent={"space-between"}>
-                    <Th
-                      textAlign={"center"}
-                      w="17%"
-                      fontSize={"sm"}
-                      textTransform="capitalize"
-                      color="#25557B"
-                    >
-                      Due Installments
-                    </Th>
-                    <Th
-                      w="17%"
-                      fontSize={"sm"}
-                      textTransform="capitalize"
-                      color="#25557B"
-                    >
-                      Partial Payment
-                    </Th>
-                    <Th
-                      w="17%"
-                      fontSize={"sm"}
-                      textTransform="capitalize"
-                      color="#25557B"
-                      textAlign={"center"}
-                    >
-                      Due
-                    </Th>
-                    <Th
-                      w="17%"
-                      fontSize={"sm"}
-                      textTransform="capitalize"
-                      color="#25557B"
-                    >
-                      Partial Payment
-                    </Th>
-                    <Th
-                      w="17%"
-                      fontSize={"sm"}
-                      textTransform="capitalize"
-                      color="#25557B"
-                    >
-                      Include Tax
-                    </Th>
-                    <Th
-                      w="17%"
-                      fontSize={"sm"}
-                      textTransform="capitalize"
-                      color="#25557B"
-                    >
-                      Mode Of Payment
-                    </Th>
-                  </Tr>
-                </Thead>
-                <Tbody borderBottom="2px solid #5a5a5a">
-                  <Tr display={"flex"} justifyContent={"space-between"}>
-                    <Td w="17%">
-                      {feePaymentsData[searchResults].dueInstallments.map(
-                        (element, index) => {
-                          return (
-                            <Box
-                              key={index}
-                              mt="5px"
-                              display={"flex"}
-                              alignItems="center"
-                              gap="5px"
-                            >
-                              <input
-                                type="checkbox"
-                                value={element}
-                                id={element}
-                                style={{ width: "17px", height: "17px" }}
-                              />
-                              <label htmlFor={element}> {element} </label>
-                            </Box>
-                          );
-                        }
-                      )}
-                    </Td>
-                    <Td w="17%">
-                      {feePaymentsData[searchResults].partialPayments.map(
-                        (element, index) => {
-                          return (
-                            <Box
-                              key={index}
-                              mt="5px"
-                              display={"flex"}
-                              alignItems="center"
-                              gap="5px"
-                            >
-                              <input
-                                type="checkbox"
-                                value={element[0]}
-                                id={element[0]}
-                                style={{ width: "17px", height: "17px" }}
-                              />
-                              <label htmlFor={element[0]}> {element[0]} </label>
-                            </Box>
-                          );
-                        }
-                      )}
-                    </Td>
-                    <Td w="17%" textAlign={"center"}>
-                      {feePaymentsData[searchResults].partialPayments.map(
-                        (element, index) => {
-                          return (
-                            <Text key={index} mt="5px">
-                              {element[1]}
-                            </Text>
-                          );
-                        }
-                      )}
-                    </Td>
-                    <Td w="17%">
-                      <Box>
-                        <Input
-                          type="number"
-                          background="#FFFFFF"
-                          border="0.444px solid #474747"
-                          boxShadow="-2px 2px 10px rgba(196, 226, 255, 0.19)"
-                          borderRadius="5px"
-                          h="30px"
-                        ></Input>
-                        <Divider h="1px" bg="gray" mt="10px" />
-                        <Text fontSize={"sm"} mt="5px">
-                          Apply Discount
-                        </Text>
-                        {/* CUSTOM DROP DOWN */}
-                        <Box position={"relative"}>
-                          <Button
-                            bg="#fff"
-                            w="100%"
+              <TableContainer
+                bg="#E2E1FF70"
+                background="rgba(226, 225, 255, 0.44)"
+                boxShadow="2px 2px 10px rgba(230, 246, 241, 0.25)"
+                borderRadius="12px"
+                w="100%"
+                my="20px"
+                overflow={"visiblex !important"}
+                overflowY={"visiblex !important"}
+              >
+                <Table>
+                  <Thead borderBottom="2px solid #5a5a5a">
+                    <Tr display={"flex"} justifyContent={"space-between"}>
+                      <Th
+                        textAlign={"center"}
+                        w="17%"
+                        fontSize={"sm"}
+                        textTransform="capitalize"
+                        color="#25557B"
+                      >
+                        Due Installments
+                      </Th>
+                      <Th
+                        w="17%"
+                        fontSize={"sm"}
+                        textTransform="capitalize"
+                        color="#25557B"
+                      >
+                        Partial Payment
+                      </Th>
+                      <Th
+                        w="17%"
+                        fontSize={"sm"}
+                        textTransform="capitalize"
+                        color="#25557B"
+                        textAlign={"center"}
+                      >
+                        Due
+                      </Th>
+                      <Th
+                        w="17%"
+                        fontSize={"sm"}
+                        textTransform="capitalize"
+                        color="#25557B"
+                      >
+                        Partial Payment
+                      </Th>
+                      <Th
+                        w="17%"
+                        fontSize={"sm"}
+                        textTransform="capitalize"
+                        color="#25557B"
+                      >
+                        Include Tax
+                      </Th>
+                      <Th
+                        w="17%"
+                        fontSize={"sm"}
+                        textTransform="capitalize"
+                        color="#25557B"
+                      >
+                        Mode Of Payment
+                      </Th>
+                    </Tr>
+                  </Thead>
+                  <Tbody borderBottom="2px solid #5a5a5a">
+                    <Tr display={"flex"} justifyContent={"space-between"}>
+                      <Td w="17%">
+                        {feePaymentsData[searchResults].dueInstallments.map(
+                          (element, index) => {
+                            return (
+                              <Box
+                                key={index}
+                                mt="5px"
+                                display={"flex"}
+                                alignItems="center"
+                                gap="5px"
+                              >
+                                <input
+                                  type="checkbox"
+                                  value={element}
+                                  id={element}
+                                  onChange={handleDueInstallmentsCheckboxAction}
+                                  name={`dueInstallmentsDate`}
+                                  style={{ width: "17px", height: "17px" }}
+                                />
+                                <label htmlFor={element}> {element} </label>
+                              </Box>
+                            );
+                          }
+                        )}
+                      </Td>
+                      <Td w="17%">
+                        {feePaymentsData[searchResults].partialPayments.map(
+                          (element, index) => {
+                            return (
+                              <Box
+                                key={index}
+                                mt="5px"
+                                display={"flex"}
+                                alignItems="center"
+                                gap="5px"
+                              >
+                                <input
+                                  type="checkbox"
+                                  value={element[0]}
+                                  id={element[0]}
+                                  onChange={handlePartialPaymentsCheckboxAction}
+                                  style={{ width: "17px", height: "17px" }}
+                                />
+                                <label htmlFor={element[0]}>
+                                  {" "}
+                                  {element[0]}{" "}
+                                </label>
+                              </Box>
+                            );
+                          }
+                        )}
+                      </Td>
+                      <Td w="17%" textAlign={"center"}>
+                        {feePaymentsData[searchResults].partialPayments.map(
+                          (element, index) => {
+                            return (
+                              <Text key={index} mt="5px">
+                                {element[1]}
+                              </Text>
+                            );
+                          }
+                        )}
+                      </Td>
+                      <Td w="17%">
+                        <Box>
+                          <Input
+                            type="number"
+                            background="#FFFFFF"
                             border="0.444px solid #474747"
                             boxShadow="-2px 2px 10px rgba(196, 226, 255, 0.19)"
                             borderRadius="5px"
-                            id="classesDropDown"
-                            onClick={() =>
-                              openCustomOptions(customDiscountOptionsRef)
-                            }
-                          >
-                            {chosenDiscountOption}
-                            <ChevronDownIcon boxSize={6} />
-                          </Button>
+                            h="30px"
+                            name="partialPaymentAmount"
+                            onChange={formik.handleChange}
+                          ></Input>
+                          <Divider h="1px" bg="gray" mt="10px" />
+                          <Text fontSize={"sm"} mt="5px">
+                            Apply Discount
+                          </Text>
+                          {/* CUSTOM DROP DOWN */}
+                          <Box position={"relative"}>
+                            <Button
+                              bg="#fff"
+                              w="100%"
+                              border="0.444px solid #474747"
+                              boxShadow="-2px 2px 10px rgba(196, 226, 255, 0.19)"
+                              borderRadius="5px"
+                              id="classesDropDown"
+                              onClick={() =>
+                                openCustomOptions(customDiscountOptionsRef)
+                              }
+                            >
+                              {chosenDiscountOption}
+                              <ChevronDownIcon boxSize={6} />
+                            </Button>
 
-                          {/* LIST OF OPTIONS */}
-                          <VStack
-                            gap="0"
-                            ref={customDiscountOptionsRef}
-                            display={"none"}
-                            position="absolute"
-                            w="100%"
-                            zIndex={1}
-                          >
-                            {discountOptions.map((element, index) => {
-                              return (
-                                <Text
-                                  onClick={handleOptionSelection}
-                                  textAlign={"center"}
-                                  p="2px"
-                                  key={`${element}_${index}`}
-                                  value={element}
-                                  w="100%"
-                                  mt="0 !important"
-                                  border="0.5px solid #474747"
-                                  bg="#fff"
-                                  color="#606060"
-                                  cursor="pointer"
-                                  borderRadius={
-                                    index === 0
-                                      ? "5px 5px 0 0"
-                                      : index === discountOptions.length - 1
-                                      ? "0 0 5px 5px"
-                                      : ""
-                                  }
-                                  _hover={{
-                                    background: "#25557B",
-                                    color: "#fff",
-                                  }}
-                                >
-                                  {element}
-                                </Text>
-                              );
-                            })}
-                          </VStack>
+                            {/* LIST OF OPTIONS */}
+                            <VStack
+                              gap="0"
+                              ref={customDiscountOptionsRef}
+                              display={"none"}
+                              position="absolute"
+                              w="100%"
+                              zIndex={1}
+                            >
+                              {discountOptions.map((element, index) => {
+                                return (
+                                  <Text
+                                    onClick={handleOptionSelection}
+                                    textAlign={"center"}
+                                    p="2px"
+                                    key={`${element}_${index}`}
+                                    value={element}
+                                    w="100%"
+                                    mt="0 !important"
+                                    border="0.5px solid #474747"
+                                    bg="#fff"
+                                    color="#606060"
+                                    cursor="pointer"
+                                    borderRadius={
+                                      index === 0
+                                        ? "5px 5px 0 0"
+                                        : index === discountOptions.length - 1
+                                        ? "0 0 5px 5px"
+                                        : ""
+                                    }
+                                    _hover={{
+                                      background: "#25557B",
+                                      color: "#fff",
+                                    }}
+                                  >
+                                    {element}
+                                  </Text>
+                                );
+                              })}
+                            </VStack>
+                          </Box>
                         </Box>
-                      </Box>
-                    </Td>
-                    <Td w="17%">
-                      <RadioGroup defaultValue="yes">
-                        <Box display={"flex"} flexDirection="column" gap="10px">
-                          <Radio
-                            value="yes"
-                            border={"1px solid lightgray"}
-                            bg="white"
+                      </Td>
+                      <Td w="17%">
+                        <RadioGroup
+                          defaultValue="yes"
+                          value={taxRadio}
+                          onChange={setTaxRadio}
+                        >
+                          <Box
+                            display={"flex"}
+                            flexDirection="column"
+                            gap="10px"
                           >
-                            Yes
-                          </Radio>
-                          <Radio
-                            value="no"
-                            border={"1px solid lightgray"}
-                            bg="white"
+                            <Radio
+                              value="yes"
+                              border={"1px solid lightgray"}
+                              bg="white"
+                            >
+                              Yes
+                            </Radio>
+                            <Radio
+                              value="no"
+                              border={"1px solid lightgray"}
+                              bg="white"
+                            >
+                              No
+                            </Radio>
+                          </Box>
+                        </RadioGroup>
+                      </Td>
+                      <Td w="17%">
+                        <RadioGroup
+                          defaultValue="cash"
+                          value={paymentMethodRadio}
+                          onChange={setPaymentMethodRadio}
+                        >
+                          <Box
+                            display={"flex"}
+                            flexDirection="column"
+                            gap="10px"
                           >
-                            No
-                          </Radio>
-                        </Box>
-                      </RadioGroup>
-                    </Td>
-                    <Td w="17%">
-                      <RadioGroup defaultValue="cash">
-                        <Box display={"flex"} flexDirection="column" gap="10px">
-                          <Radio
-                            value="cash"
-                            border={"1px solid lightgray"}
-                            bg="white"
-                          >
-                            Cash
-                          </Radio>
-                          <Radio
-                            value="neft/imps"
-                            border={"1px solid lightgray"}
-                            bg="white"
-                          >
-                            NEFT/IMPS
-                          </Radio>
-                          <Radio
-                            value="online payment"
-                            border={"1px solid lightgray"}
-                            bg="white"
-                          >
-                            Online Payment
-                          </Radio>
-                          <Radio
-                            value="cheque"
-                            border={"1px solid lightgray"}
-                            bg="white"
-                          >
-                            Cheque
-                          </Radio>
-                          <Radio
-                            value="debit/credit"
-                            border={"1px solid lightgray"}
-                            bg="white"
-                          >
-                            Debit / Credit
-                          </Radio>
-                        </Box>
-                      </RadioGroup>
-                    </Td>
-                  </Tr>
-                </Tbody>
-                <Tfoot>
-                  <Tr display={"flex"} flexDirection="space-between">
-                    <Td ml="auto">
-                      <Text fontSize={"lg"}>Grand Total</Text>
-                      <Text fontSize={"md"} fontWeight={500}>
-                        18,000
-                      </Text>
-                    </Td>
-                    <Td>
-                      <Button
-                        color="white"
-                        background="#4D68E6"
-                        boxShadow="0px 1px 11px rgba(0, 0, 0, 0.09)"
-                        borderRadius="5px"
-                      >
-                        Make Payment
-                      </Button>
-                    </Td>
-                  </Tr>
-                </Tfoot>
-              </Table>
-            </TableContainer>
+                            <Radio
+                              value="cash"
+                              border={"1px solid lightgray"}
+                              bg="white"
+                            >
+                              Cash
+                            </Radio>
+                            <Radio
+                              value="neft/imps"
+                              border={"1px solid lightgray"}
+                              bg="white"
+                            >
+                              NEFT/IMPS
+                            </Radio>
+                            <Radio
+                              value="online payment"
+                              border={"1px solid lightgray"}
+                              bg="white"
+                            >
+                              Online Payment
+                            </Radio>
+                            <Radio
+                              value="cheque"
+                              border={"1px solid lightgray"}
+                              bg="white"
+                            >
+                              Cheque
+                            </Radio>
+                            <Radio
+                              value="debit/credit"
+                              border={"1px solid lightgray"}
+                              bg="white"
+                            >
+                              Debit / Credit
+                            </Radio>
+                          </Box>
+                        </RadioGroup>
+                      </Td>
+                    </Tr>
+                  </Tbody>
+                  <Tfoot>
+                    <Tr display={"flex"} flexDirection="space-between">
+                      <Td ml="auto">
+                        <Text fontSize={"lg"}>Grand Total</Text>
+                        <Text fontSize={"md"} fontWeight={500}>
+                          {formik.values.partialPaymentAmount}
+                        </Text>
+                      </Td>
+                      <Td>
+                        <Button
+                          color="white"
+                          background="#4D68E6"
+                          boxShadow="0px 1px 11px rgba(0, 0, 0, 0.09)"
+                          borderRadius="5px"
+                          type="submit"
+                        >
+                          Make Payment
+                        </Button>
+                      </Td>
+                    </Tr>
+                  </Tfoot>
+                </Table>
+              </TableContainer>
+            </form>
             <Heading
               as="h3"
               fontSize={"xl"}
