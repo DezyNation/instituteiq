@@ -26,7 +26,7 @@ import {
 } from "public/icons/Icons";
 import React from "react";
 
-const Cards = ({ heading, value }) => {
+const Cards = ({ heading = "", value = "" }) => {
   return (
     <Card
       w="250px"
@@ -36,6 +36,7 @@ const Cards = ({ heading, value }) => {
       borderRadius="20px"
       bg="rgba(255, 255, 255, 0.55)"
       position="relative"
+      flex="1 1 250px"
     >
       {heading === "Absent" && (
         <HeaderAbsent
@@ -183,19 +184,27 @@ const Cards = ({ heading, value }) => {
         />
       )}
 
-      <CardBody position="relative" top="50px">
-        <Text
-          fontSize="38px"
-          fontWeight="500"
-          color="#373737"
-          textAlign="right"
-        >
-          {value}
-        </Text>
-        <Divider bg="#BCBCBC" height="2px" />
-        <Text fontSize="20px" color="#555555" fontWeight="400">
-          {heading}
-        </Text>
+      <CardBody
+        position="relative"
+        display={"flex"}
+        flexDirection="column"
+        justifyContent={"flex-end"}
+        p="0"
+      >
+        <Box>
+          <Text
+            fontSize="30px"
+            fontWeight="500"
+            color="#373737"
+            textAlign="right"
+          >
+            {value}
+          </Text>
+          <Divider bg="#BCBCBC" height="2px" />
+          <Text fontSize="20px" color="#555555" fontWeight="400">
+            {heading}
+          </Text>
+        </Box>
       </CardBody>
     </Card>
   );
