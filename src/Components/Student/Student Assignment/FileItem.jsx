@@ -4,16 +4,17 @@ import React from "react";
 import { useFilesProvider } from "./FilesProvider";
 
 const FileItem = ({ fileName }) => {
-  const [modalBodyFileList, setModalBodyFileList] = useFilesProvider();
+  const [filesToBeUploaded, , handleDeleteItem] = useFilesProvider();
 
   const handleRemove = (e) => {
     const clickedFileName = e.target.parentElement.children[0].innerText;
 
-    setModalBodyFileList(
-      modalBodyFileList.filter((element) => {
-        return element != clickedFileName;
-      })
-    );
+    {
+      filesToBeUploaded &&
+        Object.entries(filesToBeUploaded).map((fileElement, index) => {
+          if (fileElement[1].name == clickedFileName) handleDeleteItem(index);
+        });
+    }
   };
 
   return (

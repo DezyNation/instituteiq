@@ -6,12 +6,10 @@ import { FilesProvider } from "@/Components/Student/Student Assignment/FilesProv
 export default function Home() {
   return (
     <>
-      <FilesProvider>
-        <Flex>
-          <InchargeSidebar />
-          <Index />
-        </Flex>
-      </FilesProvider>
+      <Flex>
+        <InchargeSidebar />
+        <Index />
+      </Flex>
     </>
   );
 }

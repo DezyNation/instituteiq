@@ -6,12 +6,21 @@ import AssessmentTotal from "../Misc/AssessmentTotal";
 import Carousel from "../Misc/Carousel";
 
 const Performance = () => {
-  const carouselButtons = ["Assignment-1","Assignment-2","Assignment-3","SA-1","SA-2","SA-3","SA-4","SA-5"];
+  const carouselButtons = [
+    "Assignment-1",
+    "Assignment-2",
+    "Assignment-3",
+    "SA-1",
+    "SA-2",
+    "SA-3",
+    "SA-4",
+    "SA-5",
+  ];
 
   return (
     <MainPage heading="Perfromance">
       <Box w="100%" h="max-content">
-        <Carousel carouselButtons={carouselButtons} type="button"/>
+        <Carousel carouselButtons={carouselButtons} type="button" />
         <Flex
           justifyContent="space-between"
           w="90%"
@@ -30,10 +39,10 @@ const Performance = () => {
             Subject
           </Heading>
           <Heading fontWeight="600" fontSize={"large"}>
-            Date
+            Teacher
           </Heading>
           <Heading fontWeight="600" fontSize={"large"}>
-            Teacher
+            Date
           </Heading>
           <Heading fontWeight="600" fontSize={"large"}>
             Percentage

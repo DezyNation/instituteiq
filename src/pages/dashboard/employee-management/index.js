@@ -6,12 +6,10 @@ import { Flex } from "@chakra-ui/react";
 export default function Home() {
   return (
     <>
-      <FilesProvider>
-        <Flex>
-          <InchargeSidebar />
-          <Index />
-        </Flex>
-      </FilesProvider>
+      <Flex>
+        <InchargeSidebar />
+        <Index />
+      </Flex>
     </>
   );
 }

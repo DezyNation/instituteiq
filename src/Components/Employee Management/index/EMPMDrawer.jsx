@@ -36,20 +36,13 @@ import userSVG from "../../../../public/userSVG.svg";
 
 const EMPMDrawer = (props) => {
   const [uploadFileName, setUploadFileName] = useState("");
-  const [modalBodyFileList, setModalBodyFileList] = useFilesProvider();
+  const [filesToBeUploaded, handleFileUploadOrChange] =
+    useFilesProvider();
 
   const handleManualFileUpload = (e) => {
     setUploadFileName(e.target.files[0].name);
   };
 
-  const onFileUpload = (e) => {
-    let modalBodyFilesArray = [];
-    const filesRef = e.target.files;
-    for (const [, value] of Object.entries(e.target.files)) {
-      modalBodyFilesArray.push(value.name);
-    }
-    setModalBodyFileList(modalBodyFilesArray);
-  };
 
   const formik = useFormik({
     initialValues: {
@@ -102,9 +95,7 @@ const EMPMDrawer = (props) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const bulkEmployeeFiles = e.target.querySelector(
-      "input#addEmployeeFileUploadInput"
-    ).files;
+    const bulkEmployeeFiles = filesToBeUploaded
     formik.setValues({
       ...formik.values,
       employeeFiles: bulkEmployeeFiles,
@@ -169,15 +160,19 @@ const EMPMDrawer = (props) => {
                       multiple
                       id="addEmployeeFileUploadInput"
                       display={"none"}
-                      onChange={onFileUpload}
+                      onChange={e=>handleFileUploadOrChange(e)}
                     />
                   </Box>
                 </InputGroup>
-                {modalBodyFileList?.map((element, index) => {
-                  return (
-                    <FileItem key={`${element}_${index}`} fileName={element} />
-                  );
-                })}
+                {filesToBeUploaded &&
+                  Object.entries(filesToBeUploaded).map((element, index) => {
+                    return (
+                      <FileItem
+                        key={`${element[1].name}_${index}`}
+                        fileName={element[1].name}
+                      />
+                    );
+                  })}
                 <Divider h="1px" bg="#A3A3A3" />
                 <Text textAlign="center" w="100%">
                   OR

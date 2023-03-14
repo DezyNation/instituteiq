@@ -7,10 +7,8 @@ export default function studentassignment() {
   return (
     <>
       <Flex>
-        <FilesProvider>
-          <StudentDashboardSidebar />
-          <StudentAssignment />
-        </FilesProvider>
+        <StudentDashboardSidebar />
+        <StudentAssignment />
       </Flex>
     </>
   );

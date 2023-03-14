@@ -26,24 +26,15 @@ const AssignmentUploadModal = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [submitButton, setSubmitButton] = useState(true);
   const [flatPickerValue, setFlatPickerValue] = useState([]);
-  const [modalBodyFileList, setModalBodyFileList] = useFilesProvider();
-
-  const onFileUpload = (e) => {
-    let modalBodyFilesArray = [];
-    for (const [, value] of Object.entries(e.target.files)) {
-      modalBodyFilesArray.push(value.name);
-    }
-    setModalBodyFileList(modalBodyFilesArray);
-  };
+  const [filesToBeUploaded, handleFileUploadOrChange] = useFilesProvider();
 
   const handleCancel = () => {
-    setModalBodyFileList([]);
     onClose();
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const files = e.target.querySelector("input#fileUpload").files
+    const files = filesToBeUploaded;
     formik.setValues({
       ...formik.values,
       newAssignmentScheduleTime: flatPickerValue,
@@ -140,18 +131,19 @@ const AssignmentUploadModal = (props) => {
                   border="0"
                   display={"none"}
                   id="fileUpload"
-                  onChange={onFileUpload}
+                  onChange={(e) => handleFileUploadOrChange(e)}
                   multiple={true}
                 />
                 <Box>
-                  {modalBodyFileList?.map((element, index) => {
-                    return (
-                      <FileItem
-                        key={`${element}_${index}`}
-                        fileName={element}
-                      />
-                    );
-                  })}
+                  {filesToBeUploaded &&
+                    Object.entries(filesToBeUploaded).map((element, index) => {
+                      return (
+                        <FileItem
+                          key={`${element[1].name}_${index}`}
+                          fileName={element[1].name}
+                        />
+                      );
+                    })}
                 </Box>
                 <Flex mt="10px">
                   <Box mr="50px">
