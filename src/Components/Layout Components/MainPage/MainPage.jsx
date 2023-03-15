@@ -1,4 +1,5 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
+import Head from "next/head";
 import React, { Children } from "react";
 import Header from "../Header/Header";
 

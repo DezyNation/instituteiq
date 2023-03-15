@@ -1,3 +1,4 @@
+import CPRightSide from "@/Components/Curriculum Progress/Index/CPRightSide";
 import Index from "@/Components/Curriculum Progress/Index/Index";
 import CPSidebar from "@/Components/Layout Components/Sidebar/CPSidebar";
 import { Flex } from "@chakra-ui/react";

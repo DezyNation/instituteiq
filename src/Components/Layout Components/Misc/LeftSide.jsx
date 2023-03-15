@@ -1,3 +1,4 @@
+import { classVAssignmentData } from "@/Components/Assessment Management/index/Index";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Accordion,
@@ -18,7 +19,7 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 import { BiLeftArrow } from "react-icons/bi";
-import { classVAssignmentData } from "@/Components/Assessment Management/Index/Index";
+// import { classVAssignmentData } from "@/Components/Assessment Management/Index/Index";
 
 const assessmentClasses = [
   { Subject: "Maths", students: 50, rate: 85 },
