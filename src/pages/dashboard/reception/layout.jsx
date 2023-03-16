@@ -98,11 +98,7 @@ const Sidenav = () => {
 const Layout = ({ children, pageName }) => {
     return (
         <>
-<<<<<<< HEAD
-            <Head><title>institute iQ | {pageName}</title></Head>
-=======
             <Head><title>{`institute iQ | ${pageName}`}</title></Head>
->>>>>>> dhananjay
             <Stack
                 w={'full'} h={'100vh'}
                 direction={['column', 'row']}

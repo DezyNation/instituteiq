@@ -5,11 +5,7 @@ import Layout from './layout'
 const Dashboard = () => {
   return (
     <>
-<<<<<<< HEAD
-        <Layout pageName={'Student Dashboard'}>
-=======
         <Layout pageName="Reception Dashboard">
->>>>>>> dhananjay
           
         </Layout>
     </>
