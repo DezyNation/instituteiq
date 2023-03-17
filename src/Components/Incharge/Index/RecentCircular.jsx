@@ -25,7 +25,7 @@ export const ToDoListObject = [
   },
 ];
 
-const RecentCircular = () => {
+const RecentCircular = ({ page = "class-teacher" }) => {
   const [itemList, setItemList] = useState(ToDoListObject);
 
   return (
@@ -38,11 +38,12 @@ const RecentCircular = () => {
       boxShadow="2px 4px 4px rgba(0, 0, 0, 0.25)"
       p="15px"
     >
+      {page!=="class-teacher"?
       <InputModal
-        heading="Add new circular"
-        placeholder="Add circular"
-        itemList={itemList}
-        setItemList={setItemList}
+      heading="Add new circular"
+      placeholder="Add circular"
+      itemList={itemList}
+      setItemList={setItemList}
       >
         <Box
           w="100%"
@@ -51,7 +52,7 @@ const RecentCircular = () => {
           boxShadow="0px 4px 4px rgba(56, 70, 199, 0.5)"
           borderRadius="13.5px"
           mb="20px"
-        >
+          >
           <Flex>
             <Text
               fontWeight="500"
@@ -72,7 +73,7 @@ const RecentCircular = () => {
                 margin: "auto",
                 top: "0",
               }}
-            />
+              />
             <Flex justifyContent="center" alignItems="center">
               <Text
                 fontFamily={"sans-serif"}
@@ -81,20 +82,21 @@ const RecentCircular = () => {
                 fontWeight="600"
                 color="#577C99"
                 lineHeight="16px"
-              >
+                >
                 Create Circular
               </Text>
             </Flex>
           </Flex>
         </Box>
       </InputModal>
+      :<Text color="#577C99" fontSize={"2xl"} mb="10px" fontFamily={"serif"} textAlign="center">Recent Circular</Text>}
       {itemList.map((element, index) => {
         return (
           <Box
-            key={`${element.task}_${index}`}
-            bg="transparent"
-            p="10px"
-            border="1px solid #DADADA"
+          key={`${element.task}_${index}`}
+          bg="transparent"
+          p="10px"
+          border="1px solid #DADADA"
             borderRadius="13.5px"
             mb="20px"
           >

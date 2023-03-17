@@ -111,6 +111,12 @@ span.flatpickr-day:hover {
 }
 /* Chakra UI modal end */
 
+/* Chakra circular */
+.css-ol3i12{
+  stroke:"#F69B53 !important"
+}
+/* Chakra circular */
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

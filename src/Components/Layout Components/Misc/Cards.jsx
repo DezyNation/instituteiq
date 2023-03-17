@@ -26,7 +26,7 @@ import {
 } from "public/icons/Icons";
 import React from "react";
 
-const Cards = ({ heading = "", value = "" }) => {
+const Cards = ({ heading = "", value = "",page }) => {
   return (
     <Card
       w="250px"
@@ -172,6 +172,30 @@ const Cards = ({ heading = "", value = "" }) => {
         />
       )}
       {heading === "Overall Attendance" && (
+        <OverallAttendance
+          borderRadius="20px"
+          bg="rgba(0, 56, 101, 0.85)"
+          h="62px"
+          w="77px"
+          m="auto"
+          position="absolute"
+          top="-25px"
+          left="30px"
+        />
+      )}
+      {(heading === "Overall Attendance" && page==="class-teacher")&& (
+        <NumberStaff
+          borderRadius="20px"
+          bg="rgba(0, 56, 101, 0.85)"
+          h="62px"
+          w="77px"
+          m="auto"
+          position="absolute"
+          top="-25px"
+          left="30px"
+        />
+      )}
+      {heading === "Curriculum Progress" && (
         <OverallAttendance
           borderRadius="20px"
           bg="rgba(0, 56, 101, 0.85)"

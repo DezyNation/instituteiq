@@ -1,6 +1,20 @@
-import { Badge, Box, HStack, Stack, Text, VStack } from "@chakra-ui/react";
+import {
+  Badge,
+  Box,
+  Flex,
+  HStack,
+  Img,
+  Select,
+  Stack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import React from "react";
 import { BsPlusCircleFill } from "react-icons/bs";
+import Image from "next/image";
+import rankOne from "../../../../public/icons/rank-one.png";
+import rankTwo from "../../../../public/icons/rank-two.png";
+import rankThree from "../../../../public/icons/rank-three.png";
 
 export const ThreeColTable = ({ head, body, color }) => {
   return (
@@ -81,7 +95,7 @@ const LeaderBoard = () => {
       justifyContent={"space-between"}
     >
       <VStack
-        h={"sm"}
+        // h={"sm"}
         p={4}
         bg={"#26567CCC"}
         color={"white"}
@@ -91,6 +105,22 @@ const LeaderBoard = () => {
         <Text fontWeight={"medium"} pb={6}>
           Leaderboard
         </Text>
+        <HStack>
+          <HStack>
+            <Text fontSize={"xs"} >Class</Text>
+            <Select fontSize={"xs"} border="none" >
+              <option style={{color:"black"}} >Option-1</option>
+              <option style={{color:"black"}} >Option-2</option>
+            </Select>
+          </HStack>
+          <HStack>
+            <Text fontSize={"xs"} >Section</Text>
+            <Select fontSize={"xs"} border="none" >
+              <option style={{color:"black"}} >A</option>
+              <option style={{color:"black"}} >B</option>
+            </Select>
+          </HStack>
+        </HStack>
         <HStack
           rounded={"full"}
           w={"full"}
@@ -103,10 +133,10 @@ const LeaderBoard = () => {
           <Text flex={1}>Name</Text>
           <Text flex={1}>Percentage</Text>
         </HStack>
-        {leaderboardData.map((student, key) => {
+        {leaderboardData.map((student, index) => {
           return (
             <HStack
-              key={key}
+              key={index}
               px={4}
               pt={3}
               pb={1}
@@ -115,7 +145,18 @@ const LeaderBoard = () => {
               borderBottomColor={"aliceblue"}
             >
               <Text flex={1}>{student.rank}</Text>
-              <Text flex={1}>{student.name}</Text>
+              <Flex flex={1}>
+                {student.name}
+                {index === 0 ? (
+                  <Image src={rankOne} alt="" />
+                ) : index === 1 ? (
+                  <Image src={rankTwo} alt="" />
+                ) : index === 2 ? (
+                  <Image src={rankThree} alt="" />
+                ) : (
+                  ""
+                )}
+              </Flex>
               <Text flex={1} textAlign={"center"}>
                 {student.percentage}
               </Text>
